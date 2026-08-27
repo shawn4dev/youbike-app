@@ -1,13 +1,14 @@
 /* YouBike 站點查詢 Service Worker
- * - 靜態資產與離線殼：cache-first
+ * - 導航頁與 Next 資產：network-first，避免吃到舊版 bundle
+ * - 靜態圖示：cache-first
  * - /api/stations：network-first（失敗時退回快取）
  */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const STATIC_CACHE = `youbike-static-${VERSION}`;
 const RUNTIME_CACHE = `youbike-runtime-${VERSION}`;
 
 // 安裝時預先快取的離線殼
-const PRECACHE_URLS = ['/', '/manifest.json', '/icon-192.png', '/icon-512.png'];
+const PRECACHE_URLS = ['/manifest.json', '/icon-192.png', '/icon-512.png'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -63,7 +64,28 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 靜態資產與頁面：cache-first
+  // Next.js bundle 與頁面導覽優先拿最新版本，離線時才退回快取
+  if (request.mode === 'navigate' || url.pathname.startsWith('/_next/')) {
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          if (response.ok || response.type === 'basic') {
+            const copy = response.clone();
+            caches.open(RUNTIME_CACHE).then((cache) => cache.put(request, copy));
+          }
+          return response;
+        })
+        .catch(async () => {
+          const cached = await caches.match(request);
+          if (cached) return cached;
+          if (request.mode === 'navigate') return caches.match('/');
+          return Response.error();
+        })
+    );
+    return;
+  }
+
+  // 靜態圖示與其他同源資產：cache-first
   event.respondWith(
     caches.match(request).then((cached) => {
       if (cached) return cached;

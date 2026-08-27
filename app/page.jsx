@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
+import { memo, useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { AREA_CENTERS, matchArea } from '../lib/areas';
 import { guardHistory, sampleIntervalMs, distanceMeters } from '../lib/storage-guard';
@@ -22,7 +22,14 @@ const CITY_ZOOM = {
   新北: { center: [25.02, 121.47], zoom: 12 },
   高雄: { center: [22.63, 120.3], zoom: 12 },
 };
+const BANQIAO_FALLBACK = { lat: 25.0114, lng: 121.4618, zoom: 14 };
 const CITIES = ['all', '臺北', '新北', '高雄'];
+const STATION_TYPE_OPTIONS = [
+  { key: 'empty', label: '無車站', className: 'status-empty' },
+  { key: 'full', label: '滿柱站', className: 'status-full' },
+  { key: 'normal', label: '可借可還', className: 'status-normal' },
+  { key: 'inactive', label: '暫停營運', className: 'status-inactive' },
+];
 
 function loadLS(key, fallback) {
   try {
@@ -36,6 +43,51 @@ function saveLS(key, val) {
   try {
     localStorage.setItem(key, JSON.stringify(val));
   } catch {}
+}
+
+function mergeStations(prevStations, nextStations) {
+  const prevMap = new Map(prevStations.map((s) => [s.id, s]));
+  const merged = [];
+  const seen = new Set();
+  let changed = prevStations.length !== nextStations.length;
+
+  for (const next of nextStations) {
+    const prev = prevMap.get(next.id);
+    if (!prev) {
+      changed = true;
+      merged.push({ ...next });
+      seen.add(next.id);
+      continue;
+    }
+
+    const same =
+      prev.lat === next.lat &&
+      prev.lng === next.lng &&
+      prev.name === next.name &&
+      prev.nameEn === next.nameEn &&
+      prev.city === next.city &&
+      prev.area === next.area &&
+      prev.addr === next.addr &&
+      prev.active === next.active &&
+      prev.available === next.available &&
+      prev.empty === next.empty &&
+      prev.total === next.total &&
+      prev.regularBikes === next.regularBikes &&
+      prev.ebikes === next.ebikes;
+
+    if (!same) changed = true;
+    merged.push(same ? prev : { ...prev, ...next });
+    seen.add(next.id);
+  }
+
+  for (const prev of prevStations) {
+    if (!seen.has(prev.id)) {
+      changed = true;
+      merged.push(prev);
+    }
+  }
+
+  return changed ? merged : prevStations;
 }
 
 function useTheme() {
@@ -66,6 +118,99 @@ function AnimatedNumber({ value }) {
   return <span className={'num' + (pulse ? ' pulse' : '')}>{display}</span>;
 }
 
+function stationViewType(station) {
+  if (!station.active) return 'inactive';
+  if (station.available === 0) return 'empty';
+  if ((station.empty ?? 0) === 0 && station.available > 0) return 'full';
+  return 'normal';
+}
+
+const StationCard = memo(function StationCard({
+  station,
+  isSelected,
+  isFav,
+  low,
+  trend,
+  minValue,
+  maxValue,
+  dist,
+  onPick,
+  onToggleFavorite,
+  cardRefs,
+}) {
+  const denom = station.total > 0 ? station.total : (station.available + (station.empty ?? 0));
+  const pct = denom > 0 ? Math.round((station.available / denom) * 100) : 0;
+
+  return (
+    <li
+      ref={(el) => (cardRefs.current[station.id] = el)}
+      className={
+        'card' +
+        (isSelected ? ' selected glow' : '') +
+        (low ? ' low-station' : '')
+      }
+      onClick={() => onPick(station)}
+    >
+      <div className="card-top">
+        <span className={`city-badge b-${station.city}`}>{station.city}</span>
+        <span className="name">{station.name}</span>
+        <button
+          className={'star' + (isFav ? ' on' : '')}
+          onClick={(e) => {
+            e.stopPropagation();
+            onToggleFavorite(station.id);
+          }}
+          aria-label="收藏"
+        >
+          {isFav ? '★' : '☆'}
+        </button>
+      </div>
+      <div className="addr">{station.area} · {station.addr}</div>
+      <div className="counts">
+        {!station.active ? (
+          <span className="inactive-tag">⛔ 暫停營運</span>
+        ) : (
+          <>
+            {station.regularBikes != null && (
+              <span className="bike-type" title="一般自行車">🚲 <AnimatedNumber value={station.regularBikes} /></span>
+            )}
+            {station.ebikes != null && station.ebikes > 0 && (
+              <span className="bike-type ebike" title="電輔車">⚡ <AnimatedNumber value={station.ebikes} /></span>
+            )}
+            {(station.regularBikes == null || station.ebikes == null) && (
+              <span className="avail" title="臺北官方 API 未提供車型明細,此為一般+電輔總數">🚲 可借 <AnimatedNumber value={station.available} /></span>
+            )}
+            <span className="free" title="可停空位">🅿️ 可停 <AnimatedNumber value={station.empty ?? 0} /></span>
+            {trend && trend !== 'flat' && (
+              <span className={'trend ' + trend}>{trend === 'up' ? '↑' : '↓'} 車流中</span>
+            )}
+          </>
+        )}
+        {minValue != null && maxValue != null && (
+          <span className="minmax" title="近 2 小時最低/最高可借數">
+            ↓{minValue} ↑{maxValue}
+          </span>
+        )}
+        {dist != null && dist < 100000 && (
+          <span className="dist">{dist >= 1000 ? (dist / 1000).toFixed(1) + 'km' : Math.round(dist) + 'm'}</span>
+        )}
+        <a
+          className="nav-link"
+          href={`https://www.google.com/maps/dir/?api=1&destination=${station.lat},${station.lng}`}
+          target="_blank"
+          rel="noreferrer"
+          onClick={(e) => e.stopPropagation()}
+        >
+          導航 ↗
+        </a>
+      </div>
+      <div className="bar">
+        <div className={'fill' + (low ? ' fill-low' : '')} style={{ width: Math.min(pct, 100) + '%' }} />
+      </div>
+    </li>
+  );
+});
+
 export default function Home() {
   const [theme, toggleTheme] = useTheme();
   const [stations, setStations] = useState([]);
@@ -84,17 +229,28 @@ export default function Home() {
   const [geoErr, setGeoErr] = useState(null);
   const [notifSettings, setNotifSettings] = useState({ enabled: false, threshold: 3, activeFrom: 700, activeTo: 2200 });
   const [showImport, setShowImport] = useState(false);
+  const [controlsOpen, setControlsOpen] = useState(false);
+  const [locating, setLocating] = useState(false);
+  const [stationTypeFilters, setStationTypeFilters] = useState({
+    empty: true,
+    full: true,
+    normal: true,
+    inactive: true,
+  });
   const [boundsFilter, setBoundsFilter] = useState(true); // 只看此地圖範圍
   const [mapBounds, setMapBounds] = useState(null); // {south,west,north,east}
   const [mapZoom, setMapZoom] = useState(null);
   const [clusteredIds, setClusteredIds] = useState(new Set()); // 目前被聚合的站
-  const [lowOnly, setLowOnly] = useState(false); // 徽章點擊:只看無車站
   const [mapCenterOverride, setMapCenterOverride] = useState(null); // 📍 二次點擊回定位
   const historyRef = useRef({});
   const listRef = useRef(null);
   const cardRefs = useRef({});
   const notifiedRef = useRef(new Map());
   const mountedRef = useRef(false); // 跳過 mount 當次 URL 寫入,避免撞 Next router 初始化
+  const lastScrolledIdRef = useRef(null);
+  const controlsRef = useRef(null);
+  const searchRef = useRef(null);
+  const didInitializeCityRef = useRef(false);
 
   // 初始載入本地狀態 + URL 分享站號
   useEffect(() => {
@@ -148,7 +304,7 @@ export default function Home() {
       try {
         const res = await fetch('/api/stations' + (force ? '?force=1' : ''));
         const data = await res.json();
-        setStations(data.stations || []);
+        setStations((prev) => mergeStations(prev || [], data.stations || []));
         setErrors(data.errors || []);
         setFetchedAt(data.fetchedAt);
 
@@ -202,26 +358,85 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [load]);
 
-  function locate() {
+  function focusLocation(lat, lng) {
+    const location = { lat, lng };
+    saveLS('yb-last-location', location);
+    setUserLoc(location);
+    setMapCenterOverride({ center: [lat, lng], zoom: 15 });
+    setGeoErr(null);
+    setLocating(false);
+  }
+
+  function requestLocation({ silent = false, networkFallback = true } = {}) {
     if (!navigator.geolocation) {
-      setGeoErr('此瀏覽器不支援定位');
+      setLocating(false);
+      if (!silent) setGeoErr('此瀏覽器不支援定位');
       return;
     }
-    // 二次點擊 = 已有定位 → 直接把地圖帶回自己位置
-    if (userLoc) {
-      setMapCenterOverride({ center: [userLoc.lat, userLoc.lng], zoom: 15 });
-      return;
-    }
+    setLocating(true);
     navigator.geolocation.getCurrentPosition(
       (pos) => {
-        setUserLoc({ lat: pos.coords.latitude, lng: pos.coords.longitude });
-        setMapCenterOverride({ center: [pos.coords.latitude, pos.coords.longitude], zoom: 15 });
-        setGeoErr(null);
+        focusLocation(pos.coords.latitude, pos.coords.longitude);
       },
-      (err) => setGeoErr('定位失敗:' + err.message),
+      (highAccuracyError) => {
+        if (!networkFallback) {
+          setLocating(false);
+          if (!silent) setGeoErr('定位失敗:' + highAccuracyError.message);
+          return;
+        }
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            focusLocation(pos.coords.latitude, pos.coords.longitude);
+          },
+          (err) => {
+            setLocating(false);
+            if (!silent) setGeoErr('定位失敗:' + err.message);
+          },
+          { enableHighAccuracy: false, timeout: 10000, maximumAge: 5 * 60 * 1000 }
+        );
+      },
       { enableHighAccuracy: true, timeout: 10000 }
     );
   }
+
+  function locate() {
+    if (userLoc) {
+      setMapCenterOverride({ center: [userLoc.lat, userLoc.lng], zoom: 15 });
+    }
+    requestLocation();
+  }
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const urlLat = Number.parseFloat(params.get('lat'));
+    const urlLng = Number.parseFloat(params.get('lng'));
+    const urlZoom = Number.parseInt(params.get('z'), 10);
+    if (Number.isFinite(urlLat) && Number.isFinite(urlLng) && Number.isFinite(urlZoom)) return;
+
+    const saved = loadLS('yb-last-location', null);
+    const hasSavedLocation = Number.isFinite(saved?.lat) && Number.isFinite(saved?.lng);
+    if (hasSavedLocation) {
+      setUserLoc(saved);
+      setMapCenterOverride({ center: [saved.lat, saved.lng], zoom: 15 });
+    } else {
+      setMapCenterOverride({ center: [BANQIAO_FALLBACK.lat, BANQIAO_FALLBACK.lng], zoom: BANQIAO_FALLBACK.zoom });
+    }
+    requestLocation({ silent: true, networkFallback: !hasSavedLocation });
+  }, []);
+
+  useEffect(() => {
+    if (!controlsOpen) return;
+    searchRef.current?.focus();
+  }, [controlsOpen]);
+
+  useEffect(() => {
+    if (!controlsOpen) return;
+    const closeOutsideControls = (event) => {
+      if (!controlsRef.current?.contains(event.target)) setControlsOpen(false);
+    };
+    document.addEventListener('pointerdown', closeOutsideControls);
+    return () => document.removeEventListener('pointerdown', closeOutsideControls);
+  }, [controlsOpen]);
 
   const trend = useCallback((id) => {
     const arr = historyRef.current[id];
@@ -243,7 +458,7 @@ export default function Home() {
     return { min: Math.min(...pts), max: Math.max(...pts) };
   }, []);
 
-  function toggleFavorite(id) {
+  const toggleFavorite = useCallback((id) => {
     setFavorites((prev) => {
       const next = prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id];
       saveLS('yb-favorites', next);
@@ -253,7 +468,7 @@ export default function Home() {
       saveLS('yb-history', hist);
       return next;
     });
-  }
+  }, []);
 
   function exportFavs() {
     const data = JSON.stringify({ favorites: loadLS('yb-favorites', []), history: historyRef.current }, null, 2);
@@ -290,8 +505,26 @@ export default function Home() {
     reader.readAsText(file);
   }
 
+  const favoriteSet = useMemo(() => new Set(favorites), [favorites]);
+
+  const stationDistances = useMemo(() => {
+    if (!userLoc) return null;
+    return new Map(
+      stations.map((s) => [
+        s.id,
+        !isNaN(s.lat) && !isNaN(s.lng)
+          ? distanceMeters(userLoc.lat, userLoc.lng, s.lat, s.lng)
+          : Infinity,
+      ])
+    );
+  }, [stations, userLoc]);
+
+  const toggleStationTypeFilter = useCallback((type) => {
+    setStationTypeFilters((prev) => ({ ...prev, [type]: !prev[type] }));
+  }, []);
+
   // 搜尋:regex 查詢(支援 |、.*、中文/英文站名),無效 pattern 時退回純文字
-  const filtered = useMemo(() => {
+  const baseFiltered = useMemo(() => {
     const q = query.trim();
     let matcher = null;
     if (q) {
@@ -312,8 +545,7 @@ export default function Home() {
     let list = stations
       .filter((s) => city === 'all' || s.city === city)
       .filter((s) => !onlyAvailable || s.available > 0)
-      .filter((s) => !showFavOnly || favorites.includes(s.id))
-      .filter((s) => !lowOnly || s.available === 0)
+      .filter((s) => !showFavOnly || favoriteSet.has(s.id))
       .filter((s) => !matcher || matcher(s));
     // 地圖範圍過濾:有搜尋字時停用;定位模式也停用(距離排序已含範圍語意)
     if (boundsFilter && !q && !userLoc && mapBounds) {
@@ -328,32 +560,61 @@ export default function Home() {
       );
     }
     // 定位模式:按距離排序,超過 10km 的站排到最後
-    if (userLoc) {
+    if (stationDistances) {
       list = list
-        .map((s) => ({
-          ...s,
-          dist:
-            !isNaN(s.lat) && !isNaN(s.lng)
-              ? distanceMeters(userLoc.lat, userLoc.lng, s.lat, s.lng)
-              : Infinity,
-        }))
+        .filter((s) => (stationDistances.get(s.id) ?? Infinity) <= 10000)
         .sort((a, b) => {
-          const fa = favorites.includes(a.id) ? 1 : 0;
-          const fb = favorites.includes(b.id) ? 1 : 0;
+          const fa = favoriteSet.has(a.id) ? 1 : 0;
+          const fb = favoriteSet.has(b.id) ? 1 : 0;
           if (fa !== fb) return fb - fa;
-          return a.dist - b.dist;
+          return (stationDistances.get(a.id) ?? Infinity) - (stationDistances.get(b.id) ?? Infinity);
         });
-      list = list.filter((s) => s.dist <= 10000);
     } else {
       list.sort((a, b) => {
-        const fa = favorites.includes(a.id) ? 1 : 0;
-        const fb = favorites.includes(b.id) ? 1 : 0;
+        const fa = favoriteSet.has(a.id) ? 1 : 0;
+        const fb = favoriteSet.has(b.id) ? 1 : 0;
         if (fa !== fb) return fb - fa;
         return b.available - a.available;
       });
     }
     return list;
-  }, [stations, query, city, onlyAvailable, showFavOnly, favorites, userLoc, boundsFilter, mapBounds, lowOnly]);
+  }, [stations, query, city, onlyAvailable, showFavOnly, favoriteSet, stationDistances, boundsFilter, mapBounds]);
+
+  const stationTypeCounts = useMemo(
+    () =>
+      baseFiltered.reduce(
+        (acc, station) => {
+          acc[stationViewType(station)] += 1;
+          return acc;
+        },
+        { empty: 0, full: 0, normal: 0, inactive: 0 }
+      ),
+    [baseFiltered]
+  );
+
+  const activeStationTypeCount = useMemo(
+    () => Object.values(stationTypeFilters).filter(Boolean).length,
+    [stationTypeFilters]
+  );
+  const activeExtraFilterCount = useMemo(
+    () => [showFavOnly, boundsFilter, onlyAvailable].filter(Boolean).length,
+    [showFavOnly, boundsFilter, onlyAvailable]
+  );
+  const primaryExtraFilterLabel = useMemo(() => {
+    if (showFavOnly) return '收藏';
+    if (boundsFilter) return '範圍';
+    if (onlyAvailable) return '有車';
+    return '預設';
+  }, [showFavOnly, boundsFilter, onlyAvailable]);
+
+  const filtered = useMemo(
+    () =>
+      baseFiltered.filter((station) => {
+        const type = stationViewType(station);
+        return stationTypeFilters[type];
+      }),
+    [baseFiltered, stationTypeFilters]
+  );
 
   // 範圍內統計(給 header 統計列與徽章)
   const rangeStats = useMemo(() => {
@@ -416,62 +677,79 @@ export default function Home() {
 
   // 切城市時清除過濾狀態 + override
   useEffect(() => {
+    if (!didInitializeCityRef.current) {
+      didInitializeCityRef.current = true;
+      return;
+    }
     setMapCenterOverride(null);
     setQuery('');
     setOnlyAvailable(false);
     setShowFavOnly(false);
-    setLowOnly(false);
     setSelectedId(null);
     setChartStationId(null);
   }, [city]);
 
-  function pick(s) {
-    setSelectedId(s.id);
-    // 清除所有過濾狀態，確保站點能顯示
-    setQuery('');
-    setOnlyAvailable(false);
-    setShowFavOnly(false);
-    setLowOnly(false);
+  const pick = useCallback((s, { recenter = true } = {}) => {
+    setSelectedId((prev) => {
+      if (prev === s.id) return prev;
+      return s.id;
+    });
     if (city !== 'all' && s.city !== city) setCity('all');
-    // 直接設定強制中心,讓 Recenter 立即飛圖
-    setMapCenterOverride({ center: [s.lat, s.lng], zoom: 15 });
-  }
+    setControlsOpen(false);
+    if (recenter) {
+      setMapCenterOverride((prev) => {
+        if (
+          prev &&
+          prev.center[0] === s.lat &&
+          prev.center[1] === s.lng &&
+          prev.zoom === 15
+        ) {
+          return prev;
+        }
+        return { center: [s.lat, s.lng], zoom: 15 };
+      });
+    }
+  }, [city]);
+
+  // 篩選/查詢變更時取消選取，避免卡片卡在 pending
+  const prevFilterRef = useRef(null);
+  useEffect(() => {
+    const current = JSON.stringify({
+      query,
+      onlyAvailable,
+      showFavOnly,
+      stationTypeFilters,
+      boundsFilter,
+    });
+    if (prevFilterRef.current !== null && prevFilterRef.current !== current) {
+      setSelectedId(null);
+      setChartStationId(null);
+      lastScrolledIdRef.current = null;
+    }
+    prevFilterRef.current = current;
+  }, [query, onlyAvailable, showFavOnly, stationTypeFilters, boundsFilter]);
 
   // popup/地圖點擊 → 捲動列表到該卡片並高亮
-  // 若站點不在目前過濾清單(被城市/搜尋/只看有車過濾掉),自動清除過濾讓它出現
   useEffect(() => {
     if (!selectedId || !listRef.current) return;
     const el = cardRefs.current[selectedId];
     if (el) {
+      if (lastScrolledIdRef.current === selectedId) return;
+      lastScrolledIdRef.current = selectedId;
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return;
     }
-    // 找不到卡片 → 該站被過濾掉了,清空過濾條件讓它浮現,下一輪再捲動
-    const st = stations.find((x) => x.id === selectedId);
-    if (!st) return;
-    if (city !== 'all' && st.city !== city) {
-      setCity('all');
-      setQuery('');
-      setOnlyAvailable(false);
-      setShowFavOnly(false);
-    } else if ((query || onlyAvailable || showFavOnly) && !filtered.some((x) => x.id === selectedId)) {
-      setQuery('');
-      setOnlyAvailable(false);
-      setShowFavOnly(false);
-    }
-  }, [selectedId, filtered, stations, city, query, onlyAvailable, showFavOnly]);
+  }, [selectedId]);
 
-  const selected = filtered.find((s) => s.id === selectedId) ||
-    stations.find((s) => s.id === selectedId) || null;
+  const selected =
+    stations.find((s) => s.id === selectedId) ||
+    filtered.find((s) => s.id === selectedId) || null;
 
   const mapCenter =
     mapCenterOverride
       ? mapCenterOverride
       : areaTarget
         ? { center: areaTarget.center, zoom: 13 }
-        : selected && selected.lat
-          ? { center: [selected.lat, selected.lng], zoom: 15 }
-          : CITY_ZOOM[city];
+        : CITY_ZOOM[city];
 
   const fmtTime = (t) =>
     t ? new Date(t).toLocaleTimeString('zh-TW', { hour12: false }) : '—';
@@ -518,8 +796,8 @@ export default function Home() {
             🚲 YouBike <span className="grad">站點查詢</span>
           </h1>
           <div className="header-actions">
-            <button className={'icon-btn' + (userLoc ? ' loc-on' : '')} onClick={locate} title="定位離我最近" aria-label="定位">
-              📍
+            <button className={'icon-btn' + (userLoc ? ' loc-on' : '')} onClick={locate} title="定位到目前位置" aria-label="定位" disabled={locating}>
+              {locating ? '…' : '📍'}
             </button>
             <NotificationSettings settings={notifSettings} onChange={(s) => { saveLS('yb-notif', s); setNotifSettings(s); }} />
             <button className="icon-btn" onClick={() => setShowImport((v) => !v)} title="匯出/匯入" aria-label="備份">⇅</button>
@@ -561,52 +839,101 @@ export default function Home() {
         )}
       </header>
 
-      <div className="controls">
-        <input
-          className="search"
-          placeholder="搜尋站名 / 區域 / 地址(輸入區名地圖會飛過去)/"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        {areaTarget && (
-          <div className="area-hint">🗺️ 偵測到「{areaTarget.name}」{areaTarget.count} 站 — 地圖已定位</div>
+      <div
+        className="controls"
+        ref={controlsRef}
+        onBlurCapture={(event) => {
+          if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) setControlsOpen(false);
+        }}
+      >
+        <button
+          className="controls-trigger"
+          type="button"
+          aria-expanded={controlsOpen}
+          onClick={() => setControlsOpen((open) => !open)}
+        >
+          <span>⌕ 搜尋與篩選</span>
+          <span className="controls-trigger-meta">{filtered.length} 站 · 站態 {activeStationTypeCount}/4</span>
+        </button>
+        {controlsOpen && (
+          <div className="controls-popover">
+            <div className="controls-top-row">
+              <input
+                ref={searchRef}
+                className="search"
+                placeholder="搜尋站名 / 區域 / 地址"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+            </div>
+            {areaTarget && (
+              <div className="area-hint">🗺️ 偵測到「{areaTarget.name}」{areaTarget.count} 站 — 地圖已定位</div>
+            )}
+            <div className="chips city-chips">
+              {CITIES.map((c) => (
+                <button
+                  key={c}
+                  className={'chip' + (city === c ? ' active' : '')}
+                  onClick={() => {
+                    setCity(c);
+                    setControlsOpen(false);
+                    setSelectedId((id) => {
+                      if (!id) return id;
+                      const prefix = { 臺北: 'tp-', 新北: 'ntpc-', 高雄: 'kcg-' }[c];
+                      if (prefix && !id.startsWith(prefix)) return null;
+                      return id;
+                    });
+                    setChartStationId(null);
+                  }}
+                >
+                  {c === 'all' ? '全部' : c}
+                </button>
+              ))}
+            </div>
+            <div className="filter-group status-filters-panel">
+                <div className="status-filters-head">
+                  <span className="status-filters-title">站態</span>
+                  <span className="status-filters-subtitle">可同時勾選多種狀態</span>
+                </div>
+                <div className="status-filters">
+                  {STATION_TYPE_OPTIONS.map((option) => (
+                    <label key={option.key} className={`status-toggle ${option.className}`}>
+                      <input
+                        type="checkbox"
+                        checked={stationTypeFilters[option.key]}
+                        onChange={() => toggleStationTypeFilter(option.key)}
+                      />
+                      <span className="status-toggle-label">{option.label}</span>
+                      <span className="status-toggle-count">{stationTypeCounts[option.key]}</span>
+                    </label>
+                  ))}
+                </div>
+            </div>
+            <div className="filter-group extra-filters-panel">
+                <div className="status-filters-head">
+                  <span className="status-filters-title">其他</span>
+                  <span className="status-filters-subtitle">依偏好與目前地圖範圍篩選</span>
+                </div>
+                <div className="chips advanced-chips">
+                  <button className={'chip' + (showFavOnly ? ' active-fav' : '')} onClick={() => setShowFavOnly((v) => !v)}>
+                    ⭐ 收藏{favCount ? ` ${favCount}` : ''}
+                  </button>
+                  <label className="toggle">
+                    <input
+                      type="checkbox"
+                      checked={boundsFilter}
+                      onChange={(e) => setBoundsFilter(e.target.checked)}
+                    />
+                    只看此地圖範圍
+                  </label>
+                  <label className="toggle">
+                    <input type="checkbox" checked={onlyAvailable} onChange={(e) => setOnlyAvailable(e.target.checked)} />
+                    只看有車
+                  </label>
+                </div>
+            </div>
+          </div>
         )}
-        <div className="chips">
-          {CITIES.map((c) => (
-            <button
-              key={c}
-              className={'chip' + (city === c ? ' active' : '')}
-              onClick={() => {
-                setCity(c);
-                // 切換城市時,若選中的站不在該城市,取消選取(避免站點跨區殘留)
-                setSelectedId((id) => {
-                  if (!id) return id;
-                  const prefix = { 臺北: 'tp-', 新北: 'ntpc-', 高雄: 'kcg-' }[c];
-                  if (prefix && !id.startsWith(prefix)) return null;
-                  return id;
-                });
-                setChartStationId(null);
-              }}
-            >
-              {c === 'all' ? '全部' : c}
-            </button>
-          ))}
-          <button className={'chip' + (showFavOnly ? ' active-fav' : '')} onClick={() => setShowFavOnly((v) => !v)}>
-            ⭐ 收藏{favCount ? ` ${favCount}` : ''}
-          </button>
-          <label className="toggle">
-            <input
-              type="checkbox"
-              checked={boundsFilter}
-              onChange={(e) => setBoundsFilter(e.target.checked)}
-            />
-            只看此地圖範圍
-          </label>
-          <label className="toggle">
-            <input type="checkbox" checked={onlyAvailable} onChange={(e) => setOnlyAvailable(e.target.checked)} />
-            只看有車
-          </label>
-        </div>
       </div>
 
       <div className="main">
@@ -619,96 +946,27 @@ export default function Home() {
                 <div className="sk-line w40" />
               </li>
             ))}
-          {!loading && rangeStats && rangeStats.emptyStations > 0 && (
-            <li>
-              <button
-                className={'low-badge-btn' + (lowOnly ? ' on' : '')}
-                onClick={() => setLowOnly((v) => !v)}
-              >
-                ⚠️ 此範圍內有 {rangeStats.emptyStations} 個無車站 — 點此{lowOnly ? '顯示全部' : '只看它們'}
-              </button>
-            </li>
-          )}
           {!loading && clusteredCount > 0 && (
             <li className="cluster-hint">另有 {clusteredCount} 站已聚合於地圖(拉近即可展開)</li>
           )}
           {!loading &&
             displayList.map((s) => {
-              const isFav = favorites.includes(s.id);
-              const tr = trend(s.id);
               const mm = minmax(s.id);
-              // 進度條:可停空位比例(有車位資料時);無則用可借比例
-              const denom = s.total > 0 ? s.total : (s.available + (s.empty ?? 0));
-              const pct = denom > 0 ? Math.round((s.available / denom) * 100) : 0;
-              const low = s.active && s.available <= (notifSettings.threshold ?? 3);
               return (
-                <li
+                <StationCard
                   key={s.id}
-                  ref={(el) => (cardRefs.current[s.id] = el)}
-                  className={
-                    'card' +
-                    (s.id === selectedId ? ' selected glow' : '') +
-                    (low ? ' low-station' : '')
-                  }
-                  onClick={() => pick(s)}
-                >
-                  <div className="card-top">
-                    <span className={`city-badge b-${s.city}`}>{s.city}</span>
-                    <span className="name">{s.name}</span>
-                    <button
-                      className={'star' + (isFav ? ' on' : '')}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleFavorite(s.id);
-                      }}
-                      aria-label="收藏"
-                    >
-                      {isFav ? '★' : '☆'}
-                    </button>
-                  </div>
-                  <div className="addr">{s.area} · {s.addr}</div>
-                  <div className="counts">
-                    {!s.active ? (
-                      <span className="inactive-tag">⛔ 暫停營運</span>
-                    ) : (
-                      <>
-                        {s.regularBikes != null && (
-                          <span className="bike-type" title="一般自行車">🚲 <AnimatedNumber value={s.regularBikes} /></span>
-                        )}
-                        {s.ebikes != null && s.ebikes > 0 && (
-                          <span className="bike-type ebike" title="電輔車">⚡ <AnimatedNumber value={s.ebikes} /></span>
-                        )}
-                        {(s.regularBikes == null || s.ebikes == null) && (
-                          <span className="avail" title="臺北官方 API 未提供車型明細,此為一般+電輔總數">🚲 可借 <AnimatedNumber value={s.available} /></span>
-                        )}
-                        <span className="free" title="可停空位">🅿️ 可停 <AnimatedNumber value={s.empty ?? 0} /></span>
-                        {tr && tr !== 'flat' && (
-                          <span className={'trend ' + tr}>{tr === 'up' ? '↑' : '↓'} 車流中</span>
-                        )}
-                      </>
-                    )}
-                    {mm && (
-                      <span className="minmax" title="近 2 小時最低/最高可借數">
-                        ↓{mm.min} ↑{mm.max}
-                      </span>
-                    )}
-                    {s.dist != null && s.dist < 100000 && (
-                      <span className="dist">{s.dist >= 1000 ? (s.dist / 1000).toFixed(1) + 'km' : Math.round(s.dist) + 'm'}</span>
-                    )}
-                    <a
-                      className="nav-link"
-                      href={`https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lng}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      導航 ↗
-                    </a>
-                  </div>
-                  <div className="bar">
-                    <div className={'fill' + (low ? ' fill-low' : '')} style={{ width: Math.min(pct, 100) + '%' }} />
-                  </div>
-                </li>
+                  station={s}
+                  isSelected={s.id === selectedId}
+                  isFav={favoriteSet.has(s.id)}
+                  low={s.active && s.available <= (notifSettings.threshold ?? 3)}
+                  trend={trend(s.id)}
+                  minValue={mm?.min ?? null}
+                  maxValue={mm?.max ?? null}
+                  dist={stationDistances?.get(s.id) ?? null}
+                  onPick={pick}
+                  onToggleFavorite={toggleFavorite}
+                  cardRefs={cardRefs}
+                />
               );
             })}
           {!loading && filtered.length === 0 && <li className="no-result">沒有符合的站點</li>}
