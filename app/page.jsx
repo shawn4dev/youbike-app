@@ -725,6 +725,7 @@ export default function Home() {
           userLoc={userLoc}
           onBoundsChange={(b, z) => { setMapBounds(b); setMapZoom(z); }}
           onClusteredChange={(ids) => setClusteredIds(new Set(ids))}
+          areaTarget={areaTarget}
         />
       </div>
 

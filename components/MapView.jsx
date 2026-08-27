@@ -73,7 +73,7 @@ const meIcon = L.divIcon({
   iconAnchor: [9, 9],
 });
 
-export default function MapView({ stations, center, zoom, onSelect, selected, userLoc, onBoundsChange, onClusteredChange }) {
+export default function MapView({ stations, center, zoom, onSelect, selected, userLoc, onBoundsChange, onClusteredChange, areaTarget }) {
   const [bounds, setBounds] = useState(null);
   const [curZoom, setCurZoom] = useState(zoom);
   const groupRef = useRef(null);
@@ -87,6 +87,13 @@ export default function MapView({ stations, center, zoom, onSelect, selected, us
       flyTargetRef.current = null;
     }
   }, [selected]);
+
+  // 當 areaTarget 變化時，設定飛圖目標（搜尋區域/關鍵字 → 飛到區域中心）
+  useEffect(() => {
+    if (areaTarget && areaTarget.center) {
+      flyTargetRef.current = { lat: areaTarget.center[0], lng: areaTarget.center[1], zoom: 13 };
+    }
+  }, [areaTarget]);
 
   // 只渲染可見範圍內的站點(效能關鍵)
   // bounds 以 ref 持有,避免拖曳中重算;zoomend/moveend 後才 setState
