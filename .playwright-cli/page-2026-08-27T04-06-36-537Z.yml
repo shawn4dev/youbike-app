@@ -1,0 +1,3572 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - heading "🚲 YouBike 站點查詢" [level=1] [ref=e5]
+        - generic [ref=e6]:
+          - button "定位" [ref=e7] [cursor=pointer]: 📍
+          - button "通知設定" [ref=e9] [cursor=pointer]: ⚙️
+          - button "備份" [ref=e10] [cursor=pointer]: ⇅
+          - button "切換主題" [ref=e11] [cursor=pointer]: 🌙
+      - generic [ref=e12]:
+        - text: 222 站 · 範圍內可借 2419 輛 · 4 站無車 · 更新於 12:05:39 ·
+        - button "↻ 手動刷新" [ref=e13] [cursor=pointer]
+    - button "⌕ 搜尋與篩選 222 站 · 站態 4/4" [ref=e1480] [cursor=pointer]:
+      - generic [ref=e16]: ⌕ 搜尋與篩選
+      - generic [ref=e17]: 222 站 · 站態 4/4
+    - generic [ref=e18]:
+      - list [ref=e19]:
+        - listitem [ref=e1481] [cursor=pointer]:
+          - generic [ref=e1482]:
+            - generic [ref=e1483]: 臺北
+            - generic [ref=e1484]: 臺大資訊大樓
+            - button "收藏" [ref=e1485]: ☆
+          - generic [ref=e1486]: 大安區 · 辛亥路二段(臺大外語學院外)
+          - generic [ref=e1487]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1488]:
+              - text: 🚲 可借
+              - generic [ref=e1489]: "41"
+            - generic "可停空位" [ref=e1490]:
+              - text: 🅿️ 可停
+              - generic [ref=e1491]: "35"
+            - link "導航 ↗" [ref=e1492]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02101,121.54153
+        - listitem [ref=e1495] [cursor=pointer]:
+          - generic [ref=e1496]:
+            - generic [ref=e1497]: 臺北
+            - generic [ref=e1498]: 臺大新體育館東南側
+            - button "收藏" [ref=e1499]: ☆
+          - generic [ref=e1500]: 臺大公館校區 · 臺大體育館東南側
+          - generic [ref=e1501]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1502]:
+              - text: 🚲 可借
+              - generic [ref=e1503]: "41"
+            - generic "可停空位" [ref=e1504]:
+              - text: 🅿️ 可停
+              - generic [ref=e1505]: "10"
+            - link "導航 ↗" [ref=e1506]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02112,121.53591
+        - listitem [ref=e1509] [cursor=pointer]:
+          - generic [ref=e1510]:
+            - generic [ref=e1511]: 臺北
+            - generic [ref=e1512]: 愛國金山路口
+            - button "收藏" [ref=e1513]: ☆
+          - generic [ref=e1514]: 大安區 · 愛國東路與杭州南路二段口西南側
+          - generic [ref=e1515]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1516]:
+              - text: 🚲 可借
+              - generic [ref=e1517]: "40"
+            - generic "可停空位" [ref=e1518]:
+              - text: 🅿️ 可停
+              - generic [ref=e1519]: "16"
+            - link "導航 ↗" [ref=e1520]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03164,121.52661
+        - listitem [ref=e1523] [cursor=pointer]:
+          - generic [ref=e1524]:
+            - generic [ref=e1525]: 臺北
+            - generic [ref=e1526]: 中正運動中心
+            - button "收藏" [ref=e1527]: ☆
+          - generic [ref=e1528]: 中正區 · 信義路一段1號前
+          - generic [ref=e1529]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1530]:
+              - text: 🚲 可借
+              - generic [ref=e1531]: "39"
+            - generic "可停空位" [ref=e1532]:
+              - text: 🅿️ 可停
+              - generic [ref=e1533]: "1"
+            - link "導航 ↗" [ref=e1534]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03786,121.51985
+        - listitem [ref=e1537] [cursor=pointer]:
+          - generic [ref=e1538]:
+            - generic [ref=e1539]: 臺北
+            - generic [ref=e1540]: 臺灣師範大學(圖書館)
+            - button "收藏" [ref=e1541]: ☆
+          - generic [ref=e1542]: 大安區 · 和平東路一段129號前
+          - generic [ref=e1543]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1544]:
+              - text: 🚲 可借
+              - generic [ref=e1545]: "38"
+            - generic "可停空位" [ref=e1546]:
+              - text: 🅿️ 可停
+              - generic [ref=e1547]: "2"
+            - link "導航 ↗" [ref=e1548]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0266,121.52973
+        - listitem [ref=e1551] [cursor=pointer]:
+          - generic [ref=e1552]:
+            - generic [ref=e1553]: 臺北
+            - generic [ref=e1554]: 捷運古亭站(2號出口)
+            - button "收藏" [ref=e1555]: ☆
+          - generic [ref=e1556]: 中正區 · 羅斯福路二段168號前
+          - generic [ref=e1557]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1558]:
+              - text: 🚲 可借
+              - generic [ref=e1559]: "38"
+            - generic "可停空位" [ref=e1560]:
+              - text: 🅿️ 可停
+              - generic [ref=e1561]: "16"
+            - link "導航 ↗" [ref=e1562]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0255,121.52346
+        - listitem [ref=e1565] [cursor=pointer]:
+          - generic [ref=e1566]:
+            - generic [ref=e1567]: 臺北
+            - generic [ref=e1568]: 捷運科技大樓站(台北教育大學)
+            - button "收藏" [ref=e1569]: ☆
+          - generic [ref=e1570]: 大安區 · 和平東路二段134號前
+          - generic [ref=e1571]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1572]:
+              - text: 🚲 可借
+              - generic [ref=e1573]: "37"
+            - generic "可停空位" [ref=e1574]:
+              - text: 🅿️ 可停
+              - generic [ref=e1575]: "16"
+            - link "導航 ↗" [ref=e1576]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02472,121.54417
+        - listitem [ref=e1579] [cursor=pointer]:
+          - generic [ref=e1580]:
+            - generic [ref=e1581]: 臺北
+            - generic [ref=e1582]: 臺大鄭江樓北側
+            - button "收藏" [ref=e1583]: ☆
+          - generic [ref=e1584]: 臺大公館校區 · 臺大鄭江樓東南側
+          - generic [ref=e1585]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1586]:
+              - text: 🚲 可借
+              - generic [ref=e1587]: "37"
+            - generic "可停空位" [ref=e1588]:
+              - text: 🅿️ 可停
+              - generic [ref=e1589]: "3"
+            - link "導航 ↗" [ref=e1590]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01854,121.54309
+        - listitem [ref=e1593] [cursor=pointer]:
+          - generic [ref=e1594]:
+            - generic [ref=e1595]: 臺北
+            - generic [ref=e1596]: 臺大圖資系館北側
+            - button "收藏" [ref=e1597]: ☆
+          - generic [ref=e1598]: 臺大公館校區 · 臺大圖書資訊館北側
+          - generic [ref=e1599]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1600]:
+              - text: 🚲 可借
+              - generic [ref=e1601]: "37"
+            - generic "可停空位" [ref=e1602]:
+              - text: 🅿️ 可停
+              - generic [ref=e1603]: "0"
+            - link "導航 ↗" [ref=e1604]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01804,121.53928
+        - listitem [ref=e761] [cursor=pointer]:
+          - generic [ref=e762]:
+            - generic [ref=e763]: 臺北
+            - generic [ref=e764]: 臺北市立圖書館(總館)
+            - button "收藏" [ref=e765]: ☆
+          - generic [ref=e766]: 大安區 · 建國南路二段/建國南路二段151巷(橋下空間)
+          - generic [ref=e767]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e768]:
+              - text: 🚲 可借
+              - generic [ref=e769]: "36"
+            - generic "可停空位" [ref=e770]:
+              - text: 🅿️ 可停
+              - generic [ref=e771]: "62"
+            - link "導航 ↗" [ref=e772]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02895,121.5379
+        - listitem [ref=e1607] [cursor=pointer]:
+          - generic [ref=e1608]:
+            - generic [ref=e1609]: 臺北
+            - generic [ref=e1610]: 臺大女九舍西南側
+            - button "收藏" [ref=e1611]: ☆
+          - generic [ref=e1612]: 臺大公館校區 · 臺大女九舍西南側
+          - generic [ref=e1613]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1614]:
+              - text: 🚲 可借
+              - generic [ref=e1615]: "36"
+            - generic "可停空位" [ref=e1616]:
+              - text: 🅿️ 可停
+              - generic [ref=e1617]: "1"
+            - link "導航 ↗" [ref=e1618]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01981,121.53903
+        - listitem [ref=e1621] [cursor=pointer]:
+          - generic [ref=e1622]:
+            - generic [ref=e1623]: 臺北
+            - generic [ref=e1624]: 建國和平路口西北側
+            - button "收藏" [ref=e1625]: ☆
+          - generic [ref=e1626]: 大安區 · 建國南路二段與和平東路二段口西北側
+          - generic [ref=e1627]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1628]:
+              - text: 🚲 可借
+              - generic [ref=e1629]: "35"
+            - generic "可停空位" [ref=e1630]:
+              - text: 🅿️ 可停
+              - generic [ref=e1631]: "14"
+            - link "導航 ↗" [ref=e1632]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02606,121.53738
+        - listitem [ref=e1635] [cursor=pointer]:
+          - generic [ref=e1636]:
+            - generic [ref=e1637]: 臺北
+            - generic [ref=e1638]: 南昌公園
+            - button "收藏" [ref=e1639]: ☆
+          - generic [ref=e1640]: 中正區 · 和平西路一段與南昌路二段口西北側
+          - generic [ref=e1641]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1642]:
+              - text: 🚲 可借
+              - generic [ref=e1643]: "32"
+            - generic "可停空位" [ref=e1644]:
+              - text: 🅿️ 可停
+              - generic [ref=e1645]: "23"
+            - link "導航 ↗" [ref=e1646]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02698,121.52081
+        - listitem [ref=e1649] [cursor=pointer]:
+          - generic [ref=e1650]:
+            - generic [ref=e1651]: 臺北
+            - generic [ref=e1652]: 仁愛林森路口
+            - button "收藏" [ref=e1653]: ☆
+          - generic [ref=e1654]: 中正區 · 仁愛路一段路口/林森南路(東北側)
+          - generic [ref=e1655]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1656]:
+              - text: 🚲 可借
+              - generic [ref=e1657]: "32"
+            - generic "可停空位" [ref=e1658]:
+              - text: 🅿️ 可停
+              - generic [ref=e1659]: "14"
+            - link "導航 ↗" [ref=e1660]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03895,121.52233
+        - listitem [ref=e1663] [cursor=pointer]:
+          - generic [ref=e1664]:
+            - generic [ref=e1665]: 臺北
+            - generic [ref=e1666]: 和平敦化路口
+            - button "收藏" [ref=e1667]: ☆
+          - generic [ref=e1668]: 大安區 · 和平東路三段 / 敦化南路二段口(東側)
+          - generic [ref=e1669]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1670]:
+              - text: 🚲 可借
+              - generic [ref=e1671]: "31"
+            - generic "可停空位" [ref=e1672]:
+              - text: 🅿️ 可停
+              - generic [ref=e1673]: "5"
+            - link "導航 ↗" [ref=e1674]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02444,121.54908
+        - listitem [ref=e1677] [cursor=pointer]:
+          - generic [ref=e1678]:
+            - generic [ref=e1679]: 臺北
+            - generic [ref=e1680]: 臺北遠企購物中心
+            - button "收藏" [ref=e1681]: ☆
+          - generic [ref=e1682]: 大安區 · 敦化南路二段201號前
+          - generic [ref=e1683]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1684]:
+              - text: 🚲 可借
+              - generic [ref=e1685]: "31"
+            - generic "可停空位" [ref=e1686]:
+              - text: 🅿️ 可停
+              - generic [ref=e1687]: "2"
+            - link "導航 ↗" [ref=e1688]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02709,121.54902
+        - listitem [ref=e1691] [cursor=pointer]:
+          - generic [ref=e1692]:
+            - generic [ref=e1693]: 臺北
+            - generic [ref=e1694]: 臺大普通教學館東側
+            - button "收藏" [ref=e1695]: ☆
+          - generic [ref=e1696]: 臺大公館校區 · 臺大普通教學館東側
+          - generic [ref=e1697]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1698]:
+              - text: 🚲 可借
+              - generic [ref=e1699]: "31"
+            - generic "可停空位" [ref=e1700]:
+              - text: 🅿️ 可停
+              - generic [ref=e1701]: "9"
+            - link "導航 ↗" [ref=e1702]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01861,121.53717
+        - listitem [ref=e1705] [cursor=pointer]:
+          - generic [ref=e1706]:
+            - generic [ref=e1707]: 臺北
+            - generic [ref=e1708]: 臺大計資中心南側
+            - button "收藏" [ref=e1709]: ☆
+          - generic [ref=e1710]: 臺大公館校區 · 臺大計算機網路資訊中心南側
+          - generic [ref=e1711]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1712]:
+              - text: 🚲 可借
+              - generic [ref=e1713]: "30"
+            - generic "可停空位" [ref=e1714]:
+              - text: 🅿️ 可停
+              - generic [ref=e1715]: "19"
+            - link "導航 ↗" [ref=e1716]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02036,121.53992
+        - listitem [ref=e1719] [cursor=pointer]:
+          - generic [ref=e1720]:
+            - generic [ref=e1721]: 臺北
+            - generic [ref=e1722]: 臺大數學研究中心(東側)
+            - button "收藏" [ref=e1723]: ☆
+          - generic [ref=e1724]: 臺大公館校區 · 臺大數學研究中心東側
+          - generic [ref=e1725]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1726]:
+              - text: 🚲 可借
+              - generic [ref=e1727]: "30"
+            - generic "可停空位" [ref=e1728]:
+              - text: 🅿️ 可停
+              - generic [ref=e1729]: "11"
+            - link "導航 ↗" [ref=e1730]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02004,121.53881
+        - listitem [ref=e1733] [cursor=pointer]:
+          - generic [ref=e1734]:
+            - generic [ref=e1735]: 臺北
+            - generic [ref=e1736]: 臺大工綜館南側
+            - button "收藏" [ref=e1737]: ☆
+          - generic [ref=e1738]: 臺大公館校區 · 臺大工學院東南側
+          - generic [ref=e1739]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1740]:
+              - text: 🚲 可借
+              - generic [ref=e1741]: "28"
+            - generic "可停空位" [ref=e1742]:
+              - text: 🅿️ 可停
+              - generic [ref=e1743]: "3"
+            - link "導航 ↗" [ref=e1744]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01857,121.54059
+        - listitem [ref=e1747] [cursor=pointer]:
+          - generic [ref=e1748]:
+            - generic [ref=e1749]: 臺北
+            - generic [ref=e1750]: 復興南路1段340巷口
+            - button "收藏" [ref=e1751]: ☆
+          - generic [ref=e1752]: 大安區 · 復興南路一段信義路三段147巷45弄口
+          - generic [ref=e1753]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1754]:
+              - text: 🚲 可借
+              - generic [ref=e1755]: "26"
+            - generic "可停空位" [ref=e1756]:
+              - text: 🅿️ 可停
+              - generic [ref=e1757]: "23"
+            - link "導航 ↗" [ref=e1758]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03701,121.54348
+        - listitem [ref=e1761] [cursor=pointer]:
+          - generic [ref=e1762]:
+            - generic [ref=e1763]: 臺北
+            - generic [ref=e1764]: 仁愛敦南圓環(東側)
+            - button "收藏" [ref=e1765]: ☆
+          - generic [ref=e1766]: 大安區 · 仁愛路四段121號
+          - generic [ref=e1767]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1768]:
+              - text: 🚲 可借
+              - generic [ref=e1769]: "26"
+            - generic "可停空位" [ref=e1770]:
+              - text: 🅿️ 可停
+              - generic [ref=e1771]: "0"
+            - link "導航 ↗" [ref=e1772]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03804,121.55042
+        - listitem [ref=e1775] [cursor=pointer]:
+          - generic [ref=e1776]:
+            - generic [ref=e1777]: 臺北
+            - generic [ref=e1778]: 臺大心理系館南側
+            - button "收藏" [ref=e1779]: ☆
+          - generic [ref=e1780]: 臺大公館校區 · 臺大心理學系南側
+          - generic [ref=e1781]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1782]:
+              - text: 🚲 可借
+              - generic [ref=e1783]: "26"
+            - generic "可停空位" [ref=e1784]:
+              - text: 🅿️ 可停
+              - generic [ref=e1785]: "1"
+            - link "導航 ↗" [ref=e1786]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01941,121.5404
+        - listitem [ref=e1789] [cursor=pointer]:
+          - generic [ref=e1790]:
+            - generic [ref=e1791]: 臺北
+            - generic [ref=e1792]: 臺大社科院西側
+            - button "收藏" [ref=e1793]: ☆
+          - generic [ref=e1794]: 臺大公館校區 · 臺大社科院西側
+          - generic [ref=e1795]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1796]:
+              - text: 🚲 可借
+              - generic [ref=e1797]: "26"
+            - generic "可停空位" [ref=e1798]:
+              - text: 🅿️ 可停
+              - generic [ref=e1799]: "9"
+            - link "導航 ↗" [ref=e1800]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02053,121.54145
+        - listitem [ref=e1803] [cursor=pointer]:
+          - generic [ref=e1804]:
+            - generic [ref=e1805]: 臺北
+            - generic [ref=e1806]: 大安運動中心
+            - button "收藏" [ref=e1807]: ☆
+          - generic [ref=e1808]: 大安區 · 辛亥路三段55號前方人行道(大安運動中心)
+          - generic [ref=e1809]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1810]:
+              - text: 🚲 可借
+              - generic [ref=e1811]: "25"
+            - generic "可停空位" [ref=e1812]:
+              - text: 🅿️ 可停
+              - generic [ref=e1813]: "15"
+            - link "導航 ↗" [ref=e1814]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02054,121.54561
+        - listitem [ref=e1817] [cursor=pointer]:
+          - generic [ref=e1818]:
+            - generic [ref=e1819]: 臺北
+            - generic [ref=e1820]: 臺大社會系館南側
+            - button "收藏" [ref=e1821]: ☆
+          - generic [ref=e1822]: 臺大公館校區 · 臺大社會及社工館南側
+          - generic [ref=e1823]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1824]:
+              - text: 🚲 可借
+              - generic [ref=e1825]: "24"
+            - generic "可停空位" [ref=e1826]:
+              - text: 🅿️ 可停
+              - generic [ref=e1827]: "42"
+            - link "導航 ↗" [ref=e1828]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01987,121.54175
+        - listitem [ref=e1831] [cursor=pointer]:
+          - generic [ref=e1832]:
+            - generic [ref=e1833]: 臺北
+            - generic [ref=e1834]: 臺大學新館
+            - button "收藏" [ref=e1835]: ☆
+          - generic [ref=e1836]: 臺大公館校區 · 臺大學新館旁
+          - generic [ref=e1837]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1838]:
+              - text: 🚲 可借
+              - generic [ref=e1839]: "24"
+            - generic "可停空位" [ref=e1840]:
+              - text: 🅿️ 可停
+              - generic [ref=e1841]: "4"
+            - link "導航 ↗" [ref=e1842]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01944,121.54339
+        - listitem [ref=e1845] [cursor=pointer]:
+          - generic [ref=e1846]:
+            - generic [ref=e1847]: 臺北
+            - generic [ref=e1848]: 和平臥龍街口
+            - button "收藏" [ref=e1849]: ☆
+          - generic [ref=e1850]: 大安區 · 臥龍街1號
+          - generic [ref=e1851]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1852]:
+              - text: 🚲 可借
+              - generic [ref=e1853]: "23"
+            - generic "可停空位" [ref=e1854]:
+              - text: 🅿️ 可停
+              - generic [ref=e1855]: "1"
+            - link "導航 ↗" [ref=e1856]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.024461,121.546705
+        - listitem [ref=e1859] [cursor=pointer]:
+          - generic [ref=e1860]:
+            - generic [ref=e1861]: 臺北
+            - generic [ref=e1862]: 敦化南路二段81巷
+            - button "收藏" [ref=e1863]: ☆
+          - generic [ref=e1864]: 大安區 · 敦化南路二段與敦化南路二段81巷口西北側
+          - generic [ref=e1865]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1866]:
+              - text: 🚲 可借
+              - generic [ref=e1867]: "23"
+            - generic "可停空位" [ref=e1868]:
+              - text: 🅿️ 可停
+              - generic [ref=e1869]: "16"
+            - link "導航 ↗" [ref=e1870]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03002,121.54893
+        - listitem [ref=e1873] [cursor=pointer]:
+          - generic [ref=e1874]:
+            - generic [ref=e1875]: 臺北
+            - generic [ref=e1876]: 仁愛延吉路口(西北側)
+            - button "收藏" [ref=e1877]: ☆
+          - generic [ref=e1878]: 大安區 · 仁愛路四段363號前
+          - generic [ref=e1879]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1880]:
+              - text: 🚲 可借
+              - generic [ref=e1881]: "23"
+            - generic "可停空位" [ref=e1882]:
+              - text: 🅿️ 可停
+              - generic [ref=e1883]: "0"
+            - link "導航 ↗" [ref=e1884]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03795,121.55466
+        - listitem [ref=e1887] [cursor=pointer]:
+          - generic [ref=e1888]:
+            - generic [ref=e1889]: 臺北
+            - generic [ref=e1890]: 和平實小東北側
+            - button "收藏" [ref=e1891]: ☆
+          - generic [ref=e1892]: 大安區 · 敦南街73號
+          - generic [ref=e1893]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1894]:
+              - text: 🚲 可借
+              - generic [ref=e1895]: "22"
+            - generic "可停空位" [ref=e1896]:
+              - text: 🅿️ 可停
+              - generic [ref=e1897]: "3"
+            - link "導航 ↗" [ref=e1898]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.021641,121.54704
+        - listitem [ref=e1901] [cursor=pointer]:
+          - generic [ref=e1902]:
+            - generic [ref=e1903]: 臺北
+            - generic [ref=e1904]: 建國濟南路口
+            - button "收藏" [ref=e1905]: ☆
+          - generic [ref=e1906]: 大安區 · 建國南路一段/濟南路三段口(東南側)
+          - generic [ref=e1907]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1908]:
+              - text: 🚲 可借
+              - generic [ref=e1909]: "22"
+            - generic "可停空位" [ref=e1910]:
+              - text: 🅿️ 可停
+              - generic [ref=e1911]: "32"
+            - link "導航 ↗" [ref=e1912]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03935,121.53828
+        - listitem [ref=e1915] [cursor=pointer]:
+          - generic [ref=e1916]:
+            - generic [ref=e1917]: 臺北
+            - generic [ref=e1918]: 臺大法人語言訓練中心前
+            - button "收藏" [ref=e1919]: ☆
+          - generic [ref=e1920]: 大安區 · 臺大法人語言訓練中心北側
+          - generic [ref=e1921]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1922]:
+              - text: 🚲 可借
+              - generic [ref=e1923]: "21"
+            - generic "可停空位" [ref=e1924]:
+              - text: 🅿️ 可停
+              - generic [ref=e1925]: "7"
+            - link "導航 ↗" [ref=e1926]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02104,121.54081
+        - listitem [ref=e1929] [cursor=pointer]:
+          - generic [ref=e1930]:
+            - generic [ref=e1931]: 臺北
+            - generic [ref=e1932]: 國北教大側門南側
+            - button "收藏" [ref=e1933]: ☆
+          - generic [ref=e1934]: 大安區 · 敦南街51號
+          - generic [ref=e1935]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1936]:
+              - text: 🚲 可借
+              - generic [ref=e1937]: "21"
+            - generic "可停空位" [ref=e1938]:
+              - text: 🅿️ 可停
+              - generic [ref=e1939]: "13"
+            - link "導航 ↗" [ref=e1940]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.022864,121.546622
+        - listitem [ref=e1943] [cursor=pointer]:
+          - generic [ref=e1944]:
+            - generic [ref=e1945]: 臺北
+            - generic [ref=e1946]: 外交部外交及國際事務學院
+            - button "收藏" [ref=e1947]: ☆
+          - generic [ref=e1948]: 大安區 · 敦化南路一段280號
+          - generic [ref=e1949]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1950]:
+              - text: 🚲 可借
+              - generic [ref=e1951]: "21"
+            - generic "可停空位" [ref=e1952]:
+              - text: 🅿️ 可停
+              - generic [ref=e1953]: "5"
+            - link "導航 ↗" [ref=e1954]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0371,121.54839
+        - listitem [ref=e1957] [cursor=pointer]:
+          - generic [ref=e1958]:
+            - generic [ref=e1959]: 臺北
+            - generic [ref=e1960]: 金華杭州南路口
+            - button "收藏" [ref=e1961]: ☆
+          - generic [ref=e1962]: 中正區 · 金華街口/杭州南路二段西北側
+          - generic [ref=e1963]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1964]:
+              - text: 🚲 可借
+              - generic [ref=e1965]: "21"
+            - generic "可停空位" [ref=e1966]:
+              - text: 🅿️ 可停
+              - generic [ref=e1967]: "30"
+            - link "導航 ↗" [ref=e1968]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.031,121.52211
+        - listitem [ref=e1971] [cursor=pointer]:
+          - generic [ref=e1972]:
+            - generic [ref=e1973]: 臺北
+            - generic [ref=e1974]: 和平龍泉街口
+            - button "收藏" [ref=e1975]: ☆
+          - generic [ref=e1976]: 大安區 · 和平東路一段/龍泉街口西南側
+          - generic [ref=e1977]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1978]:
+              - text: 🚲 可借
+              - generic [ref=e1979]: "19"
+            - generic "可停空位" [ref=e1980]:
+              - text: 🅿️ 可停
+              - generic [ref=e1981]: "14"
+            - link "導航 ↗" [ref=e1982]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02638,121.52971
+        - listitem [ref=e1985] [cursor=pointer]:
+          - generic [ref=e1986]:
+            - generic [ref=e1987]: 臺北
+            - generic [ref=e1988]: 捷運大安站(5號出口)
+            - button "收藏" [ref=e1989]: ☆
+          - generic [ref=e1990]: 大安區 · 復興南路二段/信義路四段(東南側)
+          - generic [ref=e1991]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e1992]:
+              - text: 🚲 可借
+              - generic [ref=e1993]: "19"
+            - generic "可停空位" [ref=e1994]:
+              - text: 🅿️ 可停
+              - generic [ref=e1995]: "7"
+            - link "導航 ↗" [ref=e1996]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03303,121.54372
+        - listitem [ref=e1999] [cursor=pointer]:
+          - generic [ref=e2000]:
+            - generic [ref=e2001]: 臺北
+            - generic [ref=e2002]: 臺大綜合體育館停車場前
+            - button "收藏" [ref=e2003]: ☆
+          - generic [ref=e2004]: 大安區 · 臺大綜合體育館北側
+          - generic [ref=e2005]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2006]:
+              - text: 🚲 可借
+              - generic [ref=e2007]: "18"
+            - generic "可停空位" [ref=e2008]:
+              - text: 🅿️ 可停
+              - generic [ref=e2009]: "7"
+            - link "導航 ↗" [ref=e2010]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0222,121.53626
+        - listitem [ref=e2013] [cursor=pointer]:
+          - generic [ref=e2014]:
+            - generic [ref=e2015]: 臺北
+            - generic [ref=e2016]: 辛亥新生路口東南側
+            - button "收藏" [ref=e2017]: ☆
+          - generic [ref=e2018]: 大安區 · 辛亥新生路口東南側
+          - generic [ref=e2019]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2020]:
+              - text: 🚲 可借
+              - generic [ref=e2021]: "18"
+            - generic "可停空位" [ref=e2022]:
+              - text: 🅿️ 可停
+              - generic [ref=e2023]: "32"
+            - link "導航 ↗" [ref=e2024]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02218,121.53474
+        - listitem [ref=e2027] [cursor=pointer]:
+          - generic [ref=e2028]:
+            - generic [ref=e2029]: 臺北
+            - generic [ref=e2030]: 仁愛國中
+            - button "收藏" [ref=e2031]: ☆
+          - generic [ref=e2032]: 大安區 · 安和路一段75號(對面)
+          - generic [ref=e2033]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2034]:
+              - text: 🚲 可借
+              - generic [ref=e2035]: "18"
+            - generic "可停空位" [ref=e2036]:
+              - text: 🅿️ 可停
+              - generic [ref=e2037]: "7"
+            - link "導航 ↗" [ref=e2038]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03706,121.55166
+        - listitem [ref=e2041] [cursor=pointer]:
+          - generic [ref=e2042]:
+            - generic [ref=e2043]: 臺北
+            - generic [ref=e2044]: 四維路170巷口
+            - button "收藏" [ref=e2045]: ☆
+          - generic [ref=e2046]: 大安區 · 敦化南路二段92號對側中央分隔島
+          - generic [ref=e2047]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2048]:
+              - text: 🚲 可借
+              - generic [ref=e2049]: "18"
+            - generic "可停空位" [ref=e2050]:
+              - text: 🅿️ 可停
+              - generic [ref=e2051]: "4"
+            - link "導航 ↗" [ref=e2052]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02821,121.54864
+        - listitem [ref=e2055] [cursor=pointer]:
+          - generic [ref=e2056]:
+            - generic [ref=e2057]: 臺北
+            - generic [ref=e2058]: 仁愛敦南圓環(西北側)
+            - button "收藏" [ref=e2059]: ☆
+          - generic [ref=e2060]: 大安區 · 仁愛路四段85號前
+          - generic [ref=e2061]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2062]:
+              - text: 🚲 可借
+              - generic [ref=e2063]: "18"
+            - generic "可停空位" [ref=e2064]:
+              - text: 🅿️ 可停
+              - generic [ref=e2065]: "2"
+            - link "導航 ↗" [ref=e2066]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03827,121.54802
+        - listitem [ref=e2069] [cursor=pointer]:
+          - generic [ref=e2070]:
+            - generic [ref=e2071]: 臺北
+            - generic [ref=e2072]: 信義四維路口
+            - button "收藏" [ref=e2073]: ☆
+          - generic [ref=e2074]: 大安區 · 信義路四段111號(前)
+          - generic [ref=e2075]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2076]:
+              - text: 🚲 可借
+              - generic [ref=e2077]: "18"
+            - generic "可停空位" [ref=e2078]:
+              - text: 🅿️ 可停
+              - generic [ref=e2079]: "1"
+            - link "導航 ↗" [ref=e2080]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03341,121.54796
+        - listitem [ref=e2083] [cursor=pointer]:
+          - generic [ref=e2084]:
+            - generic [ref=e2085]: 臺北
+            - generic [ref=e2086]: 愛國東路210巷口
+            - button "收藏" [ref=e2087]: ☆
+          - generic [ref=e2088]: 大安區 · 愛國東路210巷/愛國東路(東南側)
+          - generic [ref=e2089]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2090]:
+              - text: 🚲 可借
+              - generic [ref=e2091]: "17"
+            - generic "可停空位" [ref=e2092]:
+              - text: 🅿️ 可停
+              - generic [ref=e2093]: "17"
+            - link "導航 ↗" [ref=e2094]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03187,121.52407
+        - listitem [ref=e2097] [cursor=pointer]:
+          - generic [ref=e2098]:
+            - generic [ref=e2099]: 臺北
+            - generic [ref=e2100]: 臺大思亮館東南側
+            - button "收藏" [ref=e2101]: ☆
+          - generic [ref=e2102]: 臺大公館校區 · 臺大思亮館東南側
+          - generic [ref=e2103]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2104]:
+              - text: 🚲 可借
+              - generic [ref=e2105]: "17"
+            - generic "可停空位" [ref=e2106]:
+              - text: 🅿️ 可停
+              - generic [ref=e2107]: "14"
+            - link "導航 ↗" [ref=e2108]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02074,121.53906
+        - listitem [ref=e2111] [cursor=pointer]:
+          - generic [ref=e2112]:
+            - generic [ref=e2113]: 臺北
+            - generic [ref=e2114]: 辛亥復興路口西北側
+            - button "收藏" [ref=e2115]: ☆
+          - generic [ref=e2116]: 大安區 · 復興南路二段368號
+          - generic [ref=e2117]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2118]:
+              - text: 🚲 可借
+              - generic [ref=e2119]: "16"
+            - generic "可停空位" [ref=e2120]:
+              - text: 🅿️ 可停
+              - generic [ref=e2121]: "0"
+            - link "導航 ↗" [ref=e2122]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02153,121.54299
+        - listitem [ref=e2125] [cursor=pointer]:
+          - generic [ref=e2126]:
+            - generic [ref=e2127]: 臺北
+            - generic [ref=e2128]: 民榮公園
+            - button "收藏" [ref=e2129]: ☆
+          - generic [ref=e2130]: 大安區 · 建國南路一段304巷45號南側
+          - generic [ref=e2131]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2132]:
+              - text: 🚲 可借
+              - generic [ref=e2133]: "16"
+            - generic "可停空位" [ref=e2134]:
+              - text: 🅿️ 可停
+              - generic [ref=e2135]: "13"
+            - link "導航 ↗" [ref=e2136]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03534,121.5354
+        - listitem [ref=e2139] [cursor=pointer]:
+          - generic [ref=e2140]:
+            - generic [ref=e2141]: 臺北
+            - generic [ref=e2142]: 捷運東門站(5號出口)
+            - button "收藏" [ref=e2143]: ☆
+          - generic [ref=e2144]: 大安區 · 信義路二段178號前
+          - generic [ref=e2145]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2146]:
+              - text: 🚲 可借
+              - generic [ref=e2147]: "16"
+            - generic "可停空位" [ref=e2148]:
+              - text: 🅿️ 可停
+              - generic [ref=e2149]: "11"
+            - link "導航 ↗" [ref=e2150]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03363,121.52962
+        - listitem [ref=e2153] [cursor=pointer]:
+          - generic [ref=e2154]:
+            - generic [ref=e2155]: 臺北
+            - generic [ref=e2156]: 辛亥路一段77巷口
+            - button "收藏" [ref=e2157]: ☆
+          - generic [ref=e2158]: 大安區 · 辛亥路一段79號旁
+          - generic [ref=e2159]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2160]:
+              - text: 🚲 可借
+              - generic [ref=e2161]: "16"
+            - generic "可停空位" [ref=e2162]:
+              - text: 🅿️ 可停
+              - generic [ref=e2163]: "5"
+            - link "導航 ↗" [ref=e2164]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02128,121.53034
+        - listitem [ref=e2167] [cursor=pointer]:
+          - generic [ref=e2168]:
+            - generic [ref=e2169]: 臺北
+            - generic [ref=e2170]: 新生南路三段66號前
+            - button "收藏" [ref=e2171]: ☆
+          - generic [ref=e2172]: 大安區 · 新生南路三段66號東側
+          - generic [ref=e2173]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2174]:
+              - text: 🚲 可借
+              - generic [ref=e2175]: "15"
+            - generic "可停空位" [ref=e2176]:
+              - text: 🅿️ 可停
+              - generic [ref=e2177]: "1"
+            - link "導航 ↗" [ref=e2178]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01976,121.53384
+        - listitem [ref=e2181] [cursor=pointer]:
+          - generic [ref=e2182]:
+            - generic [ref=e2183]: 臺北
+            - generic [ref=e2184]: 新生南路三段82號前
+            - button "收藏" [ref=e2185]: ☆
+          - generic [ref=e2186]: 大安區 · 新生南路三段82號
+          - generic [ref=e2187]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2188]:
+              - text: 🚲 可借
+              - generic [ref=e2189]: "15"
+            - generic "可停空位" [ref=e2190]:
+              - text: 🅿️ 可停
+              - generic [ref=e2191]: "5"
+            - link "導航 ↗" [ref=e2192]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01894,121.53361
+        - listitem [ref=e2195] [cursor=pointer]:
+          - generic [ref=e2196]:
+            - generic [ref=e2197]: 臺北
+            - generic [ref=e2198]: 大安運動中心停車場
+            - button "收藏" [ref=e2199]: ☆
+          - generic [ref=e2200]: 大安區 · 敦南街76巷28號
+          - generic [ref=e2201]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2202]:
+              - text: 🚲 可借
+              - generic [ref=e2203]: "15"
+            - generic "可停空位" [ref=e2204]:
+              - text: 🅿️ 可停
+              - generic [ref=e2205]: "4"
+            - link "導航 ↗" [ref=e2206]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02089,121.54697
+        - listitem [ref=e2209] [cursor=pointer]:
+          - generic [ref=e2210]:
+            - generic [ref=e2211]: 臺北
+            - generic [ref=e2212]: 辛亥泰順街口
+            - button "收藏" [ref=e2213]: ☆
+          - generic [ref=e2214]: 大安區 · 辛亥泰順街口東南側
+          - generic [ref=e2215]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2216]:
+              - text: 🚲 可借
+              - generic [ref=e2217]: "15"
+            - generic "可停空位" [ref=e2218]:
+              - text: 🅿️ 可停
+              - generic [ref=e2219]: "5"
+            - link "導航 ↗" [ref=e2220]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02193,121.53165
+        - listitem [ref=e2223] [cursor=pointer]:
+          - generic [ref=e2224]:
+            - generic [ref=e2225]: 臺北
+            - generic [ref=e2226]: 新生和平路口東北側
+            - button "收藏" [ref=e2227]: ☆
+          - generic [ref=e2228]: 大安區 · 新生南路二段與和平東路二段口東北側
+          - generic [ref=e2229]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2230]:
+              - text: 🚲 可借
+              - generic [ref=e2231]: "15"
+            - generic "可停空位" [ref=e2232]:
+              - text: 🅿️ 可停
+              - generic [ref=e2233]: "35"
+            - link "導航 ↗" [ref=e2234]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02657,121.53515
+        - listitem [ref=e2237] [cursor=pointer]:
+          - generic [ref=e2238]:
+            - generic [ref=e2239]: 臺北
+            - generic [ref=e2240]: 捷運大安站(4號出口)
+            - button "收藏" [ref=e2241]: ☆
+          - generic [ref=e2242]: 大安區 · 信義路4段6號(前)
+          - generic [ref=e2243]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2244]:
+              - text: 🚲 可借
+              - generic [ref=e2245]: "15"
+            - generic "可停空位" [ref=e2246]:
+              - text: 🅿️ 可停
+              - generic [ref=e2247]: "0"
+            - link "導航 ↗" [ref=e2248]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0332,121.5439
+        - listitem [ref=e2251] [cursor=pointer]:
+          - generic [ref=e2252]:
+            - generic [ref=e2253]: 臺北
+            - generic [ref=e2254]: 仁愛路四段122巷口
+            - button "收藏" [ref=e2255]: ☆
+          - generic [ref=e2256]: 大安區 · 仁愛路四段118號前
+          - generic [ref=e2257]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2258]:
+              - text: 🚲 可借
+              - generic [ref=e2259]: "15"
+            - generic "可停空位" [ref=e2260]:
+              - text: 🅿️ 可停
+              - generic [ref=e2261]: "10"
+            - link "導航 ↗" [ref=e2262]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03762,121.55009
+        - listitem [ref=e2265] [cursor=pointer]:
+          - generic [ref=e2266]:
+            - generic [ref=e2267]: 臺北
+            - generic [ref=e2268]: 臺大博雅館西側
+            - button "收藏" [ref=e2269]: ☆
+          - generic [ref=e2270]: 臺大公館校區 · 臺大博雅館西側
+          - generic [ref=e2271]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2272]:
+              - text: 🚲 可借
+              - generic [ref=e2273]: "15"
+            - generic "可停空位" [ref=e2274]:
+              - text: 🅿️ 可停
+              - generic [ref=e2275]: "83"
+            - link "導航 ↗" [ref=e2276]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0189,121.536
+        - listitem [ref=e2279] [cursor=pointer]:
+          - generic [ref=e2280]:
+            - generic [ref=e2281]: 臺北
+            - generic [ref=e2282]: 臨江街夜市(通化街101巷口)
+            - button "收藏" [ref=e2283]: ☆
+          - generic [ref=e2284]: 大安區 · 通化街111號
+          - generic [ref=e2285]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2286]:
+              - text: 🚲 可借
+              - generic [ref=e2287]: "14"
+            - generic "可停空位" [ref=e2288]:
+              - text: 🅿️ 可停
+              - generic [ref=e2289]: "15"
+            - link "導航 ↗" [ref=e2290]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02952,121.55406
+        - listitem [ref=e2293] [cursor=pointer]:
+          - generic [ref=e2294]:
+            - generic [ref=e2295]: 臺北
+            - generic [ref=e2296]: 仁愛安和路口
+            - button "收藏" [ref=e2297]: ☆
+          - generic [ref=e2298]: 大安區 · 仁愛路四段258號前
+          - generic [ref=e2299]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2300]:
+              - text: 🚲 可借
+              - generic [ref=e2301]: "14"
+            - generic "可停空位" [ref=e2302]:
+              - text: 🅿️ 可停
+              - generic [ref=e2303]: "18"
+            - link "導航 ↗" [ref=e2304]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03754,121.55285
+        - listitem [ref=e2307] [cursor=pointer]:
+          - generic [ref=e2308]:
+            - generic [ref=e2309]: 臺北
+            - generic [ref=e2310]: 成功國宅
+            - button "收藏" [ref=e2311]: ☆
+          - generic [ref=e2312]: 大安區 · 和平東路三段1巷/四維路198巷口(西北側)
+          - generic [ref=e2313]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2314]:
+              - text: 🚲 可借
+              - generic [ref=e2315]: "14"
+            - generic "可停空位" [ref=e2316]:
+              - text: 🅿️ 可停
+              - generic [ref=e2317]: "19"
+            - link "導航 ↗" [ref=e2318]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02681,121.54668
+        - listitem [ref=e2321] [cursor=pointer]:
+          - generic [ref=e2322]:
+            - generic [ref=e2323]: 臺北
+            - generic [ref=e2324]: 復興南路二段128巷口
+            - button "收藏" [ref=e2325]: ☆
+          - generic [ref=e2326]: 大安區 · 復興南路二段142之1號前
+          - generic [ref=e2327]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2328]:
+              - text: 🚲 可借
+              - generic [ref=e2329]: "14"
+            - generic "可停空位" [ref=e2330]:
+              - text: 🅿️ 可停
+              - generic [ref=e2331]: "14"
+            - link "導航 ↗" [ref=e2332]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02861,121.54336
+        - listitem [ref=e2335] [cursor=pointer]:
+          - generic [ref=e2336]:
+            - generic [ref=e2337]: 臺北
+            - generic [ref=e2338]: 辛亥新生路口西北側
+            - button "收藏" [ref=e2339]: ☆
+          - generic [ref=e2340]: 大安區 · 辛亥路一段/新生南路三段(西北側)
+          - generic [ref=e2341]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2342]:
+              - text: 🚲 可借
+              - generic [ref=e2343]: "14"
+            - generic "可停空位" [ref=e2344]:
+              - text: 🅿️ 可停
+              - generic [ref=e2345]: "27"
+            - link "導航 ↗" [ref=e2346]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02267,121.5341
+        - listitem [ref=e2349] [cursor=pointer]:
+          - generic [ref=e2350]:
+            - generic [ref=e2351]: 臺北
+            - generic [ref=e2352]: 臺灣師範大學(浦城街)
+            - button "收藏" [ref=e2353]: ☆
+          - generic [ref=e2354]: 大安區 · 浦城街1號對側
+          - generic [ref=e2355]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2356]:
+              - text: 🚲 可借
+              - generic [ref=e2357]: "14"
+            - generic "可停空位" [ref=e2358]:
+              - text: 🅿️ 可停
+              - generic [ref=e2359]: "6"
+            - link "導航 ↗" [ref=e2360]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02476,121.52803
+        - listitem [ref=e2363] [cursor=pointer]:
+          - generic [ref=e2364]:
+            - generic [ref=e2365]: 臺北
+            - generic [ref=e2366]: 臺大天文數學館南側
+            - button "收藏" [ref=e2367]: ☆
+          - generic [ref=e2368]: 臺大公館校區 · 臺大天文數學館西南側
+          - generic [ref=e2369]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2370]:
+              - text: 🚲 可借
+              - generic [ref=e2371]: "14"
+            - generic "可停空位" [ref=e2372]:
+              - text: 🅿️ 可停
+              - generic [ref=e2373]: "13"
+            - link "導航 ↗" [ref=e2374]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02108,121.53783
+        - listitem [ref=e2377] [cursor=pointer]:
+          - generic [ref=e2378]:
+            - generic [ref=e2379]: 臺北
+            - generic [ref=e2380]: 臺大樂學館東側
+            - button "收藏" [ref=e2381]: ☆
+          - generic [ref=e2382]: 臺大公館校區 · 臺大文學院西側
+          - generic [ref=e2383]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2384]:
+              - text: 🚲 可借
+              - generic [ref=e2385]: "14"
+            - generic "可停空位" [ref=e2386]:
+              - text: 🅿️ 可停
+              - generic [ref=e2387]: "14"
+            - link "導航 ↗" [ref=e2388]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01793,121.53585
+        - listitem [ref=e2391] [cursor=pointer]:
+          - generic [ref=e2392]:
+            - generic [ref=e2393]: 臺北
+            - generic [ref=e2394]: 臺大新生教室南側
+            - button "收藏" [ref=e2395]: ☆
+          - generic [ref=e2396]: 臺大公館校區 · 臺大新生教學館南側
+          - generic [ref=e2397]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2398]:
+              - text: 🚲 可借
+              - generic [ref=e2399]: "14"
+            - generic "可停空位" [ref=e2400]:
+              - text: 🅿️ 可停
+              - generic [ref=e2401]: "2"
+            - link "導航 ↗" [ref=e2402]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0196,121.53846
+        - listitem [ref=e2405] [cursor=pointer]:
+          - generic [ref=e2406]:
+            - generic [ref=e2407]: 臺北
+            - generic [ref=e2408]: 臺大人文館
+            - button "收藏" [ref=e2409]: ☆
+          - generic [ref=e2410]: 臺大公館校區 · 臺大人文館東北側
+          - generic [ref=e2411]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2412]:
+              - text: 🚲 可借
+              - generic [ref=e2413]: "14"
+            - generic "可停空位" [ref=e2414]:
+              - text: 🅿️ 可停
+              - generic [ref=e2415]: "53"
+            - link "導航 ↗" [ref=e2416]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0182,121.53476
+        - listitem [ref=e2419] [cursor=pointer]:
+          - generic [ref=e2420]:
+            - generic [ref=e2421]: 臺北
+            - generic [ref=e2422]: 臺大社科院圖書館前
+            - button "收藏" [ref=e2423]: ☆
+          - generic [ref=e2424]: 大安區 · 辛亥路與復興南路口西南側
+          - generic [ref=e2425]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2426]:
+              - text: 🚲 可借
+              - generic [ref=e2427]: "13"
+            - generic "可停空位" [ref=e2428]:
+              - text: 🅿️ 可停
+              - generic [ref=e2429]: "14"
+            - link "導航 ↗" [ref=e2430]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02101,121.54284
+        - listitem [ref=e2433] [cursor=pointer]:
+          - generic [ref=e2434]:
+            - generic [ref=e2435]: 臺北
+            - generic [ref=e2436]: 仁愛醫院
+            - button "收藏" [ref=e2437]: ☆
+          - generic [ref=e2438]: 大安區 · 仁愛路四段/大安路一段口(西南側)
+          - generic [ref=e2439]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2440]:
+              - text: 🚲 可借
+              - generic [ref=e2441]: "13"
+            - generic "可停空位" [ref=e2442]:
+              - text: 🅿️ 可停
+              - generic [ref=e2443]: "23"
+            - link "導航 ↗" [ref=e2444]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03756,121.54587
+        - listitem [ref=e2447] [cursor=pointer]:
+          - generic [ref=e2448]:
+            - generic [ref=e2449]: 臺北
+            - generic [ref=e2450]: 懷生國中
+            - button "收藏" [ref=e2451]: ☆
+          - generic [ref=e2452]: 大安區 · 忠孝東路三段248巷30號
+          - generic [ref=e2453]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2454]:
+              - text: 🚲 可借
+              - generic [ref=e2455]: "13"
+            - generic "可停空位" [ref=e2456]:
+              - text: 🅿️ 可停
+              - generic [ref=e2457]: "10"
+            - link "導航 ↗" [ref=e2458]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0401,121.54122
+        - listitem [ref=e2461] [cursor=pointer]:
+          - generic [ref=e2462]:
+            - generic [ref=e2463]: 臺北
+            - generic [ref=e2464]: 牯嶺街95巷
+            - button "收藏" [ref=e2465]: ☆
+          - generic [ref=e2466]: 中正區 · 牯嶺街95巷65號對側
+          - generic [ref=e2467]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2468]:
+              - text: 🚲 可借
+              - generic [ref=e2469]: "13"
+            - generic "可停空位" [ref=e2470]:
+              - text: 🅿️ 可停
+              - generic [ref=e2471]: "3"
+            - link "導航 ↗" [ref=e2472]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0255,121.52067
+        - listitem [ref=e2475] [cursor=pointer]:
+          - generic [ref=e2476]:
+            - generic [ref=e2477]: 臺北
+            - generic [ref=e2478]: 臺大小福樓東側
+            - button "收藏" [ref=e2479]: ☆
+          - generic [ref=e2480]: 臺大公館校區 · 臺大小福樓東側
+          - generic [ref=e2481]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2482]:
+              - text: 🚲 可借
+              - generic [ref=e2483]: "13"
+            - generic "可停空位" [ref=e2484]:
+              - text: 🅿️ 可停
+              - generic [ref=e2485]: "7"
+            - link "導航 ↗" [ref=e2486]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01846,121.5376
+        - listitem [ref=e2489] [cursor=pointer]:
+          - generic [ref=e2490]:
+            - generic [ref=e2491]: 臺北
+            - generic [ref=e2492]: 臺大電機二館東南側
+            - button "收藏" [ref=e2493]: ☆
+          - generic [ref=e2494]: 臺大公館校區 · 臺大電機二館南側
+          - generic [ref=e2495]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2496]:
+              - text: 🚲 可借
+              - generic [ref=e2497]: "13"
+            - generic "可停空位" [ref=e2498]:
+              - text: 🅿️ 可停
+              - generic [ref=e2499]: "1"
+            - link "導航 ↗" [ref=e2500]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01857,121.54247
+        - listitem [ref=e2503] [cursor=pointer]:
+          - generic [ref=e2504]:
+            - generic [ref=e2505]: 臺北
+            - generic [ref=e2506]: 臺大獸醫館南側
+            - button "收藏" [ref=e2507]: ☆
+          - generic [ref=e2508]: 臺大公館校區 · 臺大獸醫系館南側
+          - generic [ref=e2509]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2510]:
+              - text: 🚲 可借
+              - generic [ref=e2511]: "13"
+            - generic "可停空位" [ref=e2512]:
+              - text: 🅿️ 可停
+              - generic [ref=e2513]: "10"
+            - link "導航 ↗" [ref=e2514]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01791,121.54242
+        - listitem [ref=e2517] [cursor=pointer]:
+          - generic [ref=e2518]:
+            - generic [ref=e2519]: 臺北
+            - generic [ref=e2520]: 和平泰順街口
+            - button "收藏" [ref=e2521]: ☆
+          - generic [ref=e2522]: 大安區 · 和平東路一段/泰順街口東南側
+          - generic [ref=e2523]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2524]:
+              - text: 🚲 可借
+              - generic [ref=e2525]: "12"
+            - generic "可停空位" [ref=e2526]:
+              - text: 🅿️ 可停
+              - generic [ref=e2527]: "7"
+            - link "導航 ↗" [ref=e2528]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02621,121.53171
+        - listitem [ref=e2531] [cursor=pointer]:
+          - generic [ref=e2532]:
+            - generic [ref=e2533]: 臺北
+            - generic [ref=e2534]: 建國南路一段279巷口
+            - button "收藏" [ref=e2535]: ☆
+          - generic [ref=e2536]: 大安區 · 建國南路一段275號
+          - generic [ref=e2537]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2538]:
+              - text: 🚲 可借
+              - generic [ref=e2539]: "12"
+            - generic "可停空位" [ref=e2540]:
+              - text: 🅿️ 可停
+              - generic [ref=e2541]: "50"
+            - link "導航 ↗" [ref=e2542]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03635,121.53833
+        - listitem [ref=e2545] [cursor=pointer]:
+          - generic [ref=e2546]:
+            - generic [ref=e2547]: 臺北
+            - generic [ref=e2548]: 仁愛延吉街口
+            - button "收藏" [ref=e2549]: ☆
+          - generic [ref=e2550]: 大安區 · 仁愛路四段376號前
+          - generic [ref=e2551]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2552]:
+              - text: 🚲 可借
+              - generic [ref=e2553]: "12"
+            - generic "可停空位" [ref=e2554]:
+              - text: 🅿️ 可停
+              - generic [ref=e2555]: "21"
+            - link "導航 ↗" [ref=e2556]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03748,121.55564
+        - listitem [ref=e2559] [cursor=pointer]:
+          - generic [ref=e2560]:
+            - generic [ref=e2561]: 臺北
+            - generic [ref=e2562]: 和平東建國南路口
+            - button "收藏" [ref=e2563]: ☆
+          - generic [ref=e2564]: 大安區 · 和平東路/建國南路口(北側)
+          - generic [ref=e2565]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2566]:
+              - text: 🚲 可借
+              - generic [ref=e2567]: "12"
+            - generic "可停空位" [ref=e2568]:
+              - text: 🅿️ 可停
+              - generic [ref=e2569]: "4"
+            - link "導航 ↗" [ref=e2570]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02575,121.5377
+        - listitem [ref=e2573] [cursor=pointer]:
+          - generic [ref=e2574]:
+            - generic [ref=e2575]: 臺北
+            - generic [ref=e2576]: 仁愛大安路口(東北側)
+            - button "收藏" [ref=e2577]: ☆
+          - generic [ref=e2578]: 大安區 · 仁愛路四段37號前
+          - generic [ref=e2579]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2580]:
+              - text: 🚲 可借
+              - generic [ref=e2581]: "12"
+            - generic "可停空位" [ref=e2582]:
+              - text: 🅿️ 可停
+              - generic [ref=e2583]: "9"
+            - link "導航 ↗" [ref=e2584]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03813,121.54631
+        - listitem [ref=e2587] [cursor=pointer]:
+          - generic [ref=e2588]:
+            - generic [ref=e2589]: 臺北
+            - generic [ref=e2590]: 金華國中(新生南路二段30巷)
+            - button "收藏" [ref=e2591]: ☆
+          - generic [ref=e2592]: 大安區 · 新生南路二段30巷19號
+          - generic [ref=e2593]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2594]:
+              - text: 🚲 可借
+              - generic [ref=e2595]: "12"
+            - generic "可停空位" [ref=e2596]:
+              - text: 🅿️ 可停
+              - generic [ref=e2597]: "3"
+            - link "導航 ↗" [ref=e2598]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03137,121.5313
+        - listitem [ref=e2601] [cursor=pointer]:
+          - generic [ref=e2602]:
+            - generic [ref=e2603]: 臺北
+            - generic [ref=e2604]: 復興南路二段340巷口
+            - button "收藏" [ref=e2605]: ☆
+          - generic [ref=e2606]: 大安區 · 復興南路二段342號
+          - generic [ref=e2607]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2608]:
+              - text: 🚲 可借
+              - generic [ref=e2609]: "11"
+            - generic "可停空位" [ref=e2610]:
+              - text: 🅿️ 可停
+              - generic [ref=e2611]: "0"
+            - link "導航 ↗" [ref=e2612]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02253,121.54326
+        - listitem [ref=e2615] [cursor=pointer]:
+          - generic [ref=e2616]:
+            - generic [ref=e2617]: 臺北
+            - generic [ref=e2618]: 和平東路二段18巷口
+            - button "收藏" [ref=e2619]: ☆
+          - generic [ref=e2620]: 大安區 · 辛亥路二段43號前
+          - generic [ref=e2621]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2622]:
+              - text: 🚲 可借
+              - generic [ref=e2623]: "11"
+            - generic "可停空位" [ref=e2624]:
+              - text: 🅿️ 可停
+              - generic [ref=e2625]: "13"
+            - link "導航 ↗" [ref=e2626]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02268,121.53608
+        - listitem [ref=e2629] [cursor=pointer]:
+          - generic [ref=e2630]:
+            - generic [ref=e2631]: 臺北
+            - generic [ref=e2632]: 敦化南路一段295巷口
+            - button "收藏" [ref=e2633]: ☆
+          - generic [ref=e2634]: 大安區 · 敦化南路一段295巷1號
+          - generic [ref=e2635]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2636]:
+              - text: 🚲 可借
+              - generic [ref=e2637]: "11"
+            - generic "可停空位" [ref=e2638]:
+              - text: 🅿️ 可停
+              - generic [ref=e2639]: "7"
+            - link "導航 ↗" [ref=e2640]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03551,121.54951
+        - listitem [ref=e2643] [cursor=pointer]:
+          - generic [ref=e2644]:
+            - generic [ref=e2645]: 臺北
+            - generic [ref=e2646]: 臺大原分所北側
+            - button "收藏" [ref=e2647]: ☆
+          - generic [ref=e2648]: 臺大公館校區 · 臺大原子與分子科學研究所東北側
+          - generic [ref=e2649]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2650]:
+              - text: 🚲 可借
+              - generic [ref=e2651]: "11"
+            - generic "可停空位" [ref=e2652]:
+              - text: 🅿️ 可停
+              - generic [ref=e2653]: "1"
+            - link "導航 ↗" [ref=e2654]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01881,121.53868
+        - listitem [ref=e2657] [cursor=pointer]:
+          - generic [ref=e2658]:
+            - generic [ref=e2659]: 臺北
+            - generic [ref=e2660]: 臺大明達館北側(員工宿舍)
+            - button "收藏" [ref=e2661]: ☆
+          - generic [ref=e2662]: 臺大公館校區 · 明達館北側前空地
+          - generic [ref=e2663]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2664]:
+              - text: 🚲 可借
+              - generic [ref=e2665]: "11"
+            - generic "可停空位" [ref=e2666]:
+              - text: 🅿️ 可停
+              - generic [ref=e2667]: "4"
+            - link "導航 ↗" [ref=e2668]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01816,121.54469
+        - listitem [ref=e2671] [cursor=pointer]:
+          - generic [ref=e2672]:
+            - generic [ref=e2673]: 臺北
+            - generic [ref=e2674]: 和平公園東側
+            - button "收藏" [ref=e2675]: ☆
+          - generic [ref=e2676]: 大安區 · 和平東路二段118巷33號
+          - generic [ref=e2677]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2678]:
+              - text: 🚲 可借
+              - generic [ref=e2679]: "10"
+            - generic "可停空位" [ref=e2680]:
+              - text: 🅿️ 可停
+              - generic [ref=e2681]: "1"
+            - link "導航 ↗" [ref=e2682]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02351,121.54282
+        - listitem [ref=e2685] [cursor=pointer]:
+          - generic [ref=e2686]:
+            - generic [ref=e2687]: 臺北
+            - generic [ref=e2688]: 敦化南路二段293巷口南側
+            - button "收藏" [ref=e2689]: ☆
+          - generic [ref=e2690]: 大安區 · 敦化南路二段293巷口南側
+          - generic [ref=e2691]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2692]:
+              - text: 🚲 可借
+              - generic [ref=e2693]: "10"
+            - generic "可停空位" [ref=e2694]:
+              - text: 🅿️ 可停
+              - generic [ref=e2695]: "4"
+            - link "導航 ↗" [ref=e2696]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0237,121.54899
+        - listitem [ref=e2699] [cursor=pointer]:
+          - generic [ref=e2700]:
+            - generic [ref=e2701]: 臺北
+            - generic [ref=e2702]: 新生南路一段119巷口
+            - button "收藏" [ref=e2703]: ☆
+          - generic [ref=e2704]: 大安區 · 新生南路一段113號
+          - generic [ref=e2705]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2706]:
+              - text: 🚲 可借
+              - generic [ref=e2707]: "10"
+            - generic "可停空位" [ref=e2708]:
+              - text: 🅿️ 可停
+              - generic [ref=e2709]: "51"
+            - link "導航 ↗" [ref=e2710]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.04003,121.53299
+        - listitem [ref=e2713] [cursor=pointer]:
+          - generic [ref=e2714]:
+            - generic [ref=e2715]: 臺北
+            - generic [ref=e2716]: 捷運臺電大樓站(2號出口)_1
+            - button "收藏" [ref=e2717]: ☆
+          - generic [ref=e2718]: 大安區 · 羅斯福路三段201號旁
+          - generic [ref=e2719]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2720]:
+              - text: 🚲 可借
+              - generic [ref=e2721]: "10"
+            - generic "可停空位" [ref=e2722]:
+              - text: 🅿️ 可停
+              - generic [ref=e2723]: "28"
+            - link "導航 ↗" [ref=e2724]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02055,121.52855
+        - listitem [ref=e2727] [cursor=pointer]:
+          - generic [ref=e2728]:
+            - generic [ref=e2729]: 臺北
+            - generic [ref=e2730]: 羅斯福浦城街口
+            - button "收藏" [ref=e2731]: ☆
+          - generic [ref=e2732]: 大安區 · 羅斯福路三段117號前
+          - generic [ref=e2733]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2734]:
+              - text: 🚲 可借
+              - generic [ref=e2735]: "10"
+            - generic "可停空位" [ref=e2736]:
+              - text: 🅿️ 可停
+              - generic [ref=e2737]: "15"
+            - link "導航 ↗" [ref=e2738]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02208,121.52678
+        - listitem [ref=e2741] [cursor=pointer]:
+          - generic [ref=e2742]:
+            - generic [ref=e2743]: 臺北
+            - generic [ref=e2744]: 建國南路二段瑞安街264巷口
+            - button "收藏" [ref=e2745]: ☆
+          - generic [ref=e2746]: 大安區 · 建國南路二段197號(對面)
+          - generic [ref=e2747]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2748]:
+              - text: 🚲 可借
+              - generic [ref=e2749]: "10"
+            - generic "可停空位" [ref=e2750]:
+              - text: 🅿️ 可停
+              - generic [ref=e2751]: "23"
+            - link "導航 ↗" [ref=e2752]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02716,121.53782
+        - listitem [ref=e2755] [cursor=pointer]:
+          - generic [ref=e2756]:
+            - generic [ref=e2757]: 臺北
+            - generic [ref=e2758]: 羅斯福路二段6巷口
+            - button "收藏" [ref=e2759]: ☆
+          - generic [ref=e2760]: 中正區 · 羅斯福路二段/羅斯福路二段6巷口
+          - generic [ref=e2761]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2762]:
+              - text: 🚲 可借
+              - generic [ref=e2763]: "10"
+            - generic "可停空位" [ref=e2764]:
+              - text: 🅿️ 可停
+              - generic [ref=e2765]: "11"
+            - link "導航 ↗" [ref=e2766]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02923,121.52058
+        - listitem [ref=e2769] [cursor=pointer]:
+          - generic [ref=e2770]:
+            - generic [ref=e2771]: 臺北
+            - generic [ref=e2772]: 臺北市芳和實驗中學
+            - button "收藏" [ref=e2773]: ☆
+          - generic [ref=e2774]: 大安區 · 臥龍街170號(前)
+          - generic [ref=e2775]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2776]:
+              - text: 🚲 可借
+              - generic [ref=e2777]: "9"
+            - generic "可停空位" [ref=e2778]:
+              - text: 🅿️ 可停
+              - generic [ref=e2779]: "67"
+            - link "導航 ↗" [ref=e2780]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0189,121.55013
+        - listitem [ref=e2783] [cursor=pointer]:
+          - generic [ref=e2784]:
+            - generic [ref=e2785]: 臺北
+            - generic [ref=e2786]: 敦化基隆路口
+            - button "收藏" [ref=e2787]: ☆
+          - generic [ref=e2788]: 大安區 · 敦化南路二段218號
+          - generic [ref=e2789]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2790]:
+              - text: 🚲 可借
+              - generic [ref=e2791]: "9"
+            - generic "可停空位" [ref=e2792]:
+              - text: 🅿️ 可停
+              - generic [ref=e2793]: "10"
+            - link "導航 ↗" [ref=e2794]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02215,121.54839
+        - listitem [ref=e2797] [cursor=pointer]:
+          - generic [ref=e2798]:
+            - generic [ref=e2799]: 臺北
+            - generic [ref=e2800]: 捷運信義安和站(1號出口)
+            - button "收藏" [ref=e2801]: ☆
+          - generic [ref=e2802]: 大安區 · 信義路四段225號前
+          - generic [ref=e2803]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2804]:
+              - text: 🚲 可借
+              - generic [ref=e2805]: "9"
+            - generic "可停空位" [ref=e2806]:
+              - text: 🅿️ 可停
+              - generic [ref=e2807]: "39"
+            - link "導航 ↗" [ref=e2808]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03331,121.55265
+        - listitem [ref=e2811] [cursor=pointer]:
+          - generic [ref=e2812]:
+            - generic [ref=e2813]: 臺北
+            - generic [ref=e2814]: 原臺北刑務所官舍
+            - button "收藏" [ref=e2815]: ☆
+          - generic [ref=e2816]: 大安區 · 金華街78號對側
+          - generic [ref=e2817]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2818]:
+              - text: 🚲 可借
+              - generic [ref=e2819]: "9"
+            - generic "可停空位" [ref=e2820]:
+              - text: 🅿️ 可停
+              - generic [ref=e2821]: "14"
+            - link "導航 ↗" [ref=e2822]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03054,121.52466
+        - listitem [ref=e2825] [cursor=pointer]:
+          - generic [ref=e2826]:
+            - generic [ref=e2827]: 臺北
+            - generic [ref=e2828]: 立人國小
+            - button "收藏" [ref=e2829]: ☆
+          - generic [ref=e2830]: 大安區 · 安和路二段/敦化南路二段81巷(西南側)
+          - generic [ref=e2831]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2832]:
+              - text: 🚲 可借
+              - generic [ref=e2833]: "9"
+            - generic "可停空位" [ref=e2834]:
+              - text: 🅿️ 可停
+              - generic [ref=e2835]: "8"
+            - link "導航 ↗" [ref=e2836]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02974,121.55146
+        - listitem [ref=e2839] [cursor=pointer]:
+          - generic [ref=e2840]:
+            - generic [ref=e2841]: 臺北
+            - generic [ref=e2842]: 捷運古亭站(7號出口)
+            - button "收藏" [ref=e2843]: ☆
+          - generic [ref=e2844]: 中正區 · 羅斯福路二段44號前方
+          - generic [ref=e2845]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2846]:
+              - text: 🚲 可借
+              - generic [ref=e2847]: "9"
+            - generic "可停空位" [ref=e2848]:
+              - text: 🅿️ 可停
+              - generic [ref=e2849]: "3"
+            - link "導航 ↗" [ref=e2850]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02805,121.52155
+        - listitem [ref=e2853] [cursor=pointer]:
+          - generic [ref=e2854]:
+            - generic [ref=e2855]: 臺北
+            - generic [ref=e2856]: 信義杭州路口
+            - button "收藏" [ref=e2857]: ☆
+          - generic [ref=e2858]: 中正區 · 信義路一段21號前
+          - generic [ref=e2859]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2860]:
+              - text: 🚲 可借
+              - generic [ref=e2861]: "9"
+            - generic "可停空位" [ref=e2862]:
+              - text: 🅿️ 可停
+              - generic [ref=e2863]: "55"
+            - link "導航 ↗" [ref=e2864]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0357,121.5241
+        - listitem [ref=e2867] [cursor=pointer]:
+          - generic [ref=e2868]:
+            - generic [ref=e2869]: 臺北
+            - generic [ref=e2870]: 台北市替代役中心
+            - button "收藏" [ref=e2871]: ☆
+          - generic [ref=e2872]: 中正區 · 汀州路三段8號前
+          - generic [ref=e2873]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2874]:
+              - text: 🚲 可借
+              - generic [ref=e2875]: "9"
+            - generic "可停空位" [ref=e2876]:
+              - text: 🅿️ 可停
+              - generic [ref=e2877]: "6"
+            - link "導航 ↗" [ref=e2878]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01808,121.5275
+        - listitem [ref=e2881] [cursor=pointer]:
+          - generic [ref=e2882]:
+            - generic [ref=e2883]: 臺北
+            - generic [ref=e2884]: 臺大博理館西側
+            - button "收藏" [ref=e2885]: ☆
+          - generic [ref=e2886]: 臺大公館校區 · 臺大博理館西側
+          - generic [ref=e2887]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2888]:
+              - text: 🚲 可借
+              - generic [ref=e2889]: "9"
+            - generic "可停空位" [ref=e2890]:
+              - text: 🅿️ 可停
+              - generic [ref=e2891]: "7"
+            - link "導航 ↗" [ref=e2892]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01922,121.54195
+        - listitem [ref=e2895] [cursor=pointer]:
+          - generic [ref=e2896]:
+            - generic [ref=e2897]: 臺北
+            - generic [ref=e2898]: 臺大黑森林西側
+            - button "收藏" [ref=e2899]: ☆
+          - generic [ref=e2900]: 臺大公館校區 · 臺大霖澤館南側
+          - generic [ref=e2901]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2902]:
+              - text: 🚲 可借
+              - generic [ref=e2903]: "9"
+            - generic "可停空位" [ref=e2904]:
+              - text: 🅿️ 可停
+              - generic [ref=e2905]: "24"
+            - link "導航 ↗" [ref=e2906]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01995,121.54347
+        - listitem [ref=e2909] [cursor=pointer]:
+          - generic [ref=e2910]:
+            - generic [ref=e2911]: 臺北
+            - generic [ref=e2912]: 捷運古亭站(6號出口)
+            - button "收藏" [ref=e2913]: ☆
+          - generic [ref=e2914]: 大安區 · 羅斯福路二段41號前
+          - generic [ref=e2915]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2916]:
+              - text: 🚲 可借
+              - generic [ref=e2917]: "8"
+            - generic "可停空位" [ref=e2918]:
+              - text: 🅿️ 可停
+              - generic [ref=e2919]: "51"
+            - link "導航 ↗" [ref=e2920]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0276,121.52217
+        - listitem [ref=e2923] [cursor=pointer]:
+          - generic [ref=e2924]:
+            - generic [ref=e2925]: 臺北
+            - generic [ref=e2926]: 信義敦化路口
+            - button "收藏" [ref=e2927]: ☆
+          - generic [ref=e2928]: 大安區 · 信義路四段155號前
+          - generic [ref=e2929]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2930]:
+              - text: 🚲 可借
+              - generic [ref=e2931]: "8"
+            - generic "可停空位" [ref=e2932]:
+              - text: 🅿️ 可停
+              - generic [ref=e2933]: "44"
+            - link "導航 ↗" [ref=e2934]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03333,121.54977
+        - listitem [ref=e2937] [cursor=pointer]:
+          - generic [ref=e2938]:
+            - generic [ref=e2939]: 臺北
+            - generic [ref=e2940]: 捷運信義安和站(4號出口)
+            - button "收藏" [ref=e2941]: ☆
+          - generic [ref=e2942]: 大安區 · 信義路四段252號前
+          - generic [ref=e2943]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2944]:
+              - text: 🚲 可借
+              - generic [ref=e2945]: "8"
+            - generic "可停空位" [ref=e2946]:
+              - text: 🅿️ 可停
+              - generic [ref=e2947]: "40"
+            - link "導航 ↗" [ref=e2948]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03305,121.55378
+        - listitem [ref=e2951] [cursor=pointer]:
+          - generic [ref=e2952]:
+            - generic [ref=e2953]: 臺北
+            - generic [ref=e2954]: 敦親公園
+            - button "收藏" [ref=e2955]: ☆
+          - generic [ref=e2956]: 大安區 · 和平東路二段96巷8之1號(前方)
+          - generic [ref=e2957]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2958]:
+              - text: 🚲 可借
+              - generic [ref=e2959]: "8"
+            - generic "可停空位" [ref=e2960]:
+              - text: 🅿️ 可停
+              - generic [ref=e2961]: "18"
+            - link "導航 ↗" [ref=e2962]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02347,121.54108
+        - listitem [ref=e2965] [cursor=pointer]:
+          - generic [ref=e2966]:
+            - generic [ref=e2967]: 臺北
+            - generic [ref=e2968]: 和平東路二段76巷
+            - button "收藏" [ref=e2969]: ☆
+          - generic [ref=e2970]: 大安區 · 和平東路二段96巷20弄2號旁
+          - generic [ref=e2971]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2972]:
+              - text: 🚲 可借
+              - generic [ref=e2973]: "8"
+            - generic "可停空位" [ref=e2974]:
+              - text: 🅿️ 可停
+              - generic [ref=e2975]: "30"
+            - link "導航 ↗" [ref=e2976]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02263,121.53906
+        - listitem [ref=e2979] [cursor=pointer]:
+          - generic [ref=e2980]:
+            - generic [ref=e2981]: 臺北
+            - generic [ref=e2982]: 敦化基隆路口(東北側)
+            - button "收藏" [ref=e2983]: ☆
+          - generic [ref=e2984]: 大安區 · 敦化南路二段333號(前)
+          - generic [ref=e2985]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e2986]:
+              - text: 🚲 可借
+              - generic [ref=e2987]: "8"
+            - generic "可停空位" [ref=e2988]:
+              - text: 🅿️ 可停
+              - generic [ref=e2989]: "13"
+            - link "導航 ↗" [ref=e2990]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02196,121.54899
+        - listitem [ref=e2993] [cursor=pointer]:
+          - generic [ref=e2994]:
+            - generic [ref=e2995]: 臺北
+            - generic [ref=e2996]: 金山信義路口
+            - button "收藏" [ref=e2997]: ☆
+          - generic [ref=e2998]: 中正區 · 金山南路一段148號前側
+          - generic [ref=e2999]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3000]:
+              - text: 🚲 可借
+              - generic [ref=e3001]: "8"
+            - generic "可停空位" [ref=e3002]:
+              - text: 🅿️ 可停
+              - generic [ref=e3003]: "17"
+            - link "導航 ↗" [ref=e3004]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03443,121.52721
+        - listitem [ref=e3007] [cursor=pointer]:
+          - generic [ref=e3008]:
+            - generic [ref=e3009]: 臺北
+            - generic [ref=e3010]: 信安街/富陽街44巷口
+            - button "收藏" [ref=e3011]: ☆
+          - generic [ref=e3012]: 信義區 · 信安街151號(前)
+          - generic [ref=e3013]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3014]:
+              - text: 🚲 可借
+              - generic [ref=e3015]: "8"
+            - generic "可停空位" [ref=e3016]:
+              - text: 🅿️ 可停
+              - generic [ref=e3017]: "13"
+            - link "導航 ↗" [ref=e3018]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02309,121.55537
+        - listitem [ref=e3021] [cursor=pointer]:
+          - generic [ref=e3022]:
+            - generic [ref=e3023]: 臺北
+            - generic [ref=e3024]: 金華公園
+            - button "收藏" [ref=e3025]: ☆
+          - generic [ref=e3026]: 大安區 · 金華街249號對面
+          - generic [ref=e3027]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3028]:
+              - text: 🚲 可借
+              - generic [ref=e3029]: "7"
+            - generic "可停空位" [ref=e3030]:
+              - text: 🅿️ 可停
+              - generic [ref=e3031]: "37"
+            - link "導航 ↗" [ref=e3032]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02984,121.53107
+        - listitem [ref=e3035] [cursor=pointer]:
+          - generic [ref=e3036]:
+            - generic [ref=e3037]: 臺北
+            - generic [ref=e3038]: 幸安國小(仁愛路)
+            - button "收藏" [ref=e3039]: ☆
+          - generic [ref=e3040]: 大安區 · 仁愛路三段22號
+          - generic [ref=e3041]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3042]:
+              - text: 🚲 可借
+              - generic [ref=e3043]: "7"
+            - generic "可停空位" [ref=e3044]:
+              - text: 🅿️ 可停
+              - generic [ref=e3045]: "20"
+            - link "導航 ↗" [ref=e3046]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03753,121.53523
+        - listitem [ref=e3049] [cursor=pointer]:
+          - generic [ref=e3050]:
+            - generic [ref=e3051]: 臺北
+            - generic [ref=e3052]: 捷運大安森林公園站(2號出口)
+            - button "收藏" [ref=e3053]: ☆
+          - generic [ref=e3054]: 大安區 · 捷運大安森林公園站(2號出口)西側
+          - generic [ref=e3055]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3056]:
+              - text: 🚲 可借
+              - generic [ref=e3057]: "7"
+            - generic "可停空位" [ref=e3058]:
+              - text: 🅿️ 可停
+              - generic [ref=e3059]: "61"
+            - link "導航 ↗" [ref=e3060]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03332,121.53435
+        - listitem [ref=e3063] [cursor=pointer]:
+          - generic [ref=e3064]:
+            - generic [ref=e3065]: 臺北
+            - generic [ref=e3066]: 捷運大安站(6號出口)
+            - button "收藏" [ref=e3067]: ☆
+          - generic [ref=e3068]: 大安區 · 復興南路一段303號前
+          - generic [ref=e3069]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3070]:
+              - text: 🚲 可借
+              - generic [ref=e3071]: "7"
+            - generic "可停空位" [ref=e3072]:
+              - text: 🅿️ 可停
+              - generic [ref=e3073]: "21"
+            - link "導航 ↗" [ref=e3074]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03479,121.54376
+        - listitem [ref=e3077] [cursor=pointer]:
+          - generic [ref=e3078]:
+            - generic [ref=e3079]: 臺北
+            - generic [ref=e3080]: 信義路四段199巷
+            - button "收藏" [ref=e3081]: ☆
+          - generic [ref=e3082]: 大安區 · 信義路四段199巷/安和路一段90巷口
+          - generic [ref=e3083]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3084]:
+              - text: 🚲 可借
+              - generic [ref=e3085]: "7"
+            - generic "可停空位" [ref=e3086]:
+              - text: 🅿️ 可停
+              - generic [ref=e3087]: "14"
+            - link "導航 ↗" [ref=e3088]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03459,121.55164
+        - listitem [ref=e3091] [cursor=pointer]:
+          - generic [ref=e3092]:
+            - generic [ref=e3093]: 臺北
+            - generic [ref=e3094]: 金華國中
+            - button "收藏" [ref=e3095]: ☆
+          - generic [ref=e3096]: 大安區 · 新生南路二段32號(旁)
+          - generic [ref=e3097]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3098]:
+              - text: 🚲 可借
+              - generic [ref=e3099]: "7"
+            - generic "可停空位" [ref=e3100]:
+              - text: 🅿️ 可停
+              - generic [ref=e3101]: "14"
+            - link "導航 ↗" [ref=e3102]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03165,121.53306
+        - listitem [ref=e3105] [cursor=pointer]:
+          - generic [ref=e3106]:
+            - generic [ref=e3107]: 臺北
+            - generic [ref=e3108]: 羅斯福三段金門街口
+            - button "收藏" [ref=e3109]: ☆
+          - generic [ref=e3110]: 中正區 · 羅斯福路三段2號前
+          - generic [ref=e3111]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3112]:
+              - text: 🚲 可借
+              - generic [ref=e3113]: "7"
+            - generic "可停空位" [ref=e3114]:
+              - text: 🅿️ 可停
+              - generic [ref=e3115]: "8"
+            - link "導航 ↗" [ref=e3116]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02345,121.52498
+        - listitem [ref=e3119] [cursor=pointer]:
+          - generic [ref=e3120]:
+            - generic [ref=e3121]: 臺北
+            - generic [ref=e3122]: 師大水源路口
+            - button "收藏" [ref=e3123]: ☆
+          - generic [ref=e3124]: 中正區 · 師大路/水源路口(東南側)
+          - generic [ref=e3125]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3126]:
+              - text: 🚲 可借
+              - generic [ref=e3127]: "7"
+            - generic "可停空位" [ref=e3128]:
+              - text: 🅿️ 可停
+              - generic [ref=e3129]: "21"
+            - link "導航 ↗" [ref=e3130]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0203,121.52302
+        - listitem [ref=e3133] [cursor=pointer]:
+          - generic [ref=e3134]:
+            - generic [ref=e3135]: 臺北
+            - generic [ref=e3136]: 仁愛金山路口
+            - button "收藏" [ref=e3137]: ☆
+          - generic [ref=e3138]: 中正區 · 仁愛路二段31號前
+          - generic [ref=e3139]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3140]:
+              - text: 🚲 可借
+              - generic [ref=e3141]: "7"
+            - generic "可停空位" [ref=e3142]:
+              - text: 🅿️ 可停
+              - generic [ref=e3143]: "2"
+            - link "導航 ↗" [ref=e3144]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0384,121.52801
+        - listitem [ref=e3147] [cursor=pointer]:
+          - generic [ref=e3148]:
+            - generic [ref=e3149]: 臺北
+            - generic [ref=e3150]: 仁愛紹興路口(北側)
+            - button "收藏" [ref=e3151]: ☆
+          - generic [ref=e3152]: 中正區 · 仁愛路一段43號前
+          - generic [ref=e3153]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3154]:
+              - text: 🚲 可借
+              - generic [ref=e3155]: "7"
+            - generic "可停空位" [ref=e3156]:
+              - text: 🅿️ 可停
+              - generic [ref=e3157]: "16"
+            - link "導航 ↗" [ref=e3158]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03862,121.52385
+        - listitem [ref=e3161] [cursor=pointer]:
+          - generic [ref=e3162]:
+            - generic [ref=e3163]: 臺北
+            - generic [ref=e3164]: 臺大土木研究大樓前
+            - button "收藏" [ref=e3165]: ☆
+          - generic [ref=e3166]: 大安區 · 辛亥路三段188號
+          - generic [ref=e3167]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3168]:
+              - text: 🚲 可借
+              - generic [ref=e3169]: "6"
+            - generic "可停空位" [ref=e3170]:
+              - text: 🅿️ 可停
+              - generic [ref=e3171]: "18"
+            - link "導航 ↗" [ref=e3172]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01787,121.5476
+        - listitem [ref=e3175] [cursor=pointer]:
+          - generic [ref=e3176]:
+            - generic [ref=e3177]: 臺北
+            - generic [ref=e3178]: 臺大萬才館前
+            - button "收藏" [ref=e3179]: ☆
+          - generic [ref=e3180]: 大安區 · 臺大萬才館北側
+          - generic [ref=e3181]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3182]:
+              - text: 🚲 可借
+              - generic [ref=e3183]: "6"
+            - generic "可停空位" [ref=e3184]:
+              - text: 🅿️ 可停
+              - generic [ref=e3185]: "14"
+            - link "導航 ↗" [ref=e3186]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02032,121.54497
+        - listitem [ref=e3189] [cursor=pointer]:
+          - generic [ref=e3190]:
+            - generic [ref=e3191]: 臺北
+            - generic [ref=e3192]: 信義大安路口(信維大樓)
+            - button "收藏" [ref=e3193]: ☆
+          - generic [ref=e3194]: 大安區 · 信義路四段74號(前)
+          - generic [ref=e3195]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3196]:
+              - text: 🚲 可借
+              - generic [ref=e3197]: "6"
+            - generic "可停空位" [ref=e3198]:
+              - text: 🅿️ 可停
+              - generic [ref=e3199]: "11"
+            - link "導航 ↗" [ref=e3200]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03317,121.54639
+        - listitem [ref=e3203] [cursor=pointer]:
+          - generic [ref=e3204]:
+            - generic [ref=e3205]: 臺北
+            - generic [ref=e3206]: 和平東路二段90巷
+            - button "收藏" [ref=e3207]: ☆
+          - generic [ref=e3208]: 大安區 · 和平東路二段90巷/和平東路二段76巷5弄
+          - generic [ref=e3209]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3210]:
+              - text: 🚲 可借
+              - generic [ref=e3211]: "6"
+            - generic "可停空位" [ref=e3212]:
+              - text: 🅿️ 可停
+              - generic [ref=e3213]: "14"
+            - link "導航 ↗" [ref=e3214]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02468,121.53965
+        - listitem [ref=e3217] [cursor=pointer]:
+          - generic [ref=e3218]:
+            - generic [ref=e3219]: 臺北
+            - generic [ref=e3220]: 浦城街26巷
+            - button "收藏" [ref=e3221]: ☆
+          - generic [ref=e3222]: 大安區 · 浦城街26巷8號對面
+          - generic [ref=e3223]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3224]:
+              - text: 🚲 可借
+              - generic [ref=e3225]: "6"
+            - generic "可停空位" [ref=e3226]:
+              - text: 🅿️ 可停
+              - generic [ref=e3227]: "11"
+            - link "導航 ↗" [ref=e3228]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02324,121.52618
+        - listitem [ref=e3231] [cursor=pointer]:
+          - generic [ref=e3232]:
+            - generic [ref=e3233]: 臺北
+            - generic [ref=e3234]: 政大公企中心
+            - button "收藏" [ref=e3235]: ☆
+          - generic [ref=e3236]: 大安區 · 金華街187號(後方人行道)
+          - generic [ref=e3237]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3238]:
+              - text: 🚲 可借
+              - generic [ref=e3239]: "6"
+            - generic "可停空位" [ref=e3240]:
+              - text: 🅿️ 可停
+              - generic [ref=e3241]: "7"
+            - link "導航 ↗" [ref=e3242]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03076,121.52781
+        - listitem [ref=e3245] [cursor=pointer]:
+          - generic [ref=e3246]:
+            - generic [ref=e3247]: 臺北
+            - generic [ref=e3248]: 錦安區民活動中心
+            - button "收藏" [ref=e3249]: ☆
+          - generic [ref=e3250]: 大安區 · 潮州街160號對側
+          - generic [ref=e3251]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3252]:
+              - text: 🚲 可借
+              - generic [ref=e3253]: "6"
+            - generic "可停空位" [ref=e3254]:
+              - text: 🅿️ 可停
+              - generic [ref=e3255]: "14"
+            - link "導航 ↗" [ref=e3256]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02846,121.52935
+        - listitem [ref=e3259] [cursor=pointer]:
+          - generic [ref=e3260]:
+            - generic [ref=e3261]: 臺北
+            - generic [ref=e3262]: 捷運古亭站(9號出口)
+            - button "收藏" [ref=e3263]: ☆
+          - generic [ref=e3264]: 中正區 · 羅斯福路二段100號(前方)
+          - generic [ref=e3265]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3266]:
+              - text: 🚲 可借
+              - generic [ref=e3267]: "6"
+            - generic "可停空位" [ref=e3268]:
+              - text: 🅿️ 可停
+              - generic [ref=e3269]: "18"
+            - link "導航 ↗" [ref=e3270]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02694,121.52224
+        - listitem [ref=e3273] [cursor=pointer]:
+          - generic [ref=e3274]:
+            - generic [ref=e3275]: 臺北
+            - generic [ref=e3276]: 客家文化主題公園
+            - button "收藏" [ref=e3277]: ☆
+          - generic [ref=e3278]: 中正區 · 師大路/金門街11巷口對側人行道
+          - generic [ref=e3279]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3280]:
+              - text: 🚲 可借
+              - generic [ref=e3281]: "6"
+            - generic "可停空位" [ref=e3282]:
+              - text: 🅿️ 可停
+              - generic [ref=e3283]: "25"
+            - link "導航 ↗" [ref=e3284]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02069,121.52456
+        - listitem [ref=e3287] [cursor=pointer]:
+          - generic [ref=e3288]:
+            - generic [ref=e3289]: 臺北
+            - generic [ref=e3290]: 捷運古亭站(8號出口)
+            - button "收藏" [ref=e3291]: ☆
+          - generic [ref=e3292]: 中正區 · 和平西路一段13-1號前方
+          - generic [ref=e3293]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3294]:
+              - text: 🚲 可借
+              - generic [ref=e3295]: "6"
+            - generic "可停空位" [ref=e3296]:
+              - text: 🅿️ 可停
+              - generic [ref=e3297]: "7"
+            - link "導航 ↗" [ref=e3298]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02701,121.52164
+        - listitem [ref=e3301] [cursor=pointer]:
+          - generic [ref=e3302]:
+            - generic [ref=e3303]: 臺北
+            - generic [ref=e3304]: 信義連雲街口
+            - button "收藏" [ref=e3305]: ☆
+          - generic [ref=e3306]: 中正區 · 信義路二段213號前
+          - generic [ref=e3307]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3308]:
+              - text: 🚲 可借
+              - generic [ref=e3309]: "6"
+            - generic "可停空位" [ref=e3310]:
+              - text: 🅿️ 可停
+              - generic [ref=e3311]: "33"
+            - link "導航 ↗" [ref=e3312]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03377,121.53041
+        - listitem [ref=e3315] [cursor=pointer]:
+          - generic [ref=e3316]:
+            - generic [ref=e3317]: 臺北
+            - generic [ref=e3318]: 羅斯福寧波東街口
+            - button "收藏" [ref=e3319]: ☆
+          - generic [ref=e3320]: 中正區 · 羅斯福路一段/寧波東街(東南側)
+          - generic [ref=e3321]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3322]:
+              - text: 🚲 可借
+              - generic [ref=e3323]: "6"
+            - generic "可停空位" [ref=e3324]:
+              - text: 🅿️ 可停
+              - generic [ref=e3325]: "20"
+            - link "導航 ↗" [ref=e3326]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03145,121.51941
+        - listitem [ref=e3329] [cursor=pointer]:
+          - generic [ref=e3330]:
+            - generic [ref=e3331]: 臺北
+            - generic [ref=e3332]: 仁愛杭州路口
+            - button "收藏" [ref=e3333]: ☆
+          - generic [ref=e3334]: 中正區 · 仁愛路一段59號旁
+          - generic [ref=e3335]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3336]:
+              - text: 🚲 可借
+              - generic [ref=e3337]: "6"
+            - generic "可停空位" [ref=e3338]:
+              - text: 🅿️ 可停
+              - generic [ref=e3339]: "18"
+            - link "導航 ↗" [ref=e3340]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03846,121.52497
+        - listitem [ref=e3343] [cursor=pointer]:
+          - generic [ref=e3344]:
+            - generic [ref=e3345]: 臺北
+            - generic [ref=e3346]: 文光公園
+            - button "收藏" [ref=e3347]: ☆
+          - generic [ref=e3348]: 中正區 · 仁愛路二段65巷4號對側
+          - generic [ref=e3349]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3350]:
+              - text: 🚲 可借
+              - generic [ref=e3351]: "6"
+            - generic "可停空位" [ref=e3352]:
+              - text: 🅿️ 可停
+              - generic [ref=e3353]: "21"
+            - link "導航 ↗" [ref=e3354]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03898,121.53058
+        - listitem [ref=e3357] [cursor=pointer]:
+          - generic [ref=e3358]:
+            - generic [ref=e3359]: 臺北
+            - generic [ref=e3360]: 螢圃里小公園
+            - button "收藏" [ref=e3361]: ☆
+          - generic [ref=e3362]: 中正區 · 汀州路二段135號對側
+          - generic [ref=e3363]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3364]:
+              - text: 🚲 可借
+              - generic [ref=e3365]: "6"
+            - generic "可停空位" [ref=e3366]:
+              - text: 🅿️ 可停
+              - generic [ref=e3367]: "19"
+            - link "導航 ↗" [ref=e3368]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02484,121.51973
+        - listitem [ref=e3371] [cursor=pointer]:
+          - generic [ref=e3372]:
+            - generic [ref=e3373]: 臺北
+            - generic [ref=e3374]: 仁愛新生路口(西南側)
+            - button "收藏" [ref=e3375]: ☆
+          - generic [ref=e3376]: 中正區 · 仁愛路二段110號
+          - generic [ref=e3377]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3378]:
+              - text: 🚲 可借
+              - generic [ref=e3379]: "6"
+            - generic "可停空位" [ref=e3380]:
+              - text: 🅿️ 可停
+              - generic [ref=e3381]: "12"
+            - link "導航 ↗" [ref=e3382]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03796,121.53261
+        - listitem [ref=e3385] [cursor=pointer]:
+          - generic [ref=e3386]:
+            - generic [ref=e3387]: 臺北
+            - generic [ref=e3388]: 臺大凝態館南側
+            - button "收藏" [ref=e3389]: ☆
+          - generic [ref=e3390]: 臺大公館校區 · 臺大物理系館南側
+          - generic [ref=e3391]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3392]:
+              - text: 🚲 可借
+              - generic [ref=e3393]: "6"
+            - generic "可停空位" [ref=e3394]:
+              - text: 🅿️ 可停
+              - generic [ref=e3395]: "14"
+            - link "導航 ↗" [ref=e3396]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02157,121.53633
+        - listitem [ref=e3399] [cursor=pointer]:
+          - generic [ref=e3400]:
+            - generic [ref=e3401]: 臺北
+            - generic [ref=e3402]: 捷運科技大樓站
+            - button "收藏" [ref=e3403]: ☆
+          - generic [ref=e3404]: 大安區 · 復興南路二段235號前
+          - generic [ref=e3405]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3406]:
+              - text: 🚲 可借
+              - generic [ref=e3407]: "5"
+            - generic "可停空位" [ref=e3408]:
+              - text: 🅿️ 可停
+              - generic [ref=e3409]: "22"
+            - link "導航 ↗" [ref=e3410]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02605,121.5436
+        - listitem [ref=e3413] [cursor=pointer]:
+          - generic [ref=e3414]:
+            - generic [ref=e3415]: 臺北
+            - generic [ref=e3416]: 捷運六張犁站
+            - button "收藏" [ref=e3417]: ☆
+          - generic [ref=e3418]: 大安區 · 和平東路三段410號
+          - generic [ref=e3419]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3420]:
+              - text: 🚲 可借
+              - generic [ref=e3421]: "5"
+            - generic "可停空位" [ref=e3422]:
+              - text: 🅿️ 可停
+              - generic [ref=e3423]: "59"
+            - link "導航 ↗" [ref=e3424]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02397,121.55266
+        - listitem [ref=e3427] [cursor=pointer]:
+          - generic [ref=e3428]:
+            - generic [ref=e3429]: 臺北
+            - generic [ref=e3430]: 金杭公園
+            - button "收藏" [ref=e3431]: ☆
+          - generic [ref=e3432]: 大安區 · 愛國東路21巷與杭州南路二段25巷口東南側
+          - generic [ref=e3433]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3434]:
+              - text: 🚲 可借
+              - generic [ref=e3435]: "5"
+            - generic "可停空位" [ref=e3436]:
+              - text: 🅿️ 可停
+              - generic [ref=e3437]: "15"
+            - link "導航 ↗" [ref=e3438]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03325,121.52436
+        - listitem [ref=e3441] [cursor=pointer]:
+          - generic [ref=e3442]:
+            - generic [ref=e3443]: 臺北
+            - generic [ref=e3444]: 安和路二段181巷口
+            - button "收藏" [ref=e3445]: ☆
+          - generic [ref=e3446]: 大安區 · 安和路二段185號
+          - generic [ref=e3447]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3448]:
+              - text: 🚲 可借
+              - generic [ref=e3449]: "5"
+            - generic "可停空位" [ref=e3450]:
+              - text: 🅿️ 可停
+              - generic [ref=e3451]: "24"
+            - link "導航 ↗" [ref=e3452]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02721,121.54988
+        - listitem [ref=e3455] [cursor=pointer]:
+          - generic [ref=e3456]:
+            - generic [ref=e3457]: 臺北
+            - generic [ref=e3458]: 光信公園(光復南路456巷)
+            - button "收藏" [ref=e3459]: ☆
+          - generic [ref=e3460]: 大安區 · 延吉街249號
+          - generic [ref=e3461]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3462]:
+              - text: 🚲 可借
+              - generic [ref=e3463]: "5"
+            - generic "可停空位" [ref=e3464]:
+              - text: 🅿️ 可停
+              - generic [ref=e3465]: "20"
+            - link "導航 ↗" [ref=e3466]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03513,121.5561
+        - listitem [ref=e3469] [cursor=pointer]:
+          - generic [ref=e3470]:
+            - generic [ref=e3471]: 臺北
+            - generic [ref=e3472]: 東豐公園
+            - button "收藏" [ref=e3473]: ☆
+          - generic [ref=e3474]: 大安區 · 東豐街24號(旁公園路側)
+          - generic [ref=e3475]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3476]:
+              - text: 🚲 可借
+              - generic [ref=e3477]: "5"
+            - generic "可停空位" [ref=e3478]:
+              - text: 🅿️ 可停
+              - generic [ref=e3479]: "14"
+            - link "導航 ↗" [ref=e3480]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03569,121.5451
+        - listitem [ref=e3483] [cursor=pointer]:
+          - generic [ref=e3484]:
+            - generic [ref=e3485]: 臺北
+            - generic [ref=e3486]: 瑞安街208巷
+            - button "收藏" [ref=e3487]: ☆
+          - generic [ref=e3488]: 大安區 · 瑞安街208巷39號對面
+          - generic [ref=e3489]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3490]:
+              - text: 🚲 可借
+              - generic [ref=e3491]: "5"
+            - generic "可停空位" [ref=e3492]:
+              - text: 🅿️ 可停
+              - generic [ref=e3493]: "9"
+            - link "導航 ↗" [ref=e3494]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02979,121.54053
+        - listitem [ref=e3497] [cursor=pointer]:
+          - generic [ref=e3498]:
+            - generic [ref=e3499]: 臺北
+            - generic [ref=e3500]: 敦化南路二段103巷口
+            - button "收藏" [ref=e3501]: ☆
+          - generic [ref=e3502]: 大安區 · 敦化南路二段99號前
+          - generic [ref=e3503]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3504]:
+              - text: 🚲 可借
+              - generic [ref=e3505]: "5"
+            - generic "可停空位" [ref=e3506]:
+              - text: 🅿️ 可停
+              - generic [ref=e3507]: "10"
+            - link "導航 ↗" [ref=e3508]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0287,121.54904
+        - listitem [ref=e3511] [cursor=pointer]:
+          - generic [ref=e3512]:
+            - generic [ref=e3513]: 臺北
+            - generic [ref=e3514]: 仁愛路四段48巷口
+            - button "收藏" [ref=e3515]: ☆
+          - generic [ref=e3516]: 大安區 · 仁愛路四段48巷/東豐街(北側)
+          - generic [ref=e3517]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3518]:
+              - text: 🚲 可借
+              - generic [ref=e3519]: "5"
+            - generic "可停空位" [ref=e3520]:
+              - text: 🅿️ 可停
+              - generic [ref=e3521]: "7"
+            - link "導航 ↗" [ref=e3522]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03597,121.54693
+        - listitem [ref=e3525] [cursor=pointer]:
+          - generic [ref=e3526]:
+            - generic [ref=e3527]: 臺北
+            - generic [ref=e3528]: 和平新生路口西南側
+            - button "收藏" [ref=e3529]: ☆
+          - generic [ref=e3530]: 大安區 · 新生南路三段2號前
+          - generic [ref=e3531]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3532]:
+              - text: 🚲 可借
+              - generic [ref=e3533]: "5"
+            - generic "可停空位" [ref=e3534]:
+              - text: 🅿️ 可停
+              - generic [ref=e3535]: "19"
+            - link "導航 ↗" [ref=e3536]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02604,121.534
+        - listitem [ref=e3539] [cursor=pointer]:
+          - generic [ref=e3540]:
+            - generic [ref=e3541]: 臺北
+            - generic [ref=e3542]: 古風公園
+            - button "收藏" [ref=e3543]: ☆
+          - generic [ref=e3544]: 大安區 · 龍泉街93巷7號對側
+          - generic [ref=e3545]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3546]:
+              - text: 🚲 可借
+              - generic [ref=e3547]: "5"
+            - generic "可停空位" [ref=e3548]:
+              - text: 🅿️ 可停
+              - generic [ref=e3549]: "10"
+            - link "導航 ↗" [ref=e3550]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02187,121.52912
+        - listitem [ref=e3553] [cursor=pointer]:
+          - generic [ref=e3554]:
+            - generic [ref=e3555]: 臺北
+            - generic [ref=e3556]: 敦化信義路口(東南側)
+            - button "收藏" [ref=e3557]: ☆
+          - generic [ref=e3558]: 大安區 · 敦化南路二段9號
+          - generic [ref=e3559]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3560]:
+              - text: 🚲 可借
+              - generic [ref=e3561]: "5"
+            - generic "可停空位" [ref=e3562]:
+              - text: 🅿️ 可停
+              - generic [ref=e3563]: "15"
+            - link "導航 ↗" [ref=e3564]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03276,121.54907
+        - listitem [ref=e3567] [cursor=pointer]:
+          - generic [ref=e3568]:
+            - generic [ref=e3569]: 臺北
+            - generic [ref=e3570]: 大安路二段90巷口
+            - button "收藏" [ref=e3571]: ☆
+          - generic [ref=e3572]: 大安區 · 大安路二段55號(對面)
+          - generic [ref=e3573]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3574]:
+              - text: 🚲 可借
+              - generic [ref=e3575]: "5"
+            - generic "可停空位" [ref=e3576]:
+              - text: 🅿️ 可停
+              - generic [ref=e3577]: "14"
+            - link "導航 ↗" [ref=e3578]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03117,121.54602
+        - listitem [ref=e3581] [cursor=pointer]:
+          - generic [ref=e3582]:
+            - generic [ref=e3583]: 臺北
+            - generic [ref=e3584]: 信義金山路口(西南側)
+            - button "收藏" [ref=e3585]: ☆
+          - generic [ref=e3586]: 大安區 · 信義路二段88號(前)
+          - generic [ref=e3587]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3588]:
+              - text: 🚲 可借
+              - generic [ref=e3589]: "5"
+            - generic "可停空位" [ref=e3590]:
+              - text: 🅿️ 可停
+              - generic [ref=e3591]: "6"
+            - link "導航 ↗" [ref=e3592]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03407,121.52682
+        - listitem [ref=e3595] [cursor=pointer]:
+          - generic [ref=e3596]:
+            - generic [ref=e3597]: 臺北
+            - generic [ref=e3598]: 國家音樂廳
+            - button "收藏" [ref=e3599]: ☆
+          - generic [ref=e3600]: 中正區 · 信義路一段(國家音樂廳西北側)
+          - generic [ref=e3601]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3602]:
+              - text: 🚲 可借
+              - generic [ref=e3603]: "5"
+            - generic "可停空位" [ref=e3604]:
+              - text: 🅿️ 可停
+              - generic [ref=e3605]: "17"
+            - link "導航 ↗" [ref=e3606]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03788,121.51904
+        - listitem [ref=e3609] [cursor=pointer]:
+          - generic [ref=e3610]:
+            - generic [ref=e3611]: 臺北
+            - generic [ref=e3612]: 嘉興街175巷口
+            - button "收藏" [ref=e3613]: ☆
+          - generic [ref=e3614]: 信義區 · 基隆路二段131-4號(前)
+          - generic [ref=e3615]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3616]:
+              - text: 🚲 可借
+              - generic [ref=e3617]: "5"
+            - generic "可停空位" [ref=e3618]:
+              - text: 🅿️ 可停
+              - generic [ref=e3619]: "18"
+            - link "導航 ↗" [ref=e3620]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02811,121.55671
+        - listitem [ref=e3623] [cursor=pointer]:
+          - generic [ref=e3624]:
+            - generic [ref=e3625]: 臺北
+            - generic [ref=e3626]: 國北教大實小東側門
+            - button "收藏" [ref=e3627]: ☆
+          - generic [ref=e3628]: 大安區 · 和平東路二段96巷7號
+          - generic [ref=e3629]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3630]:
+              - text: 🚲 可借
+              - generic [ref=e3631]: "4"
+            - generic "可停空位" [ref=e3632]:
+              - text: 🅿️ 可停
+              - generic [ref=e3633]: "24"
+            - link "導航 ↗" [ref=e3634]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02429,121.54124
+        - listitem [ref=e3637] [cursor=pointer]:
+          - generic [ref=e3638]:
+            - generic [ref=e3639]: 臺北
+            - generic [ref=e3640]: 復興南路二段280號前
+            - button "收藏" [ref=e3641]: ☆
+          - generic [ref=e3642]: 大安區 · 復興南路二段280號
+          - generic [ref=e3643]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3644]:
+              - text: 🚲 可借
+              - generic [ref=e3645]: "4"
+            - generic "可停空位" [ref=e3646]:
+              - text: 🅿️ 可停
+              - generic [ref=e3647]: "23"
+            - link "導航 ↗" [ref=e3648]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02429,121.54328
+        - listitem [ref=e3651] [cursor=pointer]:
+          - generic [ref=e3652]:
+            - generic [ref=e3653]: 臺北
+            - generic [ref=e3654]: 新生南路三段52號前
+            - button "收藏" [ref=e3655]: ☆
+          - generic [ref=e3656]: 大安區 · 新生南路三段52號
+          - generic [ref=e3657]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3658]:
+              - text: 🚲 可借
+              - generic [ref=e3659]: "4"
+            - generic "可停空位" [ref=e3660]:
+              - text: 🅿️ 可停
+              - generic [ref=e3661]: "13"
+            - link "導航 ↗" [ref=e3662]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02112,121.53407
+        - listitem [ref=e3665] [cursor=pointer]:
+          - generic [ref=e3666]:
+            - generic [ref=e3667]: 臺北
+            - generic [ref=e3668]: 大安區健康服務中心
+            - button "收藏" [ref=e3669]: ☆
+          - generic [ref=e3670]: 大安區 · 辛亥路三段15號
+          - generic [ref=e3671]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3672]:
+              - text: 🚲 可借
+              - generic [ref=e3673]: "4"
+            - generic "可停空位" [ref=e3674]:
+              - text: 🅿️ 可停
+              - generic [ref=e3675]: "19"
+            - link "導航 ↗" [ref=e3676]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.021469,121.544069
+        - listitem [ref=e3679] [cursor=pointer]:
+          - generic [ref=e3680]:
+            - generic [ref=e3681]: 臺北
+            - generic [ref=e3682]: 金甌女中
+            - button "收藏" [ref=e3683]: ☆
+          - generic [ref=e3684]: 大安區 · 信義路二段與杭州南路二段東南側
+          - generic [ref=e3685]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3686]:
+              - text: 🚲 可借
+              - generic [ref=e3687]: "4"
+            - generic "可停空位" [ref=e3688]:
+              - text: 🅿️ 可停
+              - generic [ref=e3689]: "10"
+            - link "導航 ↗" [ref=e3690]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03519,121.5245
+        - listitem [ref=e3693] [cursor=pointer]:
+          - generic [ref=e3694]:
+            - generic [ref=e3695]: 臺北
+            - generic [ref=e3696]: 樂利路21巷口
+            - button "收藏" [ref=e3697]: ☆
+          - generic [ref=e3698]: 大安區 · 樂利路25號
+          - generic [ref=e3699]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3700]:
+              - text: 🚲 可借
+              - generic [ref=e3701]: "4"
+            - generic "可停空位" [ref=e3702]:
+              - text: 🅿️ 可停
+              - generic [ref=e3703]: "12"
+            - link "導航 ↗" [ref=e3704]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0277,121.55132
+        - listitem [ref=e3707] [cursor=pointer]:
+          - generic [ref=e3708]:
+            - generic [ref=e3709]: 臺北
+            - generic [ref=e3710]: 新生南路二段54巷口
+            - button "收藏" [ref=e3711]: ☆
+          - generic [ref=e3712]: 大安區 · 新生南路二段50號
+          - generic [ref=e3713]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3714]:
+              - text: 🚲 可借
+              - generic [ref=e3715]: "4"
+            - generic "可停空位" [ref=e3716]:
+              - text: 🅿️ 可停
+              - generic [ref=e3717]: "22"
+            - link "導航 ↗" [ref=e3718]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02878,121.53412
+        - listitem [ref=e3721] [cursor=pointer]:
+          - generic [ref=e3722]:
+            - generic [ref=e3723]: 臺北
+            - generic [ref=e3724]: 捷運臺電大樓站(1號出口)
+            - button "收藏" [ref=e3725]: ☆
+          - generic [ref=e3726]: 中正區 · 辛亥路一段/羅斯福路三段南側
+          - generic [ref=e3727]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3728]:
+              - text: 🚲 可借
+              - generic [ref=e3729]: "4"
+            - generic "可停空位" [ref=e3730]:
+              - text: 🅿️ 可停
+              - generic [ref=e3731]: "30"
+            - link "導航 ↗" [ref=e3732]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0197,121.529
+        - listitem [ref=e3735] [cursor=pointer]:
+          - generic [ref=e3736]:
+            - generic [ref=e3737]: 臺北
+            - generic [ref=e3738]: 捷運臺電大樓站(4號出口)
+            - button "收藏" [ref=e3739]: ☆
+          - generic [ref=e3740]: 中正區 · 師大路/羅斯福路三段西側
+          - generic [ref=e3741]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3742]:
+              - text: 🚲 可借
+              - generic [ref=e3743]: "4"
+            - generic "可停空位" [ref=e3744]:
+              - text: 🅿️ 可停
+              - generic [ref=e3745]: "9"
+            - link "導航 ↗" [ref=e3746]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02102,121.52751
+        - listitem [ref=e3749] [cursor=pointer]:
+          - generic [ref=e3750]:
+            - generic [ref=e3751]: 臺北
+            - generic [ref=e3752]: 仁愛紹興街口(南側)
+            - button "收藏" [ref=e3753]: ☆
+          - generic [ref=e3754]: 中正區 · 仁愛路一段/紹興南街口(南側)
+          - generic [ref=e3755]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3756]:
+              - text: 🚲 可借
+              - generic [ref=e3757]: "4"
+            - generic "可停空位" [ref=e3758]:
+              - text: 🅿️ 可停
+              - generic [ref=e3759]: "16"
+            - link "導航 ↗" [ref=e3760]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03837,121.52345
+        - listitem [ref=e3763] [cursor=pointer]:
+          - generic [ref=e3764]:
+            - generic [ref=e3765]: 臺北
+            - generic [ref=e3766]: 仁愛金山路口(東南側)
+            - button "收藏" [ref=e3767]: ☆
+          - generic [ref=e3768]: 中正區 · 仁愛路二段48-4號前
+          - generic [ref=e3769]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3770]:
+              - text: 🚲 可借
+              - generic [ref=e3771]: "4"
+            - generic "可停空位" [ref=e3772]:
+              - text: 🅿️ 可停
+              - generic [ref=e3773]: "8"
+            - link "導航 ↗" [ref=e3774]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03811,121.52855
+        - listitem [ref=e3777] [cursor=pointer]:
+          - generic [ref=e3778]:
+            - generic [ref=e3779]: 臺北
+            - generic [ref=e3780]: 臺大農業陳列館北側
+            - button "收藏" [ref=e3781]: ☆
+          - generic [ref=e3782]: 臺大公館校區 · 農業陳列館北側
+          - generic [ref=e3783]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3784]:
+              - text: 🚲 可借
+              - generic [ref=e3785]: "4"
+            - generic "可停空位" [ref=e3786]:
+              - text: 🅿️ 可停
+              - generic [ref=e3787]: "41"
+            - link "導航 ↗" [ref=e3788]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01839,121.53404
+        - listitem [ref=e3791] [cursor=pointer]:
+          - generic [ref=e3792]:
+            - generic [ref=e3793]: 臺北
+            - generic [ref=e3794]: 復興南路二段273號前
+            - button "收藏" [ref=e3795]: ☆
+          - generic [ref=e3796]: 大安區 · 復興南路二段273號西側
+          - generic [ref=e3797]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3798]:
+              - text: 🚲 可借
+              - generic [ref=e3799]: "3"
+            - generic "可停空位" [ref=e3800]:
+              - text: 🅿️ 可停
+              - generic [ref=e3801]: "18"
+            - link "導航 ↗" [ref=e3802]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02565,121.54357
+        - listitem [ref=e3805] [cursor=pointer]:
+          - generic [ref=e3806]:
+            - generic [ref=e3807]: 臺北
+            - generic [ref=e3808]: 嘉興公園
+            - button "收藏" [ref=e3809]: ☆
+          - generic [ref=e3810]: 大安區 · 樂業街101巷3號西北側
+          - generic [ref=e3811]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3812]:
+              - text: 🚲 可借
+              - generic [ref=e3813]: "3"
+            - generic "可停空位" [ref=e3814]:
+              - text: 🅿️ 可停
+              - generic [ref=e3815]: "41"
+            - link "導航 ↗" [ref=e3816]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.021,121.55211
+        - listitem [ref=e3819] [cursor=pointer]:
+          - generic [ref=e3820]:
+            - generic [ref=e3821]: 臺北
+            - generic [ref=e3822]: 法治公園
+            - button "收藏" [ref=e3823]: ☆
+          - generic [ref=e3824]: 大安區 · 通化街189號西側
+          - generic [ref=e3825]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3826]:
+              - text: 🚲 可借
+              - generic [ref=e3827]: "3"
+            - generic "可停空位" [ref=e3828]:
+              - text: 🅿️ 可停
+              - generic [ref=e3829]: "38"
+            - link "導航 ↗" [ref=e3830]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02694,121.55325
+        - listitem [ref=e3833] [cursor=pointer]:
+          - generic [ref=e3834]:
+            - generic [ref=e3835]: 臺北
+            - generic [ref=e3836]: 和平金山路口
+            - button "收藏" [ref=e3837]: ☆
+          - generic [ref=e3838]: 大安區 · 和平東路一段/金山南路二段西南側
+          - generic [ref=e3839]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3840]:
+              - text: 🚲 可借
+              - generic [ref=e3841]: "3"
+            - generic "可停空位" [ref=e3842]:
+              - text: 🅿️ 可停
+              - generic [ref=e3843]: "55"
+            - link "導航 ↗" [ref=e3844]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02669,121.52529
+        - listitem [ref=e3847] [cursor=pointer]:
+          - generic [ref=e3848]:
+            - generic [ref=e3849]: 臺北
+            - generic [ref=e3850]: 全安公園
+            - button "收藏" [ref=e3851]: ☆
+          - generic [ref=e3852]: 大安區 · 安和路二段227巷16號對側
+          - generic [ref=e3853]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3854]:
+              - text: 🚲 可借
+              - generic [ref=e3855]: "3"
+            - generic "可停空位" [ref=e3856]:
+              - text: 🅿️ 可停
+              - generic [ref=e3857]: "13"
+            - link "導航 ↗" [ref=e3858]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02535,121.55101
+        - listitem [ref=e3861] [cursor=pointer]:
+          - generic [ref=e3862]:
+            - generic [ref=e3863]: 臺北
+            - generic [ref=e3864]: 仁愛敦南圓環(東南側)
+            - button "收藏" [ref=e3865]: ☆
+          - generic [ref=e3866]: 大安區 · 仁愛路四段110號前
+          - generic [ref=e3867]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3868]:
+              - text: 🚲 可借
+              - generic [ref=e3869]: "3"
+            - generic "可停空位" [ref=e3870]:
+              - text: 🅿️ 可停
+              - generic [ref=e3871]: "13"
+            - link "導航 ↗" [ref=e3872]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03715,121.54936
+        - listitem [ref=e3875] [cursor=pointer]:
+          - generic [ref=e3876]:
+            - generic [ref=e3877]: 臺北
+            - generic [ref=e3878]: 通安區民活動中心
+            - button "收藏" [ref=e3879]: ☆
+          - generic [ref=e3880]: 大安區 · 通安街129號對面
+          - generic [ref=e3881]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3882]:
+              - text: 🚲 可借
+              - generic [ref=e3883]: "3"
+            - generic "可停空位" [ref=e3884]:
+              - text: 🅿️ 可停
+              - generic [ref=e3885]: "20"
+            - link "導航 ↗" [ref=e3886]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02942,121.55294
+        - listitem [ref=e3889] [cursor=pointer]:
+          - generic [ref=e3890]:
+            - generic [ref=e3891]: 臺北
+            - generic [ref=e3892]: 捷運古亭站(3號出口)
+            - button "收藏" [ref=e3893]: ☆
+          - generic [ref=e3894]: 大安區 · 羅斯福路二段81-1號前
+          - generic [ref=e3895]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3896]:
+              - text: 🚲 可借
+              - generic [ref=e3897]: "3"
+            - generic "可停空位" [ref=e3898]:
+              - text: 🅿️ 可停
+              - generic [ref=e3899]: "12"
+            - link "導航 ↗" [ref=e3900]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02572,121.52359
+        - listitem [ref=e3903] [cursor=pointer]:
+          - generic [ref=e3904]:
+            - generic [ref=e3905]: 臺北
+            - generic [ref=e3906]: 師大附中運動中心
+            - button "收藏" [ref=e3907]: ☆
+          - generic [ref=e3908]: 大安區 · 信義路三段111巷143號(旁)
+          - generic [ref=e3909]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3910]:
+              - text: 🚲 可借
+              - generic [ref=e3911]: "3"
+            - generic "可停空位" [ref=e3912]:
+              - text: 🅿️ 可停
+              - generic [ref=e3913]: "29"
+            - link "導航 ↗" [ref=e3914]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03626,121.53997
+        - listitem [ref=e3917] [cursor=pointer]:
+          - generic [ref=e3918]:
+            - generic [ref=e3919]: 臺北
+            - generic [ref=e3920]: 龍圖公園
+            - button "收藏" [ref=e3921]: ☆
+          - generic [ref=e3922]: 大安區 · 復興南路二段78巷42弄5號對面
+          - generic [ref=e3923]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3924]:
+              - text: 🚲 可借
+              - generic [ref=e3925]: "3"
+            - generic "可停空位" [ref=e3926]:
+              - text: 🅿️ 可停
+              - generic [ref=e3927]: "17"
+            - link "導航 ↗" [ref=e3928]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0305,121.54184
+        - listitem [ref=e3931] [cursor=pointer]:
+          - generic [ref=e3932]:
+            - generic [ref=e3933]: 臺北
+            - generic [ref=e3934]: 羅斯福路三段283巷
+            - button "收藏" [ref=e3935]: ☆
+          - generic [ref=e3936]: 大安區 · 羅斯福路三段269巷51弄9號(旁)
+          - generic [ref=e3937]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3938]:
+              - text: 🚲 可借
+              - generic [ref=e3939]: "3"
+            - generic "可停空位" [ref=e3940]:
+              - text: 🅿️ 可停
+              - generic [ref=e3941]: "15"
+            - link "導航 ↗" [ref=e3942]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02017,121.53178
+        - listitem [ref=e3945] [cursor=pointer]:
+          - generic [ref=e3946]:
+            - generic [ref=e3947]: 臺北
+            - generic [ref=e3948]: 金山南路二段156巷口
+            - button "收藏" [ref=e3949]: ☆
+          - generic [ref=e3950]: 大安區 · 金山南路二段152號前
+          - generic [ref=e3951]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3952]:
+              - text: 🚲 可借
+              - generic [ref=e3953]: "3"
+            - generic "可停空位" [ref=e3954]:
+              - text: 🅿️ 可停
+              - generic [ref=e3955]: "13"
+            - link "導航 ↗" [ref=e3956]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02877,121.52618
+        - listitem [ref=e3959] [cursor=pointer]:
+          - generic [ref=e3960]:
+            - generic [ref=e3961]: 臺北
+            - generic [ref=e3962]: 林森仁愛路口
+            - button "收藏" [ref=e3963]: ☆
+          - generic [ref=e3964]: 中正區 · 林森南路與仁愛路一段西北側
+          - generic [ref=e3965]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3966]:
+              - text: 🚲 可借
+              - generic [ref=e3967]: "3"
+            - generic "可停空位" [ref=e3968]:
+              - text: 🅿️ 可停
+              - generic [ref=e3969]: "10"
+            - link "導航 ↗" [ref=e3970]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03915,121.52163
+        - listitem [ref=e3973] [cursor=pointer]:
+          - generic [ref=e3974]:
+            - generic [ref=e3975]: 臺北
+            - generic [ref=e3976]: 王貫英先生紀念圖書館
+            - button "收藏" [ref=e3977]: ☆
+          - generic [ref=e3978]: 中正區 · 汀州路二段265號
+          - generic [ref=e3979]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3980]:
+              - text: 🚲 可借
+              - generic [ref=e3981]: "3"
+            - generic "可停空位" [ref=e3982]:
+              - text: 🅿️ 可停
+              - generic [ref=e3983]: "11"
+            - link "導航 ↗" [ref=e3984]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02266,121.52362
+        - listitem [ref=e3987] [cursor=pointer]:
+          - generic [ref=e3988]:
+            - generic [ref=e3989]: 臺北
+            - generic [ref=e3990]: 螢橋國中
+            - button "收藏" [ref=e3991]: ☆
+          - generic [ref=e3992]: 中正區 · 汀州路三段4號(旁)
+          - generic [ref=e3993]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e3994]:
+              - text: 🚲 可借
+              - generic [ref=e3995]: "3"
+            - generic "可停空位" [ref=e3996]:
+              - text: 🅿️ 可停
+              - generic [ref=e3997]: "15"
+            - link "導航 ↗" [ref=e3998]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01933,121.52582
+        - listitem [ref=e4001] [cursor=pointer]:
+          - generic [ref=e4002]:
+            - generic [ref=e4003]: 臺北
+            - generic [ref=e4004]: 和平東路三段291號
+            - button "收藏" [ref=e4005]: ☆
+          - generic [ref=e4006]: 信義區 · 和平東路三段291號前
+          - generic [ref=e4007]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4008]:
+              - text: 🚲 可借
+              - generic [ref=e4009]: "3"
+            - generic "可停空位" [ref=e4010]:
+              - text: 🅿️ 可停
+              - generic [ref=e4011]: "17"
+            - link "導航 ↗" [ref=e4012]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02186,121.55532
+        - listitem [ref=e4015] [cursor=pointer]:
+          - generic [ref=e4016]:
+            - generic [ref=e4017]: 臺北
+            - generic [ref=e4018]: 臺大舊體育館西側
+            - button "收藏" [ref=e4019]: ☆
+          - generic [ref=e4020]: 臺大公館校區 · 臺大田徑場東側
+          - generic [ref=e4021]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4022]:
+              - text: 🚲 可借
+              - generic [ref=e4023]: "3"
+            - generic "可停空位" [ref=e4024]:
+              - text: 🅿️ 可停
+              - generic [ref=e4025]: "30"
+            - link "導航 ↗" [ref=e4026]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0198,121.53583
+        - listitem [ref=e4029] [cursor=pointer]:
+          - generic [ref=e4030]:
+            - generic [ref=e4031]: 臺北
+            - generic [ref=e4032]: 辛亥路一段30號前
+            - button "收藏" [ref=e4033]: ☆
+          - generic [ref=e4034]: 大安區 · 辛亥路一段30號
+          - generic [ref=e4035]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4036]:
+              - text: 🚲 可借
+              - generic [ref=e4037]: "2"
+            - generic "可停空位" [ref=e4038]:
+              - text: 🅿️ 可停
+              - generic [ref=e4039]: "6"
+            - link "導航 ↗" [ref=e4040]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01986,121.52982
+        - listitem [ref=e4043] [cursor=pointer]:
+          - generic [ref=e4044]:
+            - generic [ref=e4045]: 臺北
+            - generic [ref=e4046]: 溫州公園
+            - button "收藏" [ref=e4047]: ☆
+          - generic [ref=e4048]: 大安區 · 羅斯福路三段283巷11號
+          - generic [ref=e4049]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4050]:
+              - text: 🚲 可借
+              - generic [ref=e4051]: "2"
+            - generic "可停空位" [ref=e4052]:
+              - text: 🅿️ 可停
+              - generic [ref=e4053]: "9"
+            - link "導航 ↗" [ref=e4054]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01895,121.53156
+        - listitem [ref=e4057] [cursor=pointer]:
+          - generic [ref=e4058]:
+            - generic [ref=e4059]: 臺北
+            - generic [ref=e4060]: 臺大國青大樓宿舍前
+            - button "收藏" [ref=e4061]: ☆
+          - generic [ref=e4062]: 大安區 · 辛亥路三段30號西北側
+          - generic [ref=e4063]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4064]:
+              - text: 🚲 可借
+              - generic [ref=e4065]: "2"
+            - generic "可停空位" [ref=e4066]:
+              - text: 🅿️ 可停
+              - generic [ref=e4067]: "18"
+            - link "導航 ↗" [ref=e4068]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02076,121.54432
+        - listitem [ref=e4071] [cursor=pointer]:
+          - generic [ref=e4072]:
+            - generic [ref=e4073]: 臺北
+            - generic [ref=e4074]: 喬治工商
+            - button "收藏" [ref=e4075]: ☆
+          - generic [ref=e4076]: 大安區 · 基隆路二段166號
+          - generic [ref=e4077]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4078]:
+              - text: 🚲 可借
+              - generic [ref=e4079]: "2"
+            - generic "可停空位" [ref=e4080]:
+              - text: 🅿️ 可停
+              - generic [ref=e4081]: "20"
+            - link "導航 ↗" [ref=e4082]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02705,121.55551
+        - listitem [ref=e4085] [cursor=pointer]:
+          - generic [ref=e4086]:
+            - generic [ref=e4087]: 臺北
+            - generic [ref=e4088]: 捷運臺電大樓站(2號出口)
+            - button "收藏" [ref=e4089]: ☆
+          - generic [ref=e4090]: 大安區 · 辛亥路一段/羅斯福路三段口北側(辛亥路側)
+          - generic [ref=e4091]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4092]:
+              - text: 🚲 可借
+              - generic [ref=e4093]: "2"
+            - generic "可停空位" [ref=e4094]:
+              - text: 🅿️ 可停
+              - generic [ref=e4095]: "15"
+            - link "導航 ↗" [ref=e4096]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02021,121.52942
+        - listitem [ref=e4099] [cursor=pointer]:
+          - generic [ref=e4100]:
+            - generic [ref=e4101]: 臺北
+            - generic [ref=e4102]: 捷運信義安和站(2號出口)
+            - button "收藏" [ref=e4103]: ☆
+          - generic [ref=e4104]: 大安區 · 信義路四段188號前
+          - generic [ref=e4105]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4106]:
+              - text: 🚲 可借
+              - generic [ref=e4107]: "2"
+            - generic "可停空位" [ref=e4108]:
+              - text: 🅿️ 可停
+              - generic [ref=e4109]: "22"
+            - link "導航 ↗" [ref=e4110]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03304,121.55171
+        - listitem [ref=e4113] [cursor=pointer]:
+          - generic [ref=e4114]:
+            - generic [ref=e4115]: 臺北
+            - generic [ref=e4116]: 大安高工
+            - button "收藏" [ref=e4117]: ☆
+          - generic [ref=e4118]: 大安區 · 復興南路二段52號(前)
+          - generic [ref=e4119]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4120]:
+              - text: 🚲 可借
+              - generic [ref=e4121]: "2"
+            - generic "可停空位" [ref=e4122]:
+              - text: 🅿️ 可停
+              - generic [ref=e4123]: "21"
+            - link "導航 ↗" [ref=e4124]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03126,121.54339
+        - listitem [ref=e4127] [cursor=pointer]:
+          - generic [ref=e4128]:
+            - generic [ref=e4129]: 臺北
+            - generic [ref=e4130]: 捷運大安森林公園站(5號出口)
+            - button "收藏" [ref=e4131]: ☆
+          - generic [ref=e4132]: 大安區 · 捷運大安森林公園站(5號出口)東側
+          - generic [ref=e4133]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4134]:
+              - text: 🚲 可借
+              - generic [ref=e4135]: "2"
+            - generic "可停空位" [ref=e4136]:
+              - text: 🅿️ 可停
+              - generic [ref=e4137]: "12"
+            - link "導航 ↗" [ref=e4138]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03336,121.5364
+        - listitem [ref=e4141] [cursor=pointer]:
+          - generic [ref=e4142]:
+            - generic [ref=e4143]: 臺北
+            - generic [ref=e4144]: 信義路三段134巷口
+            - button "收藏" [ref=e4145]: ☆
+          - generic [ref=e4146]: 大安區 · 信義路三段/信義路三段134巷口
+          - generic [ref=e4147]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4148]:
+              - text: 🚲 可借
+              - generic [ref=e4149]: "2"
+            - generic "可停空位" [ref=e4150]:
+              - text: 🅿️ 可停
+              - generic [ref=e4151]: "26"
+            - link "導航 ↗" [ref=e4152]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03333,121.53968
+        - listitem [ref=e4155] [cursor=pointer]:
+          - generic [ref=e4156]:
+            - generic [ref=e4157]: 臺北
+            - generic [ref=e4158]: 捷運大安站(3號出口)
+            - button "收藏" [ref=e4159]: ☆
+          - generic [ref=e4160]: 大安區 · 信義路三段184號前
+          - generic [ref=e4161]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4162]:
+              - text: 🚲 可借
+              - generic [ref=e4163]: "2"
+            - generic "可停空位" [ref=e4164]:
+              - text: 🅿️ 可停
+              - generic [ref=e4165]: "44"
+            - link "導航 ↗" [ref=e4166]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03328,121.5425
+        - listitem [ref=e4169] [cursor=pointer]:
+          - generic [ref=e4170]:
+            - generic [ref=e4171]: 臺北
+            - generic [ref=e4172]: 安和路二段69巷口
+            - button "收藏" [ref=e4173]: ☆
+          - generic [ref=e4174]: 大安區 · 安和路二段/安和路二段69巷
+          - generic [ref=e4175]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4176]:
+              - text: 🚲 可借
+              - generic [ref=e4177]: "2"
+            - generic "可停空位" [ref=e4178]:
+              - text: 🅿️ 可停
+              - generic [ref=e4179]: "18"
+            - link "導航 ↗" [ref=e4180]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03056,121.55252
+        - listitem [ref=e4183] [cursor=pointer]:
+          - generic [ref=e4184]:
+            - generic [ref=e4185]: 臺北
+            - generic [ref=e4186]: 仁愛復興路口
+            - button "收藏" [ref=e4187]: ☆
+          - generic [ref=e4188]: 大安區 · 仁愛路四段1號前
+          - generic [ref=e4189]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4190]:
+              - text: 🚲 可借
+              - generic [ref=e4191]: "2"
+            - generic "可停空位" [ref=e4192]:
+              - text: 🅿️ 可停
+              - generic [ref=e4193]: "15"
+            - link "導航 ↗" [ref=e4194]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03817,121.544
+        - listitem [ref=e4197] [cursor=pointer]:
+          - generic [ref=e4198]:
+            - generic [ref=e4199]: 臺北
+            - generic [ref=e4200]: 國立臺北教育大學創意館
+            - button "收藏" [ref=e4201]: ☆
+          - generic [ref=e4202]: 大安區 · 復興南路二段337巷6弄14號對側
+          - generic [ref=e4203]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4204]:
+              - text: 🚲 可借
+              - generic [ref=e4205]: "2"
+            - generic "可停空位" [ref=e4206]:
+              - text: 🅿️ 可停
+              - generic [ref=e4207]: "30"
+            - link "導航 ↗" [ref=e4208]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02305,121.54394
+        - listitem [ref=e4211] [cursor=pointer]:
+          - generic [ref=e4212]:
+            - generic [ref=e4213]: 臺北
+            - generic [ref=e4214]: 和平高中(辛亥基隆路口)
+            - button "收藏" [ref=e4215]: ☆
+          - generic [ref=e4216]: 大安區 · 辛亥路三段188號北側
+          - generic [ref=e4217]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4218]:
+              - text: 🚲 可借
+              - generic [ref=e4219]: "2"
+            - generic "可停空位" [ref=e4220]:
+              - text: 🅿️ 可停
+              - generic [ref=e4221]: "51"
+            - link "導航 ↗" [ref=e4222]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01917,121.54708
+        - listitem [ref=e4225] [cursor=pointer]:
+          - generic [ref=e4226]:
+            - generic [ref=e4227]: 臺北
+            - generic [ref=e4228]: 紀州庵
+            - button "收藏" [ref=e4229]: ☆
+          - generic [ref=e4230]: 中正區 · 水源路/同安街口(東側)
+          - generic [ref=e4231]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4232]:
+              - text: 🚲 可借
+              - generic [ref=e4233]: "2"
+            - generic "可停空位" [ref=e4234]:
+              - text: 🅿️ 可停
+              - generic [ref=e4235]: "43"
+            - link "導航 ↗" [ref=e4236]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02092,121.52049
+        - listitem [ref=e4239] [cursor=pointer]:
+          - generic [ref=e4240]:
+            - generic [ref=e4241]: 臺北
+            - generic [ref=e4242]: 捷運臺電大樓站(5號出口)
+            - button "收藏" [ref=e4243]: ☆
+          - generic [ref=e4244]: 中正區 · 羅斯福路三段126號前
+          - generic [ref=e4245]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4246]:
+              - text: 🚲 可借
+              - generic [ref=e4247]: "2"
+            - generic "可停空位" [ref=e4248]:
+              - text: 🅿️ 可停
+              - generic [ref=e4249]: "19"
+            - link "導航 ↗" [ref=e4250]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02075,121.52771
+        - listitem [ref=e4253] [cursor=pointer]:
+          - generic [ref=e4254]:
+            - generic [ref=e4255]: 臺北
+            - generic [ref=e4256]: 杭州南路一段101巷口
+            - button "收藏" [ref=e4257]: ☆
+          - generic [ref=e4258]: 中正區 · 金山南路一段72號前
+          - generic [ref=e4259]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4260]:
+              - text: 🚲 可借
+              - generic [ref=e4261]: "2"
+            - generic "可停空位" [ref=e4262]:
+              - text: 🅿️ 可停
+              - generic [ref=e4263]: "12"
+            - link "導航 ↗" [ref=e4264]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03746,121.52799
+        - listitem [ref=e4267] [cursor=pointer]:
+          - generic [ref=e4268]:
+            - generic [ref=e4269]: 臺北
+            - generic [ref=e4270]: 和平復興路口西北側
+            - button "收藏" [ref=e4271]: ☆
+          - generic [ref=e4272]: 大安區 · 復興南路二段236號
+          - generic [ref=e4273]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4274]:
+              - text: 🚲 可借
+              - generic [ref=e4275]: "1"
+            - generic "可停空位" [ref=e4276]:
+              - text: 🅿️ 可停
+              - generic [ref=e4277]: "8"
+            - link "導航 ↗" [ref=e4278]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02543,121.54332
+        - listitem [ref=e4281] [cursor=pointer]:
+          - generic [ref=e4282]:
+            - generic [ref=e4283]: 臺北
+            - generic [ref=e4284]: 羅斯福路三段245號前
+            - button "收藏" [ref=e4285]: ☆
+          - generic [ref=e4286]: 大安區 · 羅斯福路三段245號
+          - generic [ref=e4287]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4288]:
+              - text: 🚲 可借
+              - generic [ref=e4289]: "1"
+            - generic "可停空位" [ref=e4290]:
+              - text: 🅿️ 可停
+              - generic [ref=e4291]: "7"
+            - link "導航 ↗" [ref=e4292]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01927,121.52989
+        - listitem [ref=e4295] [cursor=pointer]:
+          - generic [ref=e4296]:
+            - generic [ref=e4297]: 臺北
+            - generic [ref=e4298]: 捷運大安站(2號出口)
+            - button "收藏" [ref=e4299]: ☆
+          - generic [ref=e4300]: 大安區 · 信義路3段143號(前)
+          - generic [ref=e4301]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4302]:
+              - text: 🚲 可借
+              - generic [ref=e4303]: "1"
+            - generic "可停空位" [ref=e4304]:
+              - text: 🅿️ 可停
+              - generic [ref=e4305]: "59"
+            - link "導航 ↗" [ref=e4306]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03358,121.54141
+        - listitem [ref=e4309] [cursor=pointer]:
+          - generic [ref=e4310]:
+            - generic [ref=e4311]: 臺北
+            - generic [ref=e4312]: 德安公園(四維路66巷)
+            - button "收藏" [ref=e4313]: ☆
+          - generic [ref=e4314]: 大安區 · 四維路66巷6號北側
+          - generic [ref=e4315]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4316]:
+              - text: 🚲 可借
+              - generic [ref=e4317]: "1"
+            - generic "可停空位" [ref=e4318]:
+              - text: 🅿️ 可停
+              - generic [ref=e4319]: "21"
+            - link "導航 ↗" [ref=e4320]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03473,121.54767
+        - listitem [ref=e4323] [cursor=pointer]:
+          - generic [ref=e4324]:
+            - generic [ref=e4325]: 臺北
+            - generic [ref=e4326]: 臥龍街195巷口
+            - button "收藏" [ref=e4327]: ☆
+          - generic [ref=e4328]: 大安區 · 臥龍街/臥龍街195巷(南側)
+          - generic [ref=e4329]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4330]:
+              - text: 🚲 可借
+              - generic [ref=e4331]: "1"
+            - generic "可停空位" [ref=e4332]:
+              - text: 🅿️ 可停
+              - generic [ref=e4333]: "13"
+            - link "導航 ↗" [ref=e4334]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01783,121.55224
+        - listitem [ref=e4337] [cursor=pointer]:
+          - generic [ref=e4338]:
+            - generic [ref=e4339]: 臺北
+            - generic [ref=e4340]: 臥龍基隆路口
+            - button "收藏" [ref=e4341]: ☆
+          - generic [ref=e4342]: 大安區 · 臥龍街與基隆路二段口東北側
+          - generic [ref=e4343]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4344]:
+              - text: 🚲 可借
+              - generic [ref=e4345]: "1"
+            - generic "可停空位" [ref=e4346]:
+              - text: 🅿️ 可停
+              - generic [ref=e4347]: "24"
+            - link "導航 ↗" [ref=e4348]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02039,121.54853
+        - listitem [ref=e4351] [cursor=pointer]:
+          - generic [ref=e4352]:
+            - generic [ref=e4353]: 臺北
+            - generic [ref=e4354]: 臨江公園
+            - button "收藏" [ref=e4355]: ☆
+          - generic [ref=e4356]: 大安區 · 通化街143巷33號對側
+          - generic [ref=e4357]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4358]:
+              - text: 🚲 可借
+              - generic [ref=e4359]: "1"
+            - generic "可停空位" [ref=e4360]:
+              - text: 🅿️ 可停
+              - generic [ref=e4361]: "22"
+            - link "導航 ↗" [ref=e4362]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02832,121.55592
+        - listitem [ref=e4365] [cursor=pointer]:
+          - generic [ref=e4366]:
+            - generic [ref=e4367]: 臺北
+            - generic [ref=e4368]: 大安國小
+            - button "收藏" [ref=e4369]: ☆
+          - generic [ref=e4370]: 大安區 · 臥龍街131巷11弄與樂業街108巷口
+          - generic [ref=e4371]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4372]:
+              - text: 🚲 可借
+              - generic [ref=e4373]: "1"
+            - generic "可停空位" [ref=e4374]:
+              - text: 🅿️ 可停
+              - generic [ref=e4375]: "23"
+            - link "導航 ↗" [ref=e4376]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02014,121.55084
+        - listitem [ref=e4379] [cursor=pointer]:
+          - generic [ref=e4380]:
+            - generic [ref=e4381]: 臺北
+            - generic [ref=e4382]: 和平東路三段308巷口
+            - button "收藏" [ref=e4383]: ☆
+          - generic [ref=e4384]: 大安區 · 樂業街173號對側
+          - generic [ref=e4385]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4386]:
+              - text: 🚲 可借
+              - generic [ref=e4387]: "1"
+            - generic "可停空位" [ref=e4388]:
+              - text: 🅿️ 可停
+              - generic [ref=e4389]: "13"
+            - link "導航 ↗" [ref=e4390]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01883,121.5544
+        - listitem [ref=e4393] [cursor=pointer]:
+          - generic [ref=e4394]:
+            - generic [ref=e4395]: 臺北
+            - generic [ref=e4396]: 和平溫州街口
+            - button "收藏" [ref=e4397]: ☆
+          - generic [ref=e4398]: 大安區 · 和平東路一段187號(前)
+          - generic [ref=e4399]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4400]:
+              - text: 🚲 可借
+              - generic [ref=e4401]: "1"
+            - generic "可停空位" [ref=e4402]:
+              - text: 🅿️ 可停
+              - generic [ref=e4403]: "22"
+            - link "導航 ↗" [ref=e4404]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02634,121.53342
+        - listitem [ref=e4407] [cursor=pointer]:
+          - generic [ref=e4408]:
+            - generic [ref=e4409]: 臺北
+            - generic [ref=e4410]: 臺靜農人文會館
+            - button "收藏" [ref=e4411]: ☆
+          - generic [ref=e4412]: 大安區 · 溫州街25號
+          - generic [ref=e4413]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4414]:
+              - text: 🚲 可借
+              - generic [ref=e4415]: "1"
+            - generic "可停空位" [ref=e4416]:
+              - text: 🅿️ 可停
+              - generic [ref=e4417]: "11"
+            - link "導航 ↗" [ref=e4418]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02462,121.53347
+        - listitem [ref=e4421] [cursor=pointer]:
+          - generic [ref=e4422]:
+            - generic [ref=e4423]: 臺北
+            - generic [ref=e4424]: 捷運科技大樓站(2號出口)
+            - button "收藏" [ref=e4425]: ☆
+          - generic [ref=e4426]: 大安區 · 復興南路二段224號
+          - generic [ref=e4427]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4428]:
+              - text: 🚲 可借
+              - generic [ref=e4429]: "1"
+            - generic "可停空位" [ref=e4430]:
+              - text: 🅿️ 可停
+              - generic [ref=e4431]: "70"
+            - link "導航 ↗" [ref=e4432]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02592,121.54328
+        - listitem [ref=e4435] [cursor=pointer]:
+          - generic [ref=e4436]:
+            - generic [ref=e4437]: 臺北
+            - generic [ref=e4438]: 河堤國小
+            - button "收藏" [ref=e4439]: ☆
+          - generic [ref=e4440]: 中正區 · 汀洲路二段182巷內186號旁
+          - generic [ref=e4441]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4442]:
+              - text: 🚲 可借
+              - generic [ref=e4443]: "1"
+            - generic "可停空位" [ref=e4444]:
+              - text: 🅿️ 可停
+              - generic [ref=e4445]: "58"
+            - link "導航 ↗" [ref=e4446]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02277,121.52289
+        - listitem [ref=e4449] [cursor=pointer]:
+          - generic [ref=e4450]:
+            - generic [ref=e4451]: 臺北
+            - generic [ref=e4452]: 羅斯福路三段210巷口
+            - button "收藏" [ref=e4453]: ☆
+          - generic [ref=e4454]: 中正區 · 羅斯福路三段218號(前)
+          - generic [ref=e4455]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4456]:
+              - text: 🚲 可借
+              - generic [ref=e4457]: "1"
+            - generic "可停空位" [ref=e4458]:
+              - text: 🅿️ 可停
+              - generic [ref=e4459]: "15"
+            - link "導航 ↗" [ref=e4460]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01884,121.52994
+        - listitem [ref=e4463] [cursor=pointer]:
+          - generic [ref=e4464]:
+            - generic [ref=e4465]: 臺北
+            - generic [ref=e4466]: 溫州停車場
+            - button "收藏" [ref=e4467]: ☆
+          - generic [ref=e4468]: 大安區 · 新生南路三段54巷/溫州街口
+          - generic [ref=e4469]:
+            - generic [ref=e4470]: ⛔ 暫停營運
+            - link "導航 ↗" [ref=e4471]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02093,121.5331
+        - listitem [ref=e4473] [cursor=pointer]:
+          - generic [ref=e4474]:
+            - generic [ref=e4475]: 臺北
+            - generic [ref=e4476]: 臥龍樂業街口
+            - button "收藏" [ref=e4477]: ☆
+          - generic [ref=e4478]: 大安區 · 臥龍街234-2號
+          - generic [ref=e4479]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4480]:
+              - text: 🚲 可借
+              - generic [ref=e4481]: "0"
+            - generic "可停空位" [ref=e4482]:
+              - text: 🅿️ 可停
+              - generic [ref=e4483]: "63"
+            - link "導航 ↗" [ref=e4484]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.01856,121.55558
+        - listitem [ref=e4486] [cursor=pointer]:
+          - generic [ref=e4487]:
+            - generic [ref=e4488]: 臺北
+            - generic [ref=e4489]: 捷運古亭站(5號出口)
+            - button "收藏" [ref=e4490]: ☆
+          - generic [ref=e4491]: 大安區 · 和平東路一段19號前
+          - generic [ref=e4492]:
+            - generic [ref=e4493]: ⛔ 暫停營運
+            - link "導航 ↗" [ref=e4494]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02715,121.52293
+        - listitem [ref=e4496] [cursor=pointer]:
+          - generic [ref=e4497]:
+            - generic [ref=e4498]: 臺北
+            - generic [ref=e4499]: 捷運東門站(3號出口)
+            - button "收藏" [ref=e4500]: ☆
+          - generic [ref=e4501]: 大安區 · 信義路二段128號前
+          - generic [ref=e4502]:
+            - generic [ref=e4503]: ⛔ 暫停營運
+            - link "導航 ↗" [ref=e4504]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.03383,121.52815
+        - listitem [ref=e4506] [cursor=pointer]:
+          - generic [ref=e4507]:
+            - generic [ref=e4508]: 臺北
+            - generic [ref=e4509]: 信義建國路口
+            - button "收藏" [ref=e4510]: ☆
+          - generic [ref=e4511]: 大安區 · 建國南路二段與信義路三段口西南側
+          - generic [ref=e4512]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4513]:
+              - text: 🚲 可借
+              - generic [ref=e4514]: "0"
+            - generic "可停空位" [ref=e4515]:
+              - text: 🅿️ 可停
+              - generic [ref=e4516]: "51"
+            - link "導航 ↗" [ref=e4517]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.0328,121.53746
+        - listitem [ref=e4519] [cursor=pointer]:
+          - generic [ref=e4520]:
+            - generic [ref=e4521]: 臺北
+            - generic [ref=e4522]: 樂利路101巷口
+            - button "收藏" [ref=e4523]: ☆
+          - generic [ref=e4524]: 大安區 · 樂利路97號前
+          - generic [ref=e4525]:
+            - generic [ref=e4526]: ⛔ 暫停營運
+            - link "導航 ↗" [ref=e4527]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02528,121.55224
+        - listitem [ref=e4529] [cursor=pointer]:
+          - generic [ref=e4530]:
+            - generic [ref=e4531]: 臺北
+            - generic [ref=e4532]: 和平東路二段107巷口
+            - button "收藏" [ref=e4533]: ☆
+          - generic [ref=e4534]: 大安區 · 和平東路二段95號(前)
+          - generic [ref=e4535]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4536]:
+              - text: 🚲 可借
+              - generic [ref=e4537]: "0"
+            - generic "可停空位" [ref=e4538]:
+              - text: 🅿️ 可停
+              - generic [ref=e4539]: "12"
+            - link "導航 ↗" [ref=e4540]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02555,121.53951
+        - listitem [ref=e4542] [cursor=pointer]:
+          - generic [ref=e4543]:
+            - generic [ref=e4544]: 臺北
+            - generic [ref=e4545]: 基隆路二段159巷口
+            - button "收藏" [ref=e4546]: ☆
+          - generic [ref=e4547]: 信義區 · 基隆路二段155號
+          - generic [ref=e4548]:
+            - generic "臺北官方 API 未提供車型明細,此為一般+電輔總數" [ref=e4549]:
+              - text: 🚲 可借
+              - generic [ref=e4550]: "0"
+            - generic "可停空位" [ref=e4551]:
+              - text: 🅿️ 可停
+              - generic [ref=e4552]: "14"
+            - link "導航 ↗" [ref=e4553]:
+              - /url: https://www.google.com/maps/dir/?api=1&destination=25.02561,121.55409
+      - generic [ref=e649]:
+        - generic [ref=e650]:
+          - generic:
+            - generic:
+              - button "41" [ref=e4555] [cursor=pointer]
+              - button "41" [ref=e4557] [cursor=pointer]
+              - button "40" [ref=e4559] [cursor=pointer]
+              - button "39" [ref=e4561] [cursor=pointer]
+              - button "38" [ref=e4563] [cursor=pointer]
+              - button "38" [ref=e4565] [cursor=pointer]
+              - button "37" [ref=e4567] [cursor=pointer]
+              - button "37" [ref=e4569] [cursor=pointer]
+              - button "M" [ref=e4571] [cursor=pointer]
+              - button "36" [ref=e4573] [cursor=pointer]
+              - button "36" [ref=e4575] [cursor=pointer]
+              - button "35" [ref=e4577] [cursor=pointer]
+              - button "32" [ref=e4579] [cursor=pointer]
+              - button "32" [ref=e4581] [cursor=pointer]
+              - button "31" [ref=e4583] [cursor=pointer]
+              - button "31" [ref=e4585] [cursor=pointer]
+              - button "31" [ref=e4587] [cursor=pointer]
+              - button "30" [ref=e4589] [cursor=pointer]
+              - button "30" [ref=e4591] [cursor=pointer]
+              - button "28" [ref=e4593] [cursor=pointer]
+              - button "26" [ref=e4595] [cursor=pointer]
+              - button "M" [ref=e4597] [cursor=pointer]
+              - button "26" [ref=e4599] [cursor=pointer]
+              - button "26" [ref=e4601] [cursor=pointer]
+              - button "25" [ref=e4603] [cursor=pointer]
+              - button "24" [ref=e4605] [cursor=pointer]
+              - button "24" [ref=e4607] [cursor=pointer]
+              - button "23" [ref=e4609] [cursor=pointer]
+              - button "23" [ref=e4611] [cursor=pointer]
+              - button "M" [ref=e4613] [cursor=pointer]
+              - button "22" [ref=e4615] [cursor=pointer]
+              - button "22" [ref=e4617] [cursor=pointer]
+              - button "21" [ref=e4619] [cursor=pointer]
+              - button "21" [ref=e4621] [cursor=pointer]
+              - button "21" [ref=e4623] [cursor=pointer]
+              - button "21" [ref=e4625] [cursor=pointer]
+              - button "19" [ref=e4627] [cursor=pointer]
+              - button "19" [ref=e4629] [cursor=pointer]
+              - button "18" [ref=e4631] [cursor=pointer]
+              - button "18" [ref=e4633] [cursor=pointer]
+              - button "18" [ref=e4635] [cursor=pointer]
+              - button "18" [ref=e4637] [cursor=pointer]
+              - button "18" [ref=e4639] [cursor=pointer]
+              - button "18" [ref=e4641] [cursor=pointer]
+              - button "17" [ref=e4643] [cursor=pointer]
+              - button "17" [ref=e4645] [cursor=pointer]
+              - button "M" [ref=e4647] [cursor=pointer]
+              - button "16" [ref=e4649] [cursor=pointer]
+              - button "16" [ref=e4651] [cursor=pointer]
+              - button "16" [ref=e4653] [cursor=pointer]
+              - button "15" [ref=e4655] [cursor=pointer]
+              - button "15" [ref=e4657] [cursor=pointer]
+              - button "15" [ref=e4659] [cursor=pointer]
+              - button "15" [ref=e4661] [cursor=pointer]
+              - button "15" [ref=e4663] [cursor=pointer]
+              - button "M" [ref=e4665] [cursor=pointer]
+              - button "15" [ref=e4667] [cursor=pointer]
+              - button "15" [ref=e4669] [cursor=pointer]
+              - button "14" [ref=e4671] [cursor=pointer]
+              - button "14" [ref=e4673] [cursor=pointer]
+              - button "14" [ref=e4675] [cursor=pointer]
+              - button "14" [ref=e4677] [cursor=pointer]
+              - button "14" [ref=e4679] [cursor=pointer]
+              - button "14" [ref=e4681] [cursor=pointer]
+              - button "14" [ref=e4683] [cursor=pointer]
+              - button "14" [ref=e4685] [cursor=pointer]
+              - button "14" [ref=e4687] [cursor=pointer]
+              - button "14" [ref=e4689] [cursor=pointer]
+              - button "13" [ref=e4691] [cursor=pointer]
+              - button "13" [ref=e4693] [cursor=pointer]
+              - button "13" [ref=e4695] [cursor=pointer]
+              - button "13" [ref=e4697] [cursor=pointer]
+              - button "13" [ref=e4699] [cursor=pointer]
+              - button "13" [ref=e4701] [cursor=pointer]
+              - button "13" [ref=e4703] [cursor=pointer]
+              - button "12" [ref=e4705] [cursor=pointer]
+              - button "12" [ref=e4707] [cursor=pointer]
+              - button "12" [ref=e4709] [cursor=pointer]
+              - button "12" [ref=e4711] [cursor=pointer]
+              - button "12" [ref=e4713] [cursor=pointer]
+              - button "12" [ref=e4715] [cursor=pointer]
+              - button "M" [ref=e4717] [cursor=pointer]
+              - button "11" [ref=e4719] [cursor=pointer]
+              - button "11" [ref=e4721] [cursor=pointer]
+              - button "11" [ref=e4723] [cursor=pointer]
+              - button "11" [ref=e4725] [cursor=pointer]
+              - button "10" [ref=e4727] [cursor=pointer]
+              - button "10" [ref=e4729] [cursor=pointer]
+              - button "10" [ref=e4731] [cursor=pointer]
+              - button "10" [ref=e4733] [cursor=pointer]
+              - button "10" [ref=e4735] [cursor=pointer]
+              - button "10" [ref=e4737] [cursor=pointer]
+              - button "10" [ref=e4739] [cursor=pointer]
+              - button "9" [ref=e4741] [cursor=pointer]
+              - button "9" [ref=e4743] [cursor=pointer]
+              - button "9" [ref=e4745] [cursor=pointer]
+              - button "9" [ref=e4747] [cursor=pointer]
+              - button "9" [ref=e4749] [cursor=pointer]
+              - button "9" [ref=e4751] [cursor=pointer]
+              - button "9" [ref=e4753] [cursor=pointer]
+              - button "9" [ref=e4755] [cursor=pointer]
+              - button "9" [ref=e4757] [cursor=pointer]
+              - button "9" [ref=e4759] [cursor=pointer]
+              - button "8" [ref=e4761] [cursor=pointer]
+              - button "8" [ref=e4763] [cursor=pointer]
+              - button "8" [ref=e4765] [cursor=pointer]
+              - button "8" [ref=e4767] [cursor=pointer]
+              - button "8" [ref=e4769] [cursor=pointer]
+              - button "8" [ref=e4771] [cursor=pointer]
+              - button "8" [ref=e4773] [cursor=pointer]
+              - button "8" [ref=e4775] [cursor=pointer]
+              - button "7" [ref=e4777] [cursor=pointer]
+              - button "7" [ref=e4779] [cursor=pointer]
+              - button "7" [ref=e4781] [cursor=pointer]
+              - button "7" [ref=e4783] [cursor=pointer]
+              - button "7" [ref=e4785] [cursor=pointer]
+              - button "7" [ref=e4787] [cursor=pointer]
+              - button "7" [ref=e4789] [cursor=pointer]
+              - button "7" [ref=e4791] [cursor=pointer]
+              - button "7" [ref=e4793] [cursor=pointer]
+              - button "7" [ref=e4795] [cursor=pointer]
+              - button "6" [ref=e4797] [cursor=pointer]
+              - button "6" [ref=e4799] [cursor=pointer]
+              - button "6" [ref=e4801] [cursor=pointer]
+              - button "6" [ref=e4803] [cursor=pointer]
+              - button "6" [ref=e4805] [cursor=pointer]
+              - button "6" [ref=e4807] [cursor=pointer]
+              - button "6" [ref=e4809] [cursor=pointer]
+              - button "6" [ref=e4811] [cursor=pointer]
+              - button "6" [ref=e4813] [cursor=pointer]
+              - button "6" [ref=e4815] [cursor=pointer]
+              - button "6" [ref=e4817] [cursor=pointer]
+              - button "6" [ref=e4819] [cursor=pointer]
+              - button "6" [ref=e4821] [cursor=pointer]
+              - button "6" [ref=e4823] [cursor=pointer]
+              - button "6" [ref=e4825] [cursor=pointer]
+              - button "6" [ref=e4827] [cursor=pointer]
+              - button "6" [ref=e4829] [cursor=pointer]
+              - button "5" [ref=e4831] [cursor=pointer]
+              - button "5" [ref=e4833] [cursor=pointer]
+              - button "5" [ref=e4835] [cursor=pointer]
+              - button "5" [ref=e4837] [cursor=pointer]
+              - button "5" [ref=e4839] [cursor=pointer]
+              - button "5" [ref=e4841] [cursor=pointer]
+              - button "5" [ref=e4843] [cursor=pointer]
+              - button "5" [ref=e4845] [cursor=pointer]
+              - button "5" [ref=e4847] [cursor=pointer]
+              - button "5" [ref=e4849] [cursor=pointer]
+              - button "5" [ref=e4851] [cursor=pointer]
+              - button "5" [ref=e4853] [cursor=pointer]
+              - button "5" [ref=e4855] [cursor=pointer]
+              - button "5" [ref=e4857] [cursor=pointer]
+              - button "5" [ref=e4859] [cursor=pointer]
+              - button "5" [ref=e4861] [cursor=pointer]
+              - button "4" [ref=e4863] [cursor=pointer]
+              - button "4" [ref=e4865] [cursor=pointer]
+              - button "4" [ref=e4867] [cursor=pointer]
+              - button "4" [ref=e4869] [cursor=pointer]
+              - button "4" [ref=e4871] [cursor=pointer]
+              - button "4" [ref=e4873] [cursor=pointer]
+              - button "4" [ref=e4875] [cursor=pointer]
+              - button "4" [ref=e4877] [cursor=pointer]
+              - button "4" [ref=e4879] [cursor=pointer]
+              - button "4" [ref=e4881] [cursor=pointer]
+              - button "4" [ref=e4883] [cursor=pointer]
+              - button "4" [ref=e4885] [cursor=pointer]
+              - button "3" [ref=e4887] [cursor=pointer]
+              - button "3" [ref=e4889] [cursor=pointer]
+              - button "3" [ref=e4891] [cursor=pointer]
+              - button "3" [ref=e4893] [cursor=pointer]
+              - button "3" [ref=e4895] [cursor=pointer]
+              - button "3" [ref=e4897] [cursor=pointer]
+              - button "3" [ref=e4899] [cursor=pointer]
+              - button "3" [ref=e4901] [cursor=pointer]
+              - button "3" [ref=e4903] [cursor=pointer]
+              - button "3" [ref=e4905] [cursor=pointer]
+              - button "3" [ref=e4907] [cursor=pointer]
+              - button "3" [ref=e4909] [cursor=pointer]
+              - button "3" [ref=e4911] [cursor=pointer]
+              - button "3" [ref=e4913] [cursor=pointer]
+              - button "3" [ref=e4915] [cursor=pointer]
+              - button "3" [ref=e4917] [cursor=pointer]
+              - button "3" [ref=e4919] [cursor=pointer]
+              - button "2" [ref=e4921] [cursor=pointer]
+              - button "2" [ref=e4923] [cursor=pointer]
+              - button "2" [ref=e4925] [cursor=pointer]
+              - button "2" [ref=e4927] [cursor=pointer]
+              - button "2" [ref=e4929] [cursor=pointer]
+              - button "2" [ref=e4931] [cursor=pointer]
+              - button "2" [ref=e4933] [cursor=pointer]
+              - button "2" [ref=e4935] [cursor=pointer]
+              - button "2" [ref=e4937] [cursor=pointer]
+              - button "2" [ref=e4939] [cursor=pointer]
+              - button "2" [ref=e4941] [cursor=pointer]
+              - button "2" [ref=e4943] [cursor=pointer]
+              - button "2" [ref=e4945] [cursor=pointer]
+              - button "2" [ref=e4947] [cursor=pointer]
+              - button "2" [ref=e4949] [cursor=pointer]
+              - button "2" [ref=e4951] [cursor=pointer]
+              - button "2" [ref=e4953] [cursor=pointer]
+              - button "1" [ref=e4955] [cursor=pointer]
+              - button "1" [ref=e4957] [cursor=pointer]
+              - button "1" [ref=e4959] [cursor=pointer]
+              - button "1" [ref=e4961] [cursor=pointer]
+              - button "1" [ref=e4963] [cursor=pointer]
+              - button "1" [ref=e4965] [cursor=pointer]
+              - button "1" [ref=e4967] [cursor=pointer]
+              - button "1" [ref=e4969] [cursor=pointer]
+              - button "1" [ref=e4971] [cursor=pointer]
+              - button "1" [ref=e4973] [cursor=pointer]
+              - button "1" [ref=e4975] [cursor=pointer]
+              - button "1" [ref=e4977] [cursor=pointer]
+              - button "1" [ref=e4979] [cursor=pointer]
+              - button "1" [ref=e4981] [cursor=pointer]
+              - button "0" [ref=e4983] [cursor=pointer]
+              - button "0" [ref=e4985] [cursor=pointer]
+              - button "0" [ref=e4987] [cursor=pointer]
+              - button "0" [ref=e4989] [cursor=pointer]
+              - button "0" [ref=e4991] [cursor=pointer]
+              - button "0" [ref=e4993] [cursor=pointer]
+              - button "0" [ref=e4995] [cursor=pointer]
+              - button "0" [ref=e4997] [cursor=pointer]
+          - generic:
+            - generic [ref=e741]:
+              - button "Zoom in" [ref=e742] [cursor=pointer]: +
+              - button "Zoom out" [ref=e743] [cursor=pointer]: −
+            - generic [ref=e744]:
+              - link "Leaflet" [ref=e745] [cursor=pointer]:
+                - /url: https://leafletjs.com
+              - text: "| ©"
+              - link "OpenStreetMap" [ref=e750] [cursor=pointer]:
+                - /url: https://www.openstreetmap.org/copyright
+              - text: contributors
+        - generic [ref=e751]:
+          - generic [ref=e752]: 充足
+          - generic [ref=e754]: ≤3 輛
+          - generic [ref=e756]: 無車
+          - generic [ref=e758]: 暫停
+    - button "📈 查看「臺北市立圖書館(…」車輛趨勢" [ref=e4999] [cursor=pointer]
+  - alert [ref=e760]

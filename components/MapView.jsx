@@ -13,23 +13,32 @@ const TILE = {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 };
 
+const bubbleIconCache = new Map();
+
 // 數字氣泡圖標:沒車顯示 0、不能還車顯示 M、暫停營運灰底顯示車數
 function bubbleIcon(s) {
+  const key = `${s.active ? 1 : 0}:${s.available}:${s.empty ?? ''}`;
+  const cached = bubbleIconCache.get(key);
+  if (cached) return cached;
+
+  const isFullDock = s.empty === 0 && s.available > 0;
   let color, label;
   if (!s.active) {
     color = '#9b9ba3';
-    label = s.empty === 0 && s.available > 0 ? 'M' : String(s.available);
+    label = isFullDock ? 'M' : String(s.available);
   } else {
-    color = s.available === 0 ? '#e5484d' : s.available <= 3 ? '#f5a623' : '#30a46c';
-    label = s.empty === 0 && s.available > 0 ? 'M' : String(s.available);
+    color = isFullDock ? '#e060a5' : s.available === 0 ? '#e5484d' : s.available <= 3 ? '#f5a623' : '#30a46c';
+    label = isFullDock ? 'M' : String(s.available);
   }
   const scale = label.length > 1 ? (label.length > 2 ? 36 : 31) : 24;
-  return L.divIcon({
+  const icon = L.divIcon({
     className: 'yb-bubble-wrap',
     html: `<div class="yb-bubble${!s.active ? ' dim' : ''}" style="--bc:${color};width:${scale}px;height:${scale}px">${label}</div>`,
     iconSize: [scale, scale],
     iconAnchor: [scale / 2, scale / 2],
   });
+  bubbleIconCache.set(key, icon);
+  return icon;
 }
 
 function Recenter({ center, zoom }) {
@@ -56,14 +65,11 @@ function BoundsReporter({ onBounds, onZoom }) {
   return null;
 }
 
-// 專門處理「飛到指定站點」的組件
-function FlyToTarget({ target }) {
-  const map = useMap();
-  useEffect(() => {
-    if (!target) return;
-    map.flyTo([target.lat, target.lng], target.zoom, { duration: 0.8 });
-  }, [map, target]);
-  return null;
+function zoomIntoCluster(event) {
+  const map = event.target?.getMap?.();
+  const cluster = event.layer;
+  if (!map || !cluster) return;
+  map.flyTo(cluster.getLatLng(), Math.min(15, map.getMaxZoom()), { duration: 0.45 });
 }
 
 const meIcon = L.divIcon({
@@ -73,27 +79,55 @@ const meIcon = L.divIcon({
   iconAnchor: [9, 9],
 });
 
-export default function MapView({ stations, center, zoom, onSelect, selected, userLoc, onBoundsChange, onClusteredChange, areaTarget }) {
+function StationMarker({ s, selected, onSelect }) {
+  return (
+    <Marker
+      position={[s.lat, s.lng]}
+      icon={bubbleIcon(s)}
+      zIndexOffset={s.id === selected?.id ? 1000 : 0}
+      ybId={s.id}
+      eventHandlers={{ popupopen: () => onSelect(s, { recenter: false }) }}
+    >
+      <Popup>
+        <div className="popup-card">
+          <b>{s.name}</b>
+          <div className="popup-counts">
+            {!s.active ? (
+              <span className="popup-inactive">⛔ 暫停營運</span>
+            ) : (
+              <>
+                {s.regularBikes != null && (
+                  <span style={{ color: '#27a644', fontWeight: 700 }}>🚲 一般 {s.regularBikes}</span>
+                )}
+                {s.ebikes != null && s.ebikes > 0 && (
+                  <span style={{ color: '#b8860b', fontWeight: 700 }}>⚡ 電輔 {s.ebikes}</span>
+                )}
+                {(s.regularBikes == null || s.ebikes == null) && (
+                  <span style={{ color: '#27a644', fontWeight: 700 }}>🚲 可借 {s.available}</span>
+                )}
+                <span style={{ color: '#5e6ad2' }}>🅿️ 可停 {s.empty ?? '?'}</span>
+              </>
+            )}
+          </div>
+          <div className="popup-addr">{s.area} · {s.addr}</div>
+          <a
+            href={`https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lng}`}
+            target="_blank"
+            rel="noreferrer"
+            className="popup-nav-link"
+          >
+            導航到此站 ↗
+          </a>
+        </div>
+      </Popup>
+    </Marker>
+  );
+}
+
+export default function MapView({ stations, center, zoom, onSelect, selected, userLoc, onBoundsChange, onClusteredChange }) {
   const [bounds, setBounds] = useState(null);
   const [curZoom, setCurZoom] = useState(zoom);
   const groupRef = useRef(null);
-  const flyTargetRef = useRef(null); // 明確飛圖目標：{lat, lng, zoom}
-
-  // 當 selected 變化時，設定飛圖目標（點擊卡片/圖標 → 飛到該站）
-  useEffect(() => {
-    if (selected && selected.lat != null && selected.lng != null) {
-      flyTargetRef.current = { lat: selected.lat, lng: selected.lng, zoom: 15 };
-    } else {
-      flyTargetRef.current = null;
-    }
-  }, [selected]);
-
-  // 當 areaTarget 變化時，設定飛圖目標（搜尋區域/關鍵字 → 飛到區域中心）
-  useEffect(() => {
-    if (areaTarget && areaTarget.center) {
-      flyTargetRef.current = { lat: areaTarget.center[0], lng: areaTarget.center[1], zoom: 13 };
-    }
-  }, [areaTarget]);
 
   // 只渲染可見範圍內的站點(效能關鍵)
   // bounds 以 ref 持有,避免拖曳中重算;zoomend/moveend 後才 setState
@@ -149,77 +183,26 @@ export default function MapView({ stations, center, zoom, onSelect, selected, us
       <MapContainer center={center} zoom={zoom} scrollWheelZoom className="map" preferCanvas>
         <TileLayer attribution={TILE.attribution} url={TILE.url} />
         <Recenter center={center} zoom={zoom} />
-        <FlyToTarget target={flyTargetRef.current} />
         <BoundsReporter
           onBounds={(b, z) => { setBounds(b); onBoundsChange?.(b, z); }}
           onZoom={setCurZoom}
         />
-        <MarkerClusterGroup
-          showCoverageOnHover={false}
-          maxClusterRadius={20}
-          spiderfyOnMaxZoom={true}
-          chunkedLoading
-          whenReady={(group) => { groupRef.current = group; }}
-        >
-        {visible.map((s) => (
-          <Marker
-            key={s.id}
-            position={[s.lat, s.lng]}
-            icon={bubbleIcon(s)}
-            zIndexOffset={s.id === selected?.id ? 1000 : 0}
-            ybId={s.id}
-            eventHandlers={{
-              click: (e) => {
-                e.originalEvent?.stopPropagation?.();
-                onSelect(s);
-                // 手動開啟 popup，避免 eventHandlers 阻擋預設行為
-                if (e.target && e.target.openPopup) e.target.openPopup();
-              }
-            }}
+        {curZoom >= 15 ? (
+          visible.map((s) => <StationMarker key={s.id} s={s} selected={selected} onSelect={onSelect} />)
+        ) : (
+          <MarkerClusterGroup
+            showCoverageOnHover={false}
+            maxClusterRadius={20}
+            disableClusteringAtZoom={15}
+            zoomToBoundsOnClick={false}
+            spiderfyOnMaxZoom={false}
+            chunkedLoading
+            onClick={zoomIntoCluster}
+            whenReady={(group) => { groupRef.current = group; }}
           >
-            <Popup>
-              <div className="popup-card">
-                <b>{s.name}</b>
-                <div className="popup-counts">
-                  {!s.active ? (
-                    <span className="popup-inactive">⛔ 暫停營運</span>
-                  ) : (
-                    <>
-                      {s.regularBikes != null && (
-                        <span style={{ color: '#27a644', fontWeight: 700 }}>🚲 一般 {s.regularBikes}</span>
-                      )}
-                      {s.ebikes != null && s.ebikes > 0 && (
-                        <span style={{ color: '#b8860b', fontWeight: 700 }}>⚡ 電輔 {s.ebikes}</span>
-                      )}
-                      {(s.regularBikes == null || s.ebikes == null) && (
-                        <span style={{ color: '#27a644', fontWeight: 700 }}>🚲 可借 {s.available}</span>
-                      )}
-                      <span style={{ color: '#5e6ad2' }}>🅿️ 可停 {s.empty ?? '?'}</span>
-                    </>
-                  )}
-                </div>
-                <div className="popup-addr">{s.area} · {s.addr}</div>
-                <button
-                  className="popup-focus-btn"
-                  onClick={() => {
-                    onSelect(s);
-                  }}
-                >
-                  📌 在列表中檢視
-                </button>
-                <a
-                  href={`https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lng}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="popup-nav-link"
-                >
-                  導航到此站 ↗
-                </a>
-              </div>
-            </Popup>
-          </Marker>
-        ))}
-        </MarkerClusterGroup>
+            {visible.map((s) => <StationMarker key={s.id} s={s} selected={selected} onSelect={onSelect} />)}
+          </MarkerClusterGroup>
+        )}
         {selVisible && (
           <Marker position={[selVisible.lat, selVisible.lng]} icon={bubbleIcon(selVisible)} zIndexOffset={2000} eventHandlers={{ click: () => onSelect(selVisible) }} />
         )}

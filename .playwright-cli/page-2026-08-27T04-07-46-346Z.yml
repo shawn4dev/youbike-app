@@ -1,0 +1,38 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - banner [ref=f2e3]:
+      - generic [ref=f2e4]:
+        - heading "🚲 YouBike 站點查詢" [level=1] [ref=f2e5]
+        - generic [ref=f2e6]:
+          - button "定位" [ref=f2e7] [cursor=pointer]: 📍
+          - button "通知設定" [ref=f2e9] [cursor=pointer]: ⚙️
+          - button "備份" [ref=f2e10] [cursor=pointer]: ⇅
+          - button "切換主題" [ref=f2e11] [cursor=pointer]: 🌙
+      - generic [ref=f2e12]:
+        - text: 0 站 · 範圍內可借 0 輛 · 更新於 12:07:30 ·
+        - button "↻ 手動刷新" [ref=f2e13] [cursor=pointer]
+    - button "⌕ 搜尋與篩選 0 站 · 站態 4/4" [ref=f2e15] [cursor=pointer]:
+      - generic [ref=f2e16]: ⌕ 搜尋與篩選
+      - generic [ref=f2e17]: 0 站 · 站態 4/4
+    - generic [ref=f2e18]:
+      - list [ref=f2e19]:
+        - listitem [ref=f2e20]: 沒有符合的站點
+      - generic [ref=f2e21]:
+        - generic [ref=f2e22]:
+          - generic:
+            - generic [ref=f2e23]:
+              - button "Zoom in" [ref=f2e24] [cursor=pointer]: +
+              - button "Zoom out" [ref=f2e25] [cursor=pointer]: −
+            - generic [ref=f2e26]:
+              - link "Leaflet" [ref=f2e27] [cursor=pointer]:
+                - /url: https://leafletjs.com
+              - text: "| ©"
+              - link "OpenStreetMap" [ref=f2e32] [cursor=pointer]:
+                - /url: https://www.openstreetmap.org/copyright
+              - text: contributors
+        - generic [ref=f2e33]:
+          - generic [ref=f2e34]: 充足
+          - generic [ref=f2e36]: ≤3 輛
+          - generic [ref=f2e38]: 無車
+          - generic [ref=f2e40]: 暫停
+  - alert [ref=f2e42]
