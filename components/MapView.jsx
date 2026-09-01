@@ -1,8 +1,8 @@
 'use client';
 
-import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, ZoomControl, useMap, useMapEvents } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
-import { useEffect, useMemo, useState, useRef } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'react-leaflet-markercluster/styles';
@@ -41,35 +41,79 @@ function bubbleIcon(s) {
   return icon;
 }
 
-function Recenter({ center, zoom }) {
+function Recenter({ center, zoom, trigger }) {
   const map = useMap();
   const lat = center?.[0], lng = center?.[1];
   useEffect(() => {
     if (lat == null || lng == null) return;
     // 只要 center 或 zoom 變了就飛過去（由父層明確觸發的 fly-to，不應被距離閾值擋住）
     map.flyTo([lat, lng], zoom, { duration: 0.8 });
-  }, [map, lat, lng, zoom]);
+  }, [map, lat, lng, zoom, trigger]);
   return null;
 }
 
-function BoundsReporter({ onBounds, onZoom }) {
+function ResizeInvalidator() {
+  const map = useMap();
+  useEffect(() => {
+    const container = map.getContainer();
+    const observer = new ResizeObserver(() => map.invalidateSize({ pan: false }));
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [map]);
+  return null;
+}
+
+function BoundsReporter({ onViewport }) {
+  const timerRef = useRef(null);
+  const onViewportRef = useRef(onViewport);
+  onViewportRef.current = onViewport;
   const map = useMapEvents({
-    // 只在 moveend(平移結束)與 zoomend(縮放完成)後重新統計,拖曳中不觸發
-    moveend: () => onBounds(map.getBounds(), map.getZoom()),
-    zoomend: () => { onZoom(map.getZoom()); onBounds(map.getBounds(), map.getZoom()); },
+    // 合併 Leaflet 在縮放結束時可能連續送出的 moveend，只回報最後一次。
+    moveend: () => {
+      window.clearTimeout(timerRef.current);
+      timerRef.current = window.setTimeout(
+        () => onViewportRef.current(map.getBounds(), map.getZoom()),
+        80
+      );
+    },
   });
   useEffect(() => {
-    onZoom(map.getZoom());
-    onBounds(map.getBounds(), map.getZoom());
-  }, []);
+    onViewportRef.current(map.getBounds(), map.getZoom());
+    return () => window.clearTimeout(timerRef.current);
+  }, [map]);
   return null;
 }
 
-function zoomIntoCluster(event) {
-  const map = event.target?.getMap?.();
-  const cluster = event.layer;
-  if (!map || !cluster) return;
-  map.flyTo(cluster.getLatLng(), Math.min(15, map.getMaxZoom()), { duration: 0.45 });
+function PopupDismissOnDrag({ onDismiss }) {
+  useMapEvents({ dragend: onDismiss });
+  return null;
+}
+
+function SelectedPopupOpener({ station, requestToken, onOpen }) {
+  const map = useMap();
+  const handledTokenRef = useRef(0);
+
+  useEffect(() => {
+    if (!station || requestToken === handledTokenRef.current) return;
+
+    let opened = false;
+    const open = () => {
+      if (opened) return;
+      opened = true;
+      handledTokenRef.current = requestToken;
+      onOpen(station);
+    };
+
+    map.once('moveend', open);
+    // 同站重選時 Leaflet 可能不送 moveend，仍要比照點擊圖標開啟詳情。
+    const fallback = window.setTimeout(open, 950);
+    return () => {
+      map.off('moveend', open);
+      window.clearTimeout(fallback);
+    };
+  }, [map, station, requestToken, onOpen]);
+
+  return null;
 }
 
 const meIcon = L.divIcon({
@@ -79,129 +123,222 @@ const meIcon = L.divIcon({
   iconAnchor: [9, 9],
 });
 
-function StationMarker({ s, selected, onSelect }) {
+const StationMarker = memo(function StationMarker({ s, onOpen }) {
   return (
     <Marker
       position={[s.lat, s.lng]}
       icon={bubbleIcon(s)}
-      zIndexOffset={s.id === selected?.id ? 1000 : 0}
       ybId={s.id}
-      eventHandlers={{ popupopen: () => onSelect(s, { recenter: false }) }}
+      eventHandlers={{ click: () => onOpen(s) }}
+    />
+  );
+});
+
+function StationPopup({ station }) {
+  const [shareStatus, setShareStatus] = useState('');
+  const shareStatusTimerRef = useRef(null);
+  const hasBikeBreakdown = station.regularBikes != null || station.ebikes != null;
+  const position = useMemo(() => [station.lat, station.lng], [station.lat, station.lng]);
+
+  useEffect(
+    () => () => window.clearTimeout(shareStatusTimerRef.current),
+    []
+  );
+
+  const showShareStatus = (message) => {
+    window.clearTimeout(shareStatusTimerRef.current);
+    setShareStatus(message);
+    shareStatusTimerRef.current = window.setTimeout(() => setShareStatus(''), 2400);
+  };
+
+  const shareStation = async () => {
+    const url = new URL(window.location.href);
+    url.searchParams.set('station', station.id);
+    const shareUrl = url.toString();
+    const shareData = {
+      title: `YouBike｜${station.name}`,
+      text: `${station.name} YouBike 站點`,
+      url: shareUrl,
+    };
+
+    if (typeof navigator.share === 'function') {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch (error) {
+        if (error?.name === 'AbortError') return;
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      showShareStatus('已複製連結');
+    } catch {
+      showShareStatus('請複製網址列');
+    }
+  };
+
+  return (
+    <Popup
+      position={position}
+      className="station-popup"
+      minWidth={210}
+      maxWidth={224}
+      autoPanPadding={[16, 16]}
     >
-      <Popup>
-        <div className="popup-card">
-          <b>{s.name}</b>
-          <div className="popup-counts">
-            {!s.active ? (
-              <span className="popup-inactive">⛔ 暫停營運</span>
-            ) : (
-              <>
-                {s.regularBikes != null && (
-                  <span style={{ color: '#27a644', fontWeight: 700 }}>🚲 一般 {s.regularBikes}</span>
-                )}
-                {s.ebikes != null && s.ebikes > 0 && (
-                  <span style={{ color: '#b8860b', fontWeight: 700 }}>⚡ 電輔 {s.ebikes}</span>
-                )}
-                {(s.regularBikes == null || s.ebikes == null) && (
-                  <span style={{ color: '#27a644', fontWeight: 700 }}>🚲 可借 {s.available}</span>
-                )}
-                <span style={{ color: '#5e6ad2' }}>🅿️ 可停 {s.empty ?? '?'}</span>
-              </>
-            )}
-          </div>
-          <div className="popup-addr">{s.area} · {s.addr}</div>
-          <a
-            href={`https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lng}`}
-            target="_blank"
-            rel="noreferrer"
-            className="popup-nav-link"
-          >
-            導航到此站 ↗
-          </a>
+      <article className="popup-card" aria-label={`${station.name}站點資訊`}>
+        <div className="popup-meta">
+          <span className={`popup-city b-${station.city}`}>{station.city}</span>
+          <span className={`popup-status ${station.active ? 'is-active' : 'is-inactive'}`}>
+            <i aria-hidden="true" />
+            {station.active ? '營運中' : '暫停營運'}
+          </span>
         </div>
-      </Popup>
-    </Marker>
+
+        <h2 className="popup-title">{station.name}</h2>
+
+        {station.active ? (
+          <div className="popup-metrics">
+            <div className={`popup-metric popup-metric-bike ${station.available === 0 ? 'is-zero' : ''}`}>
+              <span className="popup-metric-label"><span aria-hidden="true">🚲</span> 可借車輛</span>
+              <span className="popup-metric-value">{station.available}<small>輛</small></span>
+            </div>
+            <div className={`popup-metric popup-metric-dock ${station.empty === 0 ? 'is-zero' : ''}`}>
+              <span className="popup-metric-label"><span aria-hidden="true">P</span> 可停空位</span>
+              <span className="popup-metric-value">{station.empty ?? '—'}<small>格</small></span>
+            </div>
+          </div>
+        ) : (
+          <div className="popup-inactive-panel">
+            <span aria-hidden="true">!</span>
+            此站目前暫停提供借還服務
+          </div>
+        )}
+
+        {station.active && hasBikeBreakdown && (
+          <div className="popup-breakdown" aria-label="車型明細">
+            <span>一般車 <strong>{station.regularBikes ?? '—'}</strong></span>
+            <i aria-hidden="true" />
+            <span>電輔車 <strong>{station.ebikes ?? '—'}</strong></span>
+          </div>
+        )}
+
+        <div className="popup-location">
+          <span className="popup-location-icon" aria-hidden="true">⌖</span>
+          <div>
+            <strong>{station.area}</strong>
+            <span>{station.addr}</span>
+          </div>
+        </div>
+
+        <a
+          href={`https://www.google.com/maps/dir/?api=1&destination=${station.lat},${station.lng}`}
+          target="_blank"
+          rel="noreferrer"
+          className="popup-nav-link"
+          aria-label={`導航到${station.name}`}
+        >
+          <span aria-hidden="true">➜</span>
+          開始導航
+          <small aria-hidden="true">開啟 Google 地圖 ↗</small>
+        </a>
+
+        <button
+          type="button"
+          className="popup-share-button"
+          aria-label="分享站點"
+          onClick={shareStation}
+        >
+          <span aria-hidden="true">↗</span>
+          <span aria-live="polite">{shareStatus || '分享站點'}</span>
+        </button>
+      </article>
+    </Popup>
   );
 }
 
-export default function MapView({ stations, center, zoom, onSelect, selected, userLoc, onBoundsChange, onClusteredChange }) {
-  const [bounds, setBounds] = useState(null);
-  const [curZoom, setCurZoom] = useState(zoom);
-  const groupRef = useRef(null);
-
-  // 只渲染可見範圍內的站點(效能關鍵)
-  // bounds 以 ref 持有,避免拖曳中重算;zoomend/moveend 後才 setState
-  const visible = useMemo(() => {
-    if (!bounds) return [];
-    const padded = bounds.pad(0.1);
-    return stations.filter((s) => {
-      if (isNaN(s.lat) || isNaN(s.lng)) return false;
-      return padded.contains([s.lat, s.lng]);
-    }).slice(0, 600);
-  }, [stations, bounds]);
+export default function MapView({ stations, center, zoom, onSelect, selected, userLoc, onBoundsChange, recenterToken, popupRequestToken, markerSetKey }) {
+  const [popupState, setPopupState] = useState(null);
+  // 資料或篩選改變時才重建 marker；縮放由 Leaflet 自行處理，不寫入 React state。
+  const visible = useMemo(
+    () => stations.filter((s) => !isNaN(s.lat) && !isNaN(s.lng)),
+    [stations]
+  );
 
   const selVisible = selected && !visible.some((v) => v.id === selected.id) ? selected : null;
+  const popupStationId = popupState?.station.id ?? null;
+  const activePopupState = popupStationId === selected?.id ? popupState : null;
+  const dismissPopup = useCallback(() => setPopupState(null), []);
 
-  // 回報 bounds 給 page(列表過濾)+ 回報目前被聚合的站
-  const cbRef = useRef({});
-  cbRef.current = { onBoundsChange, onClusteredChange };
-  useEffect(() => {
-    if (!bounds) return;
-    const { onBoundsChange } = cbRef.current;
-    onBoundsChange?.(
-      {
-        south: bounds.getSouth(),
-        west: bounds.getWest(),
-        north: bounds.getNorth(),
-        east: bounds.getEast(),
-      },
-      curZoom
-    );
-  }, [bounds, curZoom]);
+  const showPopup = useCallback((station) => {
+    setPopupState((previous) => ({
+      station,
+      sequence: (previous?.sequence ?? 0) + 1,
+    }));
+  }, []);
 
   useEffect(() => {
-    if (!onClusteredChange) return;
-    const group = groupRef.current;
-    if (!group || !group.eachLayer || !group.getMap) { onClusteredChange([]); return; }
-    const z = curZoom;
-    const ids = [];
-    // 透過內部 __parent 判斷:可見父節點不是自己且父節點含超過1個子站 = 被聚合
-    group.eachLayer((layer) => {
-      const sid = layer?.options?.ybId;
-      if (!sid) return;
-      let v = layer;
-      // 往上找到當前 zoom 仍屬於同一群組的父節點
-      while (v.__parent && v.__parent._zoom >= z) v = v.__parent;
-      // v 為最終可見父節點;若 v !== layer 且 v 含 >1 子站,才算被聚合
-      if (v !== layer && v.getChildCount() > 1) ids.push(sid);
-    });
-    // 去重
-    cbRef.current.onClusteredChange?.([...new Set(ids)]);
-  }, [visible, curZoom]);
+    if (popupStationId && popupStationId !== selected?.id) setPopupState(null);
+  }, [popupStationId, selected?.id]);
+
+  const openStation = useCallback((station) => {
+    onSelect(station, { recenter: false });
+    // 等本次 Leaflet click 完整結束後再開啟，避免同一個 map click 立刻關閉新 popup。
+    window.setTimeout(() => showPopup(station), 0);
+  }, [onSelect, showPopup]);
+
   return (
     <div className="map-wrap">
-      <MapContainer center={center} zoom={zoom} scrollWheelZoom className="map" preferCanvas>
+      <MapContainer
+        center={center}
+        zoom={zoom}
+        zoomSnap={0.5}
+        zoomDelta={1}
+        wheelPxPerZoomLevel={20}
+        scrollWheelZoom
+        zoomControl={false}
+        className="map"
+        preferCanvas
+      >
         <TileLayer attribution={TILE.attribution} url={TILE.url} />
-        <Recenter center={center} zoom={zoom} />
-        <BoundsReporter
-          onBounds={(b, z) => { setBounds(b); onBoundsChange?.(b, z); }}
-          onZoom={setCurZoom}
+        <ZoomControl position="bottomleft" />
+        <ResizeInvalidator />
+        <Recenter center={center} zoom={zoom} trigger={recenterToken} />
+        <PopupDismissOnDrag onDismiss={dismissPopup} />
+        <SelectedPopupOpener
+          station={selected}
+          requestToken={popupRequestToken}
+          onOpen={showPopup}
         />
-        {curZoom >= 15 ? (
-          visible.map((s) => <StationMarker key={s.id} s={s} selected={selected} onSelect={onSelect} />)
-        ) : (
-          <MarkerClusterGroup
-            showCoverageOnHover={false}
-            maxClusterRadius={20}
-            disableClusteringAtZoom={15}
-            zoomToBoundsOnClick={false}
-            spiderfyOnMaxZoom={false}
-            chunkedLoading
-            onClick={zoomIntoCluster}
-            whenReady={(group) => { groupRef.current = group; }}
-          >
-            {visible.map((s) => <StationMarker key={s.id} s={s} selected={selected} onSelect={onSelect} />)}
-          </MarkerClusterGroup>
+        <BoundsReporter
+          onViewport={(nextBounds, nextZoom) => {
+            onBoundsChange?.(
+              {
+                south: nextBounds.getSouth(),
+                west: nextBounds.getWest(),
+                north: nextBounds.getNorth(),
+                east: nextBounds.getEast(),
+              },
+              nextZoom
+            );
+          }}
+        />
+        <MarkerClusterGroup
+          key={markerSetKey}
+          showCoverageOnHover={false}
+          maxClusterRadius={20}
+          disableClusteringAtZoom={15}
+          zoomToBoundsOnClick
+          spiderfyOnMaxZoom={false}
+          chunkedLoading
+        >
+          {visible.map((s) => <StationMarker key={s.id} s={s} onOpen={openStation} />)}
+        </MarkerClusterGroup>
+        {activePopupState && (
+          <StationPopup
+            key={`${activePopupState.station.id}:${activePopupState.sequence}`}
+            station={activePopupState.station}
+          />
         )}
         {selVisible && (
           <Marker position={[selVisible.lat, selVisible.lng]} icon={bubbleIcon(selVisible)} zIndexOffset={2000} eventHandlers={{ click: () => onSelect(selVisible) }} />

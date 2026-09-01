@@ -70,6 +70,19 @@ function normKcg(s) {
   };
 }
 
+function rowsFrom(value) {
+  if (typeof value === 'string') {
+    try { return rowsFrom(JSON.parse(value)); } catch { return []; }
+  }
+  if (Array.isArray(value)) return value;
+  if (value && typeof value === 'object') {
+    if (value.data != null) return rowsFrom(value.data);
+    if (value.retVal != null) return rowsFrom(value.retVal);
+    return Object.values(value);
+  }
+  return [];
+}
+
 // ---------- 抓取工具 ----------
 async function fetchJson(url, timeoutMs = 12000) {
   const ctrl = new AbortController();
@@ -86,7 +99,10 @@ async function fetchJson(url, timeoutMs = 12000) {
 
 async function fetchTaipei() {
   const d = await fetchJson('https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json');
-  return d.map(normTp);
+  const rows = Array.isArray(d) ? d : d?.data ?? d?.retVal ?? [];
+  const stations = rowsFrom(rows).map(normTp);
+  if (stations.length === 0) throw new Error('Taipei API returned no stations');
+  return stations;
 }
 
 async function fetchNewTaipei() {
@@ -98,13 +114,23 @@ async function fetchNewTaipei() {
     all.push(...batch);
     if (batch.length < 1000) break;
   }
-  return all.map(normNtpc);
+  const stations = all.map(normNtpc);
+  if (stations.length === 0) throw new Error('New Taipei API returned no stations');
+  return stations;
 }
 
 async function fetchKaohsiung() {
-  const raw = await fetchJson('https://openapi.kcg.gov.tw/Api/Service/Get/b4dd9c40-9027-4125-8666-06bef1756092');
-  const arr = raw?.data?.retVal ?? (Array.isArray(raw) ? raw : []);
-  return arr.map(normKcg);
+  // 高雄市政府目前使用 api.kcg.gov.tw；保留舊網域作為備援，避免單一網域異常時整個城市消失。
+  let raw;
+  try {
+    raw = await fetchJson('https://api.kcg.gov.tw/api/service/Get/b4dd9c40-9027-4125-8666-06bef1756092');
+  } catch {
+    raw = await fetchJson('https://openapi.kcg.gov.tw/Api/Service/Get/b4dd9c40-9027-4125-8666-06bef1756092');
+  }
+  // 回應可能是 data.data.retVal、data.retVal 或直接陣列，統一遞迴拆出站點列。
+  const rows = rowsFrom(raw);
+  if (rows.length === 0) throw new Error('Kaohsiung API returned no stations');
+  return rows.map(normKcg);
 }
 
 // ---------- 伺服器端快取 45 秒 ----------
@@ -124,15 +150,22 @@ export async function GET(request) {
   ]);
 
   const cityNames = ['臺北', '新北', '高雄'];
-  const stations = results.flatMap((r) => (r.status === 'fulfilled' ? r.value : []));
-  const errors = results
+  const failedCities = results
     .map((r, i) => (r.status === 'rejected' ? cityNames[i] : null))
     .filter(Boolean);
+  let stations = results.flatMap((r) => (r.status === 'fulfilled' ? r.value : []));
+
+  // 上游偶發逾時時，沿用該城市上一筆快取，避免台北／高雄整批圓點瞬間消失。
+  if (failedCities.length && CACHE?.payload?.stations?.length) {
+    const fallback = CACHE.payload.stations.filter((s) => failedCities.includes(s.city));
+    stations = stations.concat(fallback);
+  }
+  const errors = failedCities;
 
   const payload = { stations, errors, fetchedAt: new Date().toISOString() };
   // 防禦:上游大規模失敗時不覆蓋舊快取
   const prevCount = CACHE?.payload?.stations?.length ?? 0;
-  if (!CACHE || stations.length >= prevCount * 0.5 || stations.length > prevCount) {
+  if (failedCities.length === 0 && (!CACHE || stations.length >= prevCount * 0.5 || stations.length > prevCount)) {
     CACHE = { ts: Date.now(), payload };
   }
   return Response.json(payload, { headers: { 'Cache-Control': 'no-store' } });
