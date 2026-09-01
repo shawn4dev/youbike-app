@@ -987,9 +987,10 @@ body {
 .map-loading { display: grid; place-items: center; flex: 1; color: var(--text-3); }
 .legend {
   position: absolute; bottom: 18px; left: 58px; z-index: 1000;
+  max-width: calc(100% - 70px);
   border-radius: 10px; padding: 8px 14px;
   font-size: 12px; color: var(--text-2);
-  display: flex; gap: 14px;
+  display: flex; flex-wrap: wrap; gap: 4px 14px;
 }
 .legend span { display: flex; align-items: center; gap: 5px; }
 .legend i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }

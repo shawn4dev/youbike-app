@@ -351,6 +351,7 @@ export default function MapView({ stations, center, zoom, onSelect, selected, us
         <span><i style={{ background: '#30a46c' }} />充足</span>
         <span><i style={{ background: '#f5a623' }} />≤3 輛</span>
         <span><i style={{ background: '#e5484d' }} />無車</span>
+        <span><i style={{ background: '#e060a5' }} />已滿（可借車）</span>
         <span><i style={{ background: '#9b9ba3' }} />暫停</span>
       </div>
     </div>

@@ -218,9 +218,9 @@ const StationCard = memo(function StationCard({
                 <span className="bike-type ebike" title="電輔車">⚡ <AnimatedNumber value={station.ebikes} /></span>
               )}
               {(station.regularBikes == null || station.ebikes == null) && (
-                <span className="avail" title="臺北官方 API 未提供車型明細,此為一般+電輔總數">🚲 可借 <AnimatedNumber value={station.available} /></span>
+                <span className="avail" title="臺北官方 API 未提供車型明細,此為一般+電輔總數">🚲 <AnimatedNumber value={station.available} /></span>
               )}
-              <span className="free" title="可停空位">🅿️ 可停 <AnimatedNumber value={station.empty ?? 0} /></span>
+              <span className="free" title="可停空位">🅿️ <AnimatedNumber value={station.empty ?? 0} /></span>
               {trend && trend !== 'flat' && (
                 <span className={'trend ' + trend}>{trend === 'up' ? '↑' : '↓'} 車流中</span>
               )}
@@ -860,6 +860,15 @@ export default function Home() {
     [baseFiltered, stationTypeFilters]
   );
 
+  // 初始 bounds 尚未由 Leaflet 回報時，避免先建立全臺 marker 再立刻大量移除。
+  const mapStations = useMemo(
+    () =>
+      boundsFilter && !query.trim() && !userLoc && !mapBounds
+        ? []
+        : filtered,
+    [boundsFilter, query, userLoc, mapBounds, filtered]
+  );
+
   // 範圍內統計(給 header 統計列與徽章)
   const rangeStats = useMemo(() => {
     if (!boundsFilter || !mapBounds || query.trim() || userLoc) return null;
@@ -1342,7 +1351,7 @@ export default function Home() {
         </aside>
 
         <MapView
-          stations={filtered}
+          stations={mapStations}
           center={mapCenter.center}
           zoom={mapCenter.zoom}
           onSelect={pick}
