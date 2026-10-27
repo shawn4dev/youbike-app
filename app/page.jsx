@@ -291,6 +291,7 @@ export default function Home() {
   });
   const [recenterToken, setRecenterToken] = useState(0);
   const [popupRequestToken, setPopupRequestToken] = useState(0);
+  const [cardScrollRequestToken, setCardScrollRequestToken] = useState(0);
   const [, setHistoryRevision] = useState(0);
   const historyRef = useRef({});
   const listRef = useRef(null);
@@ -301,7 +302,6 @@ export default function Home() {
   const sharedViewportRef = useRef(null);
   const initialStationSyncPendingRef = useRef(true);
   const didOpenSharedStationRef = useRef(false);
-  const lastScrolledIdRef = useRef(null);
   const controlsRef = useRef(null);
   const searchRef = useRef(null);
   const previousCityRef = useRef(city);
@@ -765,7 +765,6 @@ export default function Home() {
     setSelectedId(null);
     setChartStationId(null);
     setMapCenterOverride(null);
-    lastScrolledIdRef.current = null;
   }, [searchDraft]);
 
   // 搜尋:regex 查詢(支援 |、.*、中文/英文站名),無效 pattern 時退回純文字
@@ -962,6 +961,8 @@ export default function Home() {
   }, [city]);
 
   const pick = useCallback((s, { recenter = true } = {}) => {
+    // 每次點擊都建立新的列表定位請求；重複點同一站時 selectedId 不會改變。
+    setCardScrollRequestToken((token) => token + 1);
     setSelectedId((prev) => {
       if (prev === s.id) return prev;
       return s.id;
@@ -999,21 +1000,20 @@ export default function Home() {
     if (prevFilterRef.current !== null && prevFilterRef.current !== current) {
       setSelectedId(null);
       setChartStationId(null);
-      lastScrolledIdRef.current = null;
     }
     prevFilterRef.current = current;
   }, [query, onlyAvailable, showFavOnly, stationTypeFilters, boundsFilter]);
 
   // popup/地圖點擊 → 捲動列表到該卡片並高亮
   useEffect(() => {
-    if (!selectedId || !listRef.current) return;
+    // 列表收合時卡片不可見；此時捲動卡片會連帶捲動 .main，露出底部空白。
+    // 直接略過也能保留使用者收合前的列表捲動位置。
+    if (listCollapsed || !selectedId || !listRef.current) return;
     const el = cardRefs.current[selectedId];
     if (el) {
-      if (lastScrolledIdRef.current === selectedId) return;
-      lastScrolledIdRef.current = selectedId;
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-  }, [selectedId]);
+  }, [selectedId, cardScrollRequestToken]);
 
   const selected =
     stations.find((s) => s.id === selectedId) ||
