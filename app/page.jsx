@@ -246,7 +246,7 @@ const StationCard = memo(function StationCard({
           </a>
       </div>
       <div className="bar">
-        <div className={'fill' + (low ? ' fill-low' : '')} style={{ width: Math.min(pct, 100) + '%' }} />
+        <div className={'fill' + (low ? ' fill-low' : '')} style={{ transform: `scaleX(${Math.min(pct, 100) / 100})` }} />
       </div>
     </li>
   );
@@ -655,6 +655,8 @@ export default function Home() {
 
   function locate() {
     autoLocateAllowedRef.current = true;
+    setSelectedId(null);
+    setChartStationId(null);
     if (userLoc) {
       setMapCenterOverride({ center: [userLoc.lat, userLoc.lng], zoom: 15 });
       setRecenterToken((token) => token + 1);

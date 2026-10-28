@@ -6,6 +6,7 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'react-leaflet-markercluster/styles';
+import { markersWithinBounds, paddedMarkerBounds, viewportWithinMarkerBounds } from '../lib/map-viewport.mjs';
 
 // OSM standard 圖磚:道路分級配色、綠地公園可見(最接近 Google 地圖觀感)
 const TILE = {
@@ -134,6 +135,57 @@ const StationMarker = memo(function StationMarker({ s, onOpen }) {
   );
 });
 
+function currentViewportBounds(map) {
+  const bounds = map.getBounds();
+  return {
+    south: bounds.getSouth(),
+    west: bounds.getWest(),
+    north: bounds.getNorth(),
+    east: bounds.getEast(),
+  };
+}
+
+function ViewportStationMarkers({ stations, selectedId, markerSetKey, onOpen }) {
+  const map = useMap();
+  const [markerWindow, setMarkerWindow] = useState(() => ({
+    bounds: paddedMarkerBounds(currentViewportBounds(map)),
+    zoom: map.getZoom(),
+  }));
+  const refreshBounds = useCallback(() => {
+    const viewport = currentViewportBounds(map);
+    const zoom = map.getZoom();
+    setMarkerWindow((previous) => {
+      if (previous.zoom === zoom && viewportWithinMarkerBounds(viewport, previous.bounds)) {
+        return previous;
+      }
+      return { bounds: paddedMarkerBounds(viewport), zoom };
+    });
+  }, [map]);
+
+  // 拖曳時由 Leaflet 自行移動圖層，只在移動結束後更新圖標集合。
+  useMapEvents({ moveend: refreshBounds, resize: refreshBounds });
+  useEffect(() => { refreshBounds(); }, [refreshBounds]);
+
+  const nearbyStations = useMemo(
+    () => markersWithinBounds(stations, markerWindow.bounds, selectedId),
+    [stations, markerWindow.bounds, selectedId]
+  );
+
+  return (
+    <MarkerClusterGroup
+      key={markerSetKey}
+      showCoverageOnHover={false}
+      maxClusterRadius={20}
+      disableClusteringAtZoom={15}
+      zoomToBoundsOnClick
+      spiderfyOnMaxZoom={false}
+      chunkedLoading
+    >
+      {nearbyStations.map((s) => <StationMarker key={s.id} s={s} onOpen={onOpen} />)}
+    </MarkerClusterGroup>
+  );
+}
+
 function StationPopup({ station }) {
   const [shareStatus, setShareStatus] = useState('');
   const shareStatusTimerRef = useRef(null);
@@ -259,9 +311,9 @@ function StationPopup({ station }) {
 
 export default function MapView({ stations, center, zoom, onSelect, selected, userLoc, onBoundsChange, recenterToken, popupRequestToken, markerSetKey, onInteraction }) {
   const [popupState, setPopupState] = useState(null);
-  // 資料或篩選改變時才重建 marker；縮放由 Leaflet 自行處理，不寫入 React state。
+  // 所有站點資料仍保留給列表、搜尋及跨縣市選站，只有地圖圖標按視野裁切。
   const visible = useMemo(
-    () => stations.filter((s) => !isNaN(s.lat) && !isNaN(s.lng)),
+    () => stations.filter((s) => Number.isFinite(s.lat) && Number.isFinite(s.lng)),
     [stations]
   );
 
@@ -323,17 +375,12 @@ export default function MapView({ stations, center, zoom, onSelect, selected, us
             );
           }}
         />
-        <MarkerClusterGroup
-          key={markerSetKey}
-          showCoverageOnHover={false}
-          maxClusterRadius={20}
-          disableClusteringAtZoom={15}
-          zoomToBoundsOnClick
-          spiderfyOnMaxZoom={false}
-          chunkedLoading
-        >
-          {visible.map((s) => <StationMarker key={s.id} s={s} onOpen={openStation} />)}
-        </MarkerClusterGroup>
+        <ViewportStationMarkers
+          stations={visible}
+          selectedId={selected?.id}
+          markerSetKey={markerSetKey}
+          onOpen={openStation}
+        />
         {activePopupState && (
           <StationPopup
             key={`${activePopupState.station.id}:${activePopupState.sequence}`}
