@@ -257,7 +257,7 @@ function StationPopup({ station }) {
   );
 }
 
-export default function MapView({ stations, center, zoom, onSelect, selected, userLoc, onBoundsChange, recenterToken, popupRequestToken, markerSetKey }) {
+export default function MapView({ stations, center, zoom, onSelect, selected, userLoc, onBoundsChange, recenterToken, popupRequestToken, markerSetKey, onInteraction }) {
   const [popupState, setPopupState] = useState(null);
   // 資料或篩選改變時才重建 marker；縮放由 Leaflet 自行處理，不寫入 React state。
   const visible = useMemo(
@@ -288,7 +288,7 @@ export default function MapView({ stations, center, zoom, onSelect, selected, us
   }, [onSelect, showPopup]);
 
   return (
-    <div className="map-wrap">
+    <div className="map-wrap" onPointerDown={onInteraction} onWheel={onInteraction}>
       <MapContainer
         center={center}
         zoom={zoom}

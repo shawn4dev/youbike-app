@@ -7,13 +7,14 @@ import { guardHistory, sampleIntervalMs, distanceMeters } from '../lib/storage-g
 import { ensurePermission, maybeNotify } from '../lib/notifications';
 import NotificationSettings from '../components/NotificationSettings';
 import PWARegister from '../components/PWARegister';
+import { createStationLoader } from '../lib/station-data.mjs';
+import { requestDeviceLocation } from '../lib/device-location.mjs';
 
 const MapView = dynamic(() => import('../components/MapView'), {
   ssr: false,
   loading: () => <div className="map-loading">地圖載入中…</div>,
 });
 
-const REFRESH_MS = 60 * 1000;
 const HISTORY_MAX = 120;
 
 const CITY_ZOOM = {
@@ -258,6 +259,7 @@ export default function Home() {
   const [fetchedAt, setFetchedAt] = useState(null);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const [backgroundLoading, setBackgroundLoading] = useState(false);
   const [searchDraft, setSearchDraft] = useState('');
   const [query, setQuery] = useState('');
   const [city, setCity] = useState('all');
@@ -310,6 +312,10 @@ export default function Home() {
   const mobileListSizeRef = useRef(50);
   const listResizeRef = useRef(null);
   const mobileListResizeRef = useRef(null);
+  const stationLoaderRef = useRef(null);
+  const viewportTimerRef = useRef(null);
+  const cancelLocationRef = useRef(null);
+  const autoLocateAllowedRef = useRef(true);
 
   // 初始載入本地狀態 + URL 分享站號
   useEffect(() => {
@@ -324,6 +330,12 @@ export default function Home() {
     if (Number.isFinite(lat) && Number.isFinite(lng) && Number.isFinite(zoom)) {
       sharedViewportRef.current = { lat, lng, zoom };
       setMapCenterOverride({ center: [lat, lng], zoom });
+    } else {
+      const saved = loadLS('yb-last-location', null);
+      if (Number.isFinite(saved?.lat) && Number.isFinite(saved?.lng)) {
+        setUserLoc(saved);
+        setMapCenterOverride({ center: [saved.lat, saved.lng], zoom: 15 });
+      }
     }
 
     const savedFavorites = loadLS('yb-favorites', []);
@@ -457,6 +469,10 @@ export default function Home() {
   const handleMapViewport = useCallback((bounds, zoom) => {
     const centerLat = (bounds.north + bounds.south) / 2;
     const centerLng = (bounds.east + bounds.west) / 2;
+    window.clearTimeout(viewportTimerRef.current);
+    viewportTimerRef.current = window.setTimeout(() => {
+      stationLoaderRef.current?.focus({ lat: centerLat, lng: centerLng });
+    }, 250);
     const sharedViewport = sharedViewportRef.current;
     const reachedSharedViewport = !sharedViewport || (
       Math.abs(centerLat - sharedViewport.lat) < 0.002 &&
@@ -492,12 +508,9 @@ export default function Home() {
     }
   }, [boundsFilter, query, userLoc]);
 
-  const load = useCallback(
-    async (force = false) => {
-      if (force) setRefreshing(true);
+  const receiveStations = useCallback(
+    (data) => {
       try {
-        const res = await fetch('/api/stations' + (force ? '?force=1' : ''));
-        const data = await res.json();
         setStations((prev) => mergeStations(prev || [], data.stations || []));
         setErrors(data.errors || []);
         setFetchedAt(data.fetchedAt);
@@ -511,7 +524,7 @@ export default function Home() {
         const tracked = favoriteIds.length;
         const minGap = sampleIntervalMs(tracked);
         let changed = hist !== previousHistory;
-        for (const s of data.stations || []) {
+        for (const s of data.updatedStations || []) {
           if (!hist[s.id]) continue;
           const arr = hist[s.id];
           const lastTime = arr.reduce((latest, point) => {
@@ -554,11 +567,27 @@ export default function Home() {
     [notifSettings]
   );
 
+  const receiveStationsRef = useRef(receiveStations);
+  receiveStationsRef.current = receiveStations;
+
+  const load = useCallback(async () => {
+    setRefreshing(true);
+    try { await stationLoaderRef.current?.refresh(); }
+    finally { setRefreshing(false); }
+  }, []);
+
   useEffect(() => {
-    load();
-    const timer = setInterval(() => load(false), REFRESH_MS);
-    return () => clearInterval(timer);
-  }, [load]);
+    const loader = createStationLoader({ onData: data => receiveStationsRef.current(data), onStatus: setBackgroundLoading });
+    stationLoaderRef.current = loader;
+    const params = new URLSearchParams(location.search);
+    const lat = Number.parseFloat(params.get('lat'));
+    const lng = Number.parseFloat(params.get('lng'));
+    const saved = loadLS('yb-last-location', null);
+    const point = Number.isFinite(lat) && Number.isFinite(lng) ? { lat, lng }
+      : Number.isFinite(saved?.lat) && Number.isFinite(saved?.lng) ? saved : BANQIAO_FALLBACK;
+    void loader.focus(point);
+    return () => { loader.stop(); window.clearTimeout(viewportTimerRef.current); stationLoaderRef.current = null; };
+  }, []);
 
   function focusLocation(lat, lng, { recenter = true } = {}) {
     const location = { lat, lng };
@@ -578,53 +607,54 @@ export default function Home() {
   }
 
   function requestLocation({ silent = false, savedLocation = null, notify = false } = {}) {
+    cancelLocationRef.current?.();
     const cached = savedLocation || loadLS('yb-last-location', null);
     const hasCached = Number.isFinite(cached?.lat) && Number.isFinite(cached?.lng);
-    const finishWithCached = () => {
-      if (!hasCached) return false;
-      setUserLoc(cached);
-      if (notify) setMapCenterOverride({ center: [cached.lat, cached.lng], zoom: 15 });
-      if (notify) setRecenterToken((token) => token + 1);
-      if (notify) showLocationToast();
-      setLocating(false);
-      return true;
+    let settled = false;
+    let cancelled = false;
+    let deviceLocated = false;
+    let lastFocusedPoint = null;
+    const networkController = new AbortController();
+    const apply = (point) => {
+      if (cancelled) return;
+      const moved = !lastFocusedPoint || Math.abs(point.lat - lastFocusedPoint.lat) > 0.0001 || Math.abs(point.lng - lastFocusedPoint.lng) > 0.0001;
+      const recenter = moved && ((!settled && notify) || autoLocateAllowedRef.current);
+      focusLocation(point.lat, point.lng, { recenter });
+      if (recenter) { lastFocusedPoint = point; void stationLoaderRef.current?.focus(point); }
+      if (notify && !settled) showLocationToast();
+      settled = true;
     };
-    const finishWithBanqiao = (message) => {
-      setMapCenterOverride({ center: [BANQIAO_FALLBACK.lat, BANQIAO_FALLBACK.lng], zoom: BANQIAO_FALLBACK.zoom });
-      setLocating(false);
-      if (!silent && message) setGeoErr(message);
-    };
-
-    if (!navigator.geolocation) {
-      if (!finishWithCached()) finishWithBanqiao('此瀏覽器不支援定位');
-      return;
-    }
+    if (hasCached && notify) focusLocation(cached.lat, cached.lng);
     setLocating(true);
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        focusLocation(pos.coords.latitude, pos.coords.longitude, { recenter: notify });
-        if (notify) showLocationToast();
+    const cancelDevice = requestDeviceLocation({
+      geolocation: navigator.geolocation,
+      onPosition: point => {
+        deviceLocated = true;
+        networkController.abort();
+        apply(point);
       },
-      (highAccuracyError) => {
-        if (finishWithCached()) return;
-        // 高精度定位失敗後，以 IP 網路區域定位再試一次。
-        fetch('/api/location', { cache: 'no-store' })
+      onUnavailable: error => {
+        setLocating(false);
+        if (hasCached) { apply(cached); return; }
+        fetch('https://ipapi.co/json/', { signal: AbortSignal.any([networkController.signal, AbortSignal.timeout(2500)]) })
           .then(async (response) => {
             if (!response.ok) throw new Error('network location unavailable');
             const data = await response.json();
-            if (!Number.isFinite(Number(data.lat)) || !Number.isFinite(Number(data.lng))) {
+            if (!Number.isFinite(data.latitude) || !Number.isFinite(data.longitude)) {
               throw new Error('network location has no coordinates');
             }
-            focusLocation(Number(data.lat), Number(data.lng), { recenter: notify });
-            if (notify) showLocationToast();
+            if (!deviceLocated) apply({ lat: data.latitude, lng: data.longitude });
           })
-          .catch(() => finishWithBanqiao('定位失敗:' + highAccuracyError.message));
+          .catch(() => {
+            if (!cancelled && !deviceLocated && !silent) setGeoErr('定位失敗:' + error.message);
+          });
       },
-      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60 * 1000 }
-    );
+    });
+    cancelLocationRef.current = () => { cancelled = true; cancelDevice(); networkController.abort(); };
   }
 
   function locate() {
+    autoLocateAllowedRef.current = true;
     if (userLoc) {
       setMapCenterOverride({ center: [userLoc.lat, userLoc.lng], zoom: 15 });
       setRecenterToken((token) => token + 1);
@@ -642,7 +672,10 @@ export default function Home() {
     const saved = loadLS('yb-last-location', null);
     const hasSavedLocation = Number.isFinite(saved?.lat) && Number.isFinite(saved?.lng);
     requestLocation({ silent: true, savedLocation: hasSavedLocation ? saved : null });
+    return () => cancelLocationRef.current?.();
   }, []);
+
+  useEffect(() => () => cancelLocationRef.current?.(), []);
 
   useEffect(() => {
     if (!controlsOpen) return;
@@ -961,6 +994,7 @@ export default function Home() {
   }, [city]);
 
   const pick = useCallback((s, { recenter = true } = {}) => {
+    autoLocateAllowedRef.current = false;
     // 每次點擊都建立新的列表定位請求；重複點同一站時 selectedId 不會改變。
     setCardScrollRequestToken((token) => token + 1);
     setSelectedId((prev) => {
@@ -1108,6 +1142,7 @@ export default function Home() {
               {rangeStats && rangeStats.emptyStations > 0 && ` · ${rangeStats.emptyStations} 站無車`}
               {` · 更新於 ${fmtTime(fetchedAt)}`}
               {refreshing ? ' · 刷新中…' : ''}
+              {backgroundLoading ? ' · 背景載入其他站點…' : ''}
               {userLoc ? ' · 📍依距離排序' : ''}
               {' · '}
               <button className="refresh-btn" onClick={() => load(true)} disabled={refreshing}>
@@ -1363,6 +1398,7 @@ export default function Home() {
           popupRequestToken={popupRequestToken}
           markerSetKey={query}
           areaTarget={areaTarget}
+          onInteraction={() => { autoLocateAllowedRef.current = false; }}
         />
       </div>
 

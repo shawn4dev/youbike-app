@@ -1,9 +1,9 @@
 /* YouBike 站點查詢 Service Worker
  * - 導航頁與 Next 資產：network-first，避免吃到舊版 bundle
  * - 靜態圖示：cache-first
- * - /api/stations：network-first（失敗時退回快取）
+ * - 站點靜態索引：network-first；版本化區塊：cache-first
  */
-const VERSION = 'v2';
+const VERSION = 'v3';
 const STATIC_CACHE = `youbike-static-${VERSION}`;
 const RUNTIME_CACHE = `youbike-runtime-${VERSION}`;
 
@@ -41,31 +41,8 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  // API 請求：network-first，離線時退回快取
-  if (url.pathname.startsWith('/api/')) {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          const copy = response.clone();
-          caches.open(RUNTIME_CACHE).then((cache) => cache.put(request, copy));
-          return response;
-        })
-        .catch(() =>
-          caches.match(request).then(
-            (cached) =>
-              cached ||
-              new Response(JSON.stringify({ error: 'offline' }), {
-                status: 503,
-                headers: { 'Content-Type': 'application/json' },
-              })
-          )
-        )
-    );
-    return;
-  }
-
   // Next.js bundle 與頁面導覽優先拿最新版本，離線時才退回快取
-  if (request.mode === 'navigate' || url.pathname.startsWith('/_next/')) {
+  if (request.mode === 'navigate' || url.pathname.startsWith('/_next/') || url.pathname === '/data/stations/index.json') {
     event.respondWith(
       fetch(request)
         .then((response) => {

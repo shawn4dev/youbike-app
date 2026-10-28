@@ -1,17 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export',
   allowedDevOrigins: [
     "vuedev.yoyowu.uk",
   ],
-
-  experimental: {
-    serverActions: {
-      allowedOrigins: [
-        "vuedev.yoyowu.uk",
-      ],
-    },
-  },
 };
 
 export default nextConfig;
