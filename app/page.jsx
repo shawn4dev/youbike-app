@@ -313,7 +313,6 @@ export default function Home() {
   const listResizeRef = useRef(null);
   const mobileListResizeRef = useRef(null);
   const stationLoaderRef = useRef(null);
-  const viewportTimerRef = useRef(null);
   const cancelLocationRef = useRef(null);
   const autoLocateAllowedRef = useRef(true);
 
@@ -469,10 +468,6 @@ export default function Home() {
   const handleMapViewport = useCallback((bounds, zoom) => {
     const centerLat = (bounds.north + bounds.south) / 2;
     const centerLng = (bounds.east + bounds.west) / 2;
-    window.clearTimeout(viewportTimerRef.current);
-    viewportTimerRef.current = window.setTimeout(() => {
-      stationLoaderRef.current?.focus({ lat: centerLat, lng: centerLng });
-    }, 250);
     const sharedViewport = sharedViewportRef.current;
     const reachedSharedViewport = !sharedViewport || (
       Math.abs(centerLat - sharedViewport.lat) < 0.002 &&
@@ -572,21 +567,15 @@ export default function Home() {
 
   const load = useCallback(async () => {
     setRefreshing(true);
-    try { await stationLoaderRef.current?.refresh(); }
+    try { await stationLoaderRef.current?.refresh({ force: true }); }
     finally { setRefreshing(false); }
   }, []);
 
   useEffect(() => {
     const loader = createStationLoader({ onData: data => receiveStationsRef.current(data), onStatus: setBackgroundLoading });
     stationLoaderRef.current = loader;
-    const params = new URLSearchParams(location.search);
-    const lat = Number.parseFloat(params.get('lat'));
-    const lng = Number.parseFloat(params.get('lng'));
-    const saved = loadLS('yb-last-location', null);
-    const point = Number.isFinite(lat) && Number.isFinite(lng) ? { lat, lng }
-      : Number.isFinite(saved?.lat) && Number.isFinite(saved?.lng) ? saved : BANQIAO_FALLBACK;
-    void loader.focus(point);
-    return () => { loader.stop(); window.clearTimeout(viewportTimerRef.current); stationLoaderRef.current = null; };
+    void loader.refresh();
+    return () => { loader.stop(); stationLoaderRef.current = null; };
   }, []);
 
   function focusLocation(lat, lng, { recenter = true } = {}) {
@@ -620,7 +609,7 @@ export default function Home() {
       const moved = !lastFocusedPoint || Math.abs(point.lat - lastFocusedPoint.lat) > 0.0001 || Math.abs(point.lng - lastFocusedPoint.lng) > 0.0001;
       const recenter = moved && ((!settled && notify) || autoLocateAllowedRef.current);
       focusLocation(point.lat, point.lng, { recenter });
-      if (recenter) { lastFocusedPoint = point; void stationLoaderRef.current?.focus(point); }
+      if (recenter) lastFocusedPoint = point;
       if (notify && !settled) showLocationToast();
       settled = true;
     };
@@ -1144,7 +1133,7 @@ export default function Home() {
               {rangeStats && rangeStats.emptyStations > 0 && ` · ${rangeStats.emptyStations} 站無車`}
               {` · 更新於 ${fmtTime(fetchedAt)}`}
               {refreshing ? ' · 刷新中…' : ''}
-              {backgroundLoading ? ' · 背景載入其他站點…' : ''}
+              {backgroundLoading ? ' · 資料更新中…' : ''}
               {userLoc ? ' · 📍依距離排序' : ''}
               {' · '}
               <button className="refresh-btn" onClick={() => load(true)} disabled={refreshing}>
