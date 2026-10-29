@@ -16,6 +16,8 @@ const MapView = dynamic(() => import('../components/MapView'), {
 });
 
 const HISTORY_MAX = 120;
+// 暫停車流追蹤，保留既有歷史資料以便日後恢復。
+const FLOW_TRACKING_ENABLED = false;
 
 const CITY_ZOOM = {
   all: { center: [23.9, 121.2], zoom: 8 },
@@ -351,12 +353,14 @@ export default function Home() {
       mobileListSizeRef.current = nextSize;
       setMobileListSize(nextSize);
     }
+    if (FLOW_TRACKING_ENABLED) {
     const hist = syncFavoriteHistory(
       guardHistory(loadLS('yb-history', {})),
       savedFavorites
     );
     historyRef.current = hist;
     saveLS('yb-history', hist);
+    }
     setNotifSettings((prev) => {
       const merged = { ...prev, ...loadLS('yb-notif', {}) };
       return merged;
@@ -511,6 +515,7 @@ export default function Home() {
         setFetchedAt(data.fetchedAt);
 
         // 取樣(含降頻與容量守衛)
+        if (FLOW_TRACKING_ENABLED) {
         const now = Date.now();
         const favoriteIds = loadLS('yb-favorites', []);
         const previousHistory = historyRef.current;
@@ -542,6 +547,7 @@ export default function Home() {
           }
           saveLS('yb-history', guarded);
           setHistoryRevision((revision) => revision + 1);
+        }
         }
 
         // 低車量通知(先確保權限,再檢查)
@@ -706,6 +712,7 @@ export default function Home() {
     setFavorites((prev) => {
       const next = prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id];
       saveLS('yb-favorites', next);
+      if (FLOW_TRACKING_ENABLED) {
       const hist = historyRef.current;
       if (next.includes(id) && !hist[id]) {
         hist[id] = [];
@@ -715,12 +722,13 @@ export default function Home() {
       if (!next.includes(id)) delete hist[id];
       saveLS('yb-history', hist);
       setHistoryRevision((revision) => revision + 1);
+      }
       return next;
     });
   }, [stations]);
 
   function exportFavs() {
-    const data = JSON.stringify({ favorites: loadLS('yb-favorites', []), history: historyRef.current }, null, 2);
+    const data = JSON.stringify({ favorites: loadLS('yb-favorites', []) }, null, 2);
     const blob = new Blob([data], { type: 'application/json' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
@@ -742,6 +750,7 @@ export default function Home() {
           saveLS('yb-favorites', favoriteIds);
           setFavorites(favoriteIds);
         }
+        if (FLOW_TRACKING_ENABLED) {
         const importedHistory = d.history && typeof d.history === 'object' ? d.history : {};
         const synced = syncFavoriteHistory(
           { ...historyRef.current, ...importedHistory },
@@ -756,6 +765,7 @@ export default function Home() {
         historyRef.current = synced;
         saveLS('yb-history', synced);
         setHistoryRevision((revision) => revision + 1);
+        }
         setShowImport(false);
       } catch {
         alert('檔案格式錯誤');
@@ -1087,7 +1097,7 @@ export default function Home() {
             : Math.max(focusIndex.current - 1, 0);
         const target = filtered[focusIndex.current];
         if (target) pick(target);
-      } else if (e.key === 'Enter' && selectedId) {
+      } else if (FLOW_TRACKING_ENABLED && e.key === 'Enter' && selectedId) {
         setChartStationId((v) => (v === selectedId ? null : selectedId));
       }
     }
@@ -1116,7 +1126,7 @@ export default function Home() {
         </div>
         {showImport && (
           <div className="io-row">
-            <button className="chip" onClick={exportFavs}>⬇ 匯出收藏/追蹤</button>
+            <button className="chip" onClick={exportFavs}>⬇ 匯出收藏</button>
             <label className="chip file-chip">
               ⬆ 匯入 JSON
               <input type="file" accept=".json" onChange={importFavs} hidden />
@@ -1353,7 +1363,7 @@ export default function Home() {
             ))}
           {!loading &&
             displayList.map((s) => {
-              const mm = minmax(s.id);
+              const mm = FLOW_TRACKING_ENABLED ? minmax(s.id) : null;
               return (
                 <StationCard
                   key={s.id}
@@ -1361,7 +1371,7 @@ export default function Home() {
                   isSelected={s.id === selectedId}
                   isFav={favoriteSet.has(s.id)}
                   low={s.active && (s.available === 0 || s.empty === 0)}
-                  trend={trend(s.id)}
+                  trend={FLOW_TRACKING_ENABLED ? trend(s.id) : null}
                   minValue={mm?.min ?? null}
                   maxValue={mm?.max ?? null}
                   dist={stationDistances?.get(s.id) ?? null}
@@ -1393,14 +1403,14 @@ export default function Home() {
         />
       </div>
 
-      {chartStationId && selected && chartStationId === selected.id && (
+      {FLOW_TRACKING_ENABLED && chartStationId && selected && chartStationId === selected.id && (
         <HistoryChart
           station={selected}
           history={historyRef.current[selected.id] || []}
           onClose={() => setChartStationId(null)}
         />
       )}
-      {selected && chartStationId !== selected.id && (
+      {FLOW_TRACKING_ENABLED && selected && chartStationId !== selected.id && (
         <button className="chart-btn" onClick={() => setChartStationId(selected.id)}>
           📈 查看「{selected.name.slice(0, 8)}…」車輛趨勢
         </button>
