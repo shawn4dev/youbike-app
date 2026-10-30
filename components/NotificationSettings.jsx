@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 
 // settings 形狀（呼叫端負責存 localStorage）：
 // {
@@ -38,7 +39,7 @@ export default function NotificationSettings({ settings, onChange }) {
         ⚙️
       </button>
 
-      {open && (
+      {open && createPortal(
         <div className="ntf-panel" role="dialog" aria-label="推播通知設定">
           <div className="ntf-panel-header">
             <span>🔔 推播通知</span>
@@ -99,7 +100,7 @@ export default function NotificationSettings({ settings, onChange }) {
               }}
             />
           </div>
-        </div>
+        </div>, document.body
       )}
     </div>
   );
