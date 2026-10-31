@@ -7,6 +7,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'react-leaflet-markercluster/styles';
 import { markersWithinBounds, paddedMarkerBounds, viewportWithinMarkerBounds } from '../lib/map-viewport.mjs';
+import { isMapBackgroundClick } from '../lib/map-selection.mjs';
 
 // OSM standard 圖磚:道路分級配色、綠地公園可見(最接近 Google 地圖觀感)
 const TILE = {
@@ -36,7 +37,7 @@ function bubbleIcon(s) {
     className: 'yb-bubble-wrap',
     html: `<div class="yb-bubble${!s.active ? ' dim' : ''}" style="--bc:${color};width:${scale}px;height:${scale}px">${label}</div>`,
     iconSize: [scale, scale],
-    iconAnchor: [scale / 2, scale / 2],
+    iconAnchor: [0, scale],
   });
   bubbleIconCache.set(key, icon);
   return icon;
@@ -85,8 +86,12 @@ function BoundsReporter({ onViewport }) {
   return null;
 }
 
-function PopupDismissOnDrag({ onDismiss }) {
-  useMapEvents({ dragend: onDismiss });
+function UserSelectionDismissal({ onDismiss }) {
+  useMapEvents({
+    dragstart: onDismiss,
+    click: event => { if (isMapBackgroundClick(event)) onDismiss(); },
+    keydown: event => { if (event.originalEvent?.key === 'Escape') onDismiss(); },
+  });
   return null;
 }
 
@@ -186,7 +191,7 @@ function ViewportStationMarkers({ stations, selectedId, markerSetKey, onOpen }) 
   );
 }
 
-function StationPopup({ station }) {
+function StationPopup({ station, onDismiss }) {
   const [shareStatus, setShareStatus] = useState('');
   const shareStatusTimerRef = useRef(null);
   const hasBikeBreakdown = station.regularBikes != null || station.ebikes != null;
@@ -237,7 +242,11 @@ function StationPopup({ station }) {
       minWidth={210}
       maxWidth={224}
       autoPanPadding={[16, 16]}
+      closeButton={false}
+      closeOnClick={false}
+      closeOnEscapeKey={false}
     >
+      <button type="button" className="leaflet-popup-close-button" style={{ position: 'absolute', border: 0, cursor: 'pointer' }} aria-label="關閉站點資訊" onClick={onDismiss}>×</button>
       <article className="popup-card" aria-label={`${station.name}站點資訊`}>
         <div className="popup-meta">
           <span className={`popup-city b-${station.city}`}>{station.city}</span>
@@ -309,7 +318,7 @@ function StationPopup({ station }) {
   );
 }
 
-export default function MapView({ stations, center, zoom, onSelect, selected, userLoc, onBoundsChange, recenterToken, popupRequestToken, markerSetKey, onInteraction }) {
+export default function MapView({ stations, center, zoom, onSelect, onDeselect, selected, userLoc, onBoundsChange, recenterToken, popupRequestToken, markerSetKey, onInteraction }) {
   const [popupState, setPopupState] = useState(null);
   // 所有站點資料仍保留給列表、搜尋及跨縣市選站，只有地圖圖標按視野裁切。
   const visible = useMemo(
@@ -320,9 +329,15 @@ export default function MapView({ stations, center, zoom, onSelect, selected, us
   const selVisible = selected && !visible.some((v) => v.id === selected.id) ? selected : null;
   const popupStationId = popupState?.station.id ?? null;
   const activePopupState = popupStationId === selected?.id ? popupState : null;
-  const dismissPopup = useCallback(() => setPopupState(null), []);
+  const selectedRef = useRef(selected);
+  selectedRef.current = selected;
+  const dismissPopup = useCallback(() => {
+    setPopupState(null);
+    onDeselect?.();
+  }, [onDeselect]);
 
   const showPopup = useCallback((station) => {
+    if (selectedRef.current?.id !== station.id) return;
     setPopupState((previous) => ({
       station,
       sequence: (previous?.sequence ?? 0) + 1,
@@ -356,7 +371,7 @@ export default function MapView({ stations, center, zoom, onSelect, selected, us
         <ZoomControl position="bottomleft" />
         <ResizeInvalidator />
         <Recenter center={center} zoom={zoom} trigger={recenterToken} />
-        <PopupDismissOnDrag onDismiss={dismissPopup} />
+        <UserSelectionDismissal onDismiss={dismissPopup} />
         <SelectedPopupOpener
           station={selected}
           requestToken={popupRequestToken}
@@ -385,6 +400,7 @@ export default function MapView({ stations, center, zoom, onSelect, selected, us
           <StationPopup
             key={`${activePopupState.station.id}:${activePopupState.sequence}`}
             station={activePopupState.station}
+            onDismiss={dismissPopup}
           />
         )}
         {selVisible && (

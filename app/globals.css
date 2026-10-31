@@ -591,6 +591,7 @@ body {
   box-shadow: 0 1px 5px rgba(0,0,0,.35), inset 0 -2px 3px rgba(0,0,0,.15);
   border: 2px solid rgba(255,255,255,.9);
   transition: transform .15s ease;
+  transform-origin: left bottom;
 }
 .yb-bubble.dim { opacity: .75; }
 .yb-bubble:hover { transform: scale(1.15); }

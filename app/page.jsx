@@ -8,6 +8,7 @@ import { ensurePermission, maybeNotify } from '../lib/notifications';
 import NotificationSettings from '../components/NotificationSettings';
 import PWARegister from '../components/PWARegister';
 import { createStationLoader } from '../lib/station-data.mjs';
+import { withoutStation } from '../lib/map-selection.mjs';
 import { requestDeviceLocation } from '../lib/device-location.mjs';
 
 const MapView = dynamic(() => import('../components/MapView'), {
@@ -454,6 +455,16 @@ export default function Home() {
   }
 
   // 選站後同步 URL
+  const deselectStation = useCallback(() => {
+    sharedStationIdRef.current = null;
+    sharedViewportRef.current = null;
+    initialStationSyncPendingRef.current = false;
+    didOpenSharedStationRef.current = true;
+    setSelectedId(null);
+    setChartStationId(null);
+    try { history.replaceState(null, '', withoutStation(location.href)); } catch {}
+  }, []);
+
   useEffect(() => {
     if (!mountedRef.current) return; // 跳過 mount 當次,避免撞 Next router 初始化
     if (initialStationSyncPendingRef.current) {
@@ -650,8 +661,7 @@ export default function Home() {
 
   function locate() {
     autoLocateAllowedRef.current = true;
-    setSelectedId(null);
-    setChartStationId(null);
+    deselectStation();
     if (userLoc) {
       setMapCenterOverride({ center: [userLoc.lat, userLoc.lng], zoom: 15 });
       setRecenterToken((token) => token + 1);
@@ -1087,7 +1097,7 @@ export default function Home() {
       } else if (e.key === 'Escape') {
         setSearchDraft('');
         setQuery('');
-        setChartStationId(null);
+        deselectStation();
         document.activeElement?.blur();
       } else if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && filtered.length) {
         e.preventDefault();
@@ -1103,7 +1113,7 @@ export default function Home() {
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [filtered, selectedId]);
+  }, [filtered, selectedId, deselectStation]);
 
   return (
     <div className="app">
@@ -1391,6 +1401,7 @@ export default function Home() {
           center={mapCenter.center}
           zoom={mapCenter.zoom}
           onSelect={pick}
+          onDeselect={deselectStation}
           selected={selected}
           theme={theme}
           userLoc={userLoc}
