@@ -9,6 +9,7 @@ import NotificationSettings from '../components/NotificationSettings';
 import PWARegister from '../components/PWARegister';
 import { createStationLoader } from '../lib/station-data.mjs';
 import { withoutStation } from '../lib/map-selection.mjs';
+import { formatZoom, zoomMatches } from '../lib/viewport-commit.mjs';
 import { requestDeviceLocation } from '../lib/device-location.mjs';
 
 const MapView = dynamic(() => import('../components/MapView'), {
@@ -325,7 +326,7 @@ export default function Home() {
     const sharedStationId = params.get('station') || null;
     const lat = Number.parseFloat(params.get('lat'));
     const lng = Number.parseFloat(params.get('lng'));
-    const zoom = Number.parseInt(params.get('z'), 10);
+    const zoom = Number.parseFloat(params.get('z'));
 
     sharedStationIdRef.current = sharedStationId;
     setSelectedId(sharedStationId);
@@ -487,7 +488,7 @@ export default function Home() {
     const reachedSharedViewport = !sharedViewport || (
       Math.abs(centerLat - sharedViewport.lat) < 0.002 &&
       Math.abs(centerLng - sharedViewport.lng) < 0.002 &&
-      Math.round(zoom) === sharedViewport.zoom
+      zoomMatches(zoom, sharedViewport.zoom)
     );
 
     // Leaflet 會先回報 SSR 時的預設全台視野；分享位置真正套用前不可讓它覆蓋網址。
@@ -498,7 +499,7 @@ export default function Home() {
           const url = new URL(location.href);
           url.searchParams.set('lat', centerLat.toFixed(4));
           url.searchParams.set('lng', centerLng.toFixed(4));
-          url.searchParams.set('z', String(Math.round(zoom)));
+          url.searchParams.set('z', formatZoom(zoom));
           history.replaceState(null, '', url);
         }
       } catch {}
@@ -673,7 +674,7 @@ export default function Home() {
     const params = new URLSearchParams(location.search);
     const urlLat = Number.parseFloat(params.get('lat'));
     const urlLng = Number.parseFloat(params.get('lng'));
-    const urlZoom = Number.parseInt(params.get('z'), 10);
+    const urlZoom = Number.parseFloat(params.get('z'));
     if (Number.isFinite(urlLat) && Number.isFinite(urlLng) && Number.isFinite(urlZoom)) return;
 
     const saved = loadLS('yb-last-location', null);
@@ -1402,6 +1403,8 @@ export default function Home() {
           zoom={mapCenter.zoom}
           onSelect={pick}
           onDeselect={deselectStation}
+          favoriteSet={favoriteSet}
+          onToggleFavorite={toggleFavorite}
           selected={selected}
           theme={theme}
           userLoc={userLoc}

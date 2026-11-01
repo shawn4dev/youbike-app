@@ -1,5 +1,7 @@
 import './globals.css';
 
+export const viewport = { width: 'device-width', initialScale: 1, viewportFit: 'cover' };
+
 export const metadata = {
   title: 'YouBike 站點查詢',
   description: '臺北 · 新北 · 高雄 YouBike 2.0 即時站點查詢',

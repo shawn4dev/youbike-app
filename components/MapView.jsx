@@ -8,6 +8,24 @@ import 'leaflet/dist/leaflet.css';
 import 'react-leaflet-markercluster/styles';
 import { markersWithinBounds, paddedMarkerBounds, viewportWithinMarkerBounds } from '../lib/map-viewport.mjs';
 import { isMapBackgroundClick } from '../lib/map-selection.mjs';
+import { attachTrackpadZoom } from '../lib/trackpad-zoom.mjs';
+import { attachViewportCommit } from '../lib/viewport-commit.mjs';
+
+const TRACKPAD_ZOOM_ENABLED = true;
+
+function TrackpadZoom({ onInteraction }) {
+  const map = useMap();
+  const interactionRef = useRef(onInteraction);
+  interactionRef.current = onInteraction;
+  useEffect(() => {
+    if (!TRACKPAD_ZOOM_ENABLED) return;
+    return attachTrackpadZoom(map, {
+      onGestureStart: () => { map.fire('trackpadzoomstart'); interactionRef.current?.(); },
+      onGestureEnd: detail => map.fire('trackpadzoomend', detail),
+    });
+  }, [map]);
+  return null;
+}
 
 // OSM standard 圖磚:道路分級配色、綠地公園可見(最接近 Google 地圖觀感)
 const TILE = {
@@ -66,22 +84,14 @@ function ResizeInvalidator() {
 }
 
 function BoundsReporter({ onViewport }) {
-  const timerRef = useRef(null);
   const onViewportRef = useRef(onViewport);
   onViewportRef.current = onViewport;
-  const map = useMapEvents({
-    // 合併 Leaflet 在縮放結束時可能連續送出的 moveend，只回報最後一次。
-    moveend: () => {
-      window.clearTimeout(timerRef.current);
-      timerRef.current = window.setTimeout(
-        () => onViewportRef.current(map.getBounds(), map.getZoom()),
-        80
-      );
-    },
-  });
+  const map = useMap();
   useEffect(() => {
-    onViewportRef.current(map.getBounds(), map.getZoom());
-    return () => window.clearTimeout(timerRef.current);
+    const report = () => onViewportRef.current(map.getBounds(), map.getZoom());
+    const dispose = attachViewportCommit(map, report, { delayMs: 80 });
+    report();
+    return dispose;
   }, [map]);
   return null;
 }
@@ -150,7 +160,7 @@ function currentViewportBounds(map) {
   };
 }
 
-function ViewportStationMarkers({ stations, selectedId, markerSetKey, onOpen }) {
+function ViewportStationMarkers({ stations, selectedId, markerSetKey, onOpen, onClusterClick }) {
   const map = useMap();
   const [markerWindow, setMarkerWindow] = useState(() => ({
     bounds: paddedMarkerBounds(currentViewportBounds(map)),
@@ -168,8 +178,11 @@ function ViewportStationMarkers({ stations, selectedId, markerSetKey, onOpen }) 
   }, [map]);
 
   // 拖曳時由 Leaflet 自行移動圖層，只在移動結束後更新圖標集合。
-  useMapEvents({ moveend: refreshBounds, resize: refreshBounds });
-  useEffect(() => { refreshBounds(); }, [refreshBounds]);
+  useEffect(() => {
+    const dispose = attachViewportCommit(map, refreshBounds);
+    refreshBounds();
+    return dispose;
+  }, [map, refreshBounds]);
 
   const nearbyStations = useMemo(
     () => markersWithinBounds(stations, markerWindow.bounds, selectedId),
@@ -185,13 +198,14 @@ function ViewportStationMarkers({ stations, selectedId, markerSetKey, onOpen }) 
       zoomToBoundsOnClick
       spiderfyOnMaxZoom={false}
       chunkedLoading
+      onClick={onClusterClick}
     >
       {nearbyStations.map((s) => <StationMarker key={s.id} s={s} onOpen={onOpen} />)}
     </MarkerClusterGroup>
   );
 }
 
-function StationPopup({ station, onDismiss }) {
+function StationPopup({ station, onDismiss, isFavorite, onToggleFavorite }) {
   const [shareStatus, setShareStatus] = useState('');
   const shareStatusTimerRef = useRef(null);
   const hasBikeBreakdown = station.regularBikes != null || station.ebikes != null;
@@ -254,6 +268,15 @@ function StationPopup({ station, onDismiss }) {
             <i aria-hidden="true" />
             {station.active ? '營運中' : '暫停營運'}
           </span>
+          <button
+            type="button"
+            className={'star' + (isFavorite ? ' on' : '')}
+            aria-label={isFavorite ? '取消收藏' : '收藏'}
+            aria-pressed={isFavorite}
+            onClick={event => { event.stopPropagation(); onToggleFavorite(station.id); }}
+          >
+            {isFavorite ? '★' : '☆'}
+          </button>
         </div>
 
         <h2 className="popup-title">{station.name}</h2>
@@ -318,7 +341,7 @@ function StationPopup({ station, onDismiss }) {
   );
 }
 
-export default function MapView({ stations, center, zoom, onSelect, onDeselect, selected, userLoc, onBoundsChange, recenterToken, popupRequestToken, markerSetKey, onInteraction }) {
+export default function MapView({ stations, center, zoom, onSelect, onDeselect, selected, favoriteSet, onToggleFavorite, userLoc, onBoundsChange, recenterToken, popupRequestToken, markerSetKey, onInteraction }) {
   const [popupState, setPopupState] = useState(null);
   // 所有站點資料仍保留給列表、搜尋及跨縣市選站，只有地圖圖標按視野裁切。
   const visible = useMemo(
@@ -355,7 +378,9 @@ export default function MapView({ stations, center, zoom, onSelect, onDeselect, 
   }, [onSelect, showPopup]);
 
   return (
-    <div className="map-wrap" onPointerDown={onInteraction} onWheel={onInteraction}>
+    <div className="map-wrap" onPointerDown={onInteraction} onWheel={event => {
+      if (!TRACKPAD_ZOOM_ENABLED || !event.ctrlKey) onInteraction?.(event);
+    }}>
       <MapContainer
         center={center}
         zoom={zoom}
@@ -370,6 +395,7 @@ export default function MapView({ stations, center, zoom, onSelect, onDeselect, 
         <TileLayer attribution={TILE.attribution} url={TILE.url} />
         <ZoomControl position="bottomleft" />
         <ResizeInvalidator />
+        <TrackpadZoom onInteraction={onInteraction} />
         <Recenter center={center} zoom={zoom} trigger={recenterToken} />
         <UserSelectionDismissal onDismiss={dismissPopup} />
         <SelectedPopupOpener
@@ -395,16 +421,19 @@ export default function MapView({ stations, center, zoom, onSelect, onDeselect, 
           selectedId={selected?.id}
           markerSetKey={markerSetKey}
           onOpen={openStation}
+          onClusterClick={dismissPopup}
         />
         {activePopupState && (
           <StationPopup
             key={`${activePopupState.station.id}:${activePopupState.sequence}`}
             station={activePopupState.station}
             onDismiss={dismissPopup}
+            isFavorite={favoriteSet.has(activePopupState.station.id)}
+            onToggleFavorite={onToggleFavorite}
           />
         )}
         {selVisible && (
-          <Marker position={[selVisible.lat, selVisible.lng]} icon={bubbleIcon(selVisible)} zIndexOffset={2000} eventHandlers={{ click: () => onSelect(selVisible) }} />
+          <Marker position={[selVisible.lat, selVisible.lng]} icon={bubbleIcon(selVisible)} zIndexOffset={2000} eventHandlers={{ click: () => openStation(selVisible) }} />
         )}
         {userLoc && !isNaN(userLoc.lat) && <Marker position={[userLoc.lat, userLoc.lng]} icon={meIcon}>
           <Popup>📍 您在這裡</Popup>

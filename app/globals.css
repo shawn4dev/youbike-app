@@ -3,6 +3,7 @@
   /* Light: Apple 淺色 */
   --bg: #f5f5f7;
   --surface: #ffffff;
+  --station-popup-bg: rgba(255, 255, 255, .89);
   --surface-2: rgba(0, 0, 0, 0.03);
   --text: #1d1d1f;
   --text-2: rgba(0, 0, 0, 0.6);
@@ -23,6 +24,7 @@
   /* Dark: Linear 深色 */
   --bg: #08090a;
   --surface: #131417;
+  --station-popup-bg: rgba(19, 20, 23, .89);
   --surface-2: rgba(255, 255, 255, 0.04);
   --text: #f7f8f8;
   --text-2: #8a8f98;
@@ -58,6 +60,8 @@ body {
   width: 100%;
   max-width: 100vw;
   height: 100vh;
+  height: 100dvh;
+  padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
   overflow: hidden;
 }
 
@@ -582,7 +586,8 @@ body {
 }
 
 /* 數字氣泡(YouBike App 風) */
-.yb-bubble-wrap { background: none; border: none; }
+.yb-bubble-wrap { background: none; border: none; filter: opacity(.82); }
+.marker-cluster { filter: opacity(.82); }
 .yb-bubble {
   display: grid; place-items: center;
   background: var(--bc, #30a46c); color: #fff;
@@ -593,7 +598,7 @@ body {
   transition: transform .15s ease;
   transform-origin: left bottom;
 }
-.yb-bubble.dim { opacity: .75; }
+.yb-bubble.dim { opacity: 1; }
 .yb-bubble:hover { transform: scale(1.15); }
 
 /* 您在這裡 */
@@ -611,7 +616,13 @@ body {
 }
 
 /* 站點 Popup：緊湊、可掃讀的交通狀態面板 */
+.station-popup .leaflet-popup-content-wrapper,
+.station-popup .leaflet-popup-tip {
+  background: var(--station-popup-bg) !important;
+}
 .station-popup .leaflet-popup-content-wrapper {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -669,6 +680,7 @@ body {
   font-size: 8.5px;
   font-weight: 700;
 }
+.popup-meta .star { margin-left: auto; font-size: 18px; }
 .popup-status {
   display: inline-flex;
   align-items: center;
@@ -931,7 +943,7 @@ body {
 .ntf-gear:hover { transform: scale(1.08) rotate(30deg); }
 .ntf-panel {
   position: fixed; z-index: 2500;
-  top: 64px; right: max(16px, calc((100vw - 100%) / 2));
+  top: calc(64px + env(safe-area-inset-top, 0px)); right: max(16px, env(safe-area-inset-right, 0px));
   width: 300px; max-width: calc(100vw - 32px);
   background: var(--surface);
   border-radius: 14px; padding: 14px 16px;
@@ -1111,7 +1123,7 @@ body {
   }
   .list-collapsed .list-resize-handle-mobile { display: none; }
   .main.list-collapsed .leaflet-bottom.leaflet-left {
-    bottom: calc(env(safe-area-inset-bottom) + 48px);
+    bottom: 48px;
   }
   .collapse-icon-desktop { display: none; }
   .collapse-icon-mobile { display: inline; }
@@ -1287,6 +1299,7 @@ body {
   .chart-btn { bottom: 16px; right: 16px; }
   .chart-drawer { bottom: 68px; right: 12px; }
   .legend { bottom: 12px; left: 58px; padding: 6px 10px; }
+  .main.list-collapsed .legend { max-width: calc(100% - 124px); }
 }
 
 @media (max-width: 420px) {
