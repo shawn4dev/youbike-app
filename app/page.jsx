@@ -8,6 +8,7 @@ import { ensurePermission, maybeNotify } from '../lib/notifications';
 import NotificationSettings from '../components/NotificationSettings';
 import PWARegister from '../components/PWARegister';
 import { createStationLoader } from '../lib/station-data.mjs';
+import { takeStationBootstrap } from '../lib/station-bootstrap.mjs';
 import { withoutStation } from '../lib/map-selection.mjs';
 import { formatZoom, zoomMatches } from '../lib/viewport-commit.mjs';
 import { requestDeviceLocation } from '../lib/device-location.mjs';
@@ -590,7 +591,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const loader = createStationLoader({ onData: data => receiveStationsRef.current(data), onStatus: setBackgroundLoading });
+    const loader = createStationLoader({ onData: data => receiveStationsRef.current(data), onStatus: setBackgroundLoading, initialRequest: takeStationBootstrap() });
     stationLoaderRef.current = loader;
     void loader.refresh();
     return () => { loader.stop(); stationLoaderRef.current = null; };

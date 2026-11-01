@@ -1,0 +1,17 @@
+✔ exact fixed script does zero hidden work and handles rejection before claim (1.659625ms)
+✔ pending and completed early requests each transfer once and avoid a second download (13.495417ms)
+✔ hide, pagehide, timeout and expiry before claim discard the handle and retained data (2.093958ms)
+✔ delayed body, source errors and invalid budgets fall through to exactly one normal request (2.408833ms)
+✔ claim removes visibility ownership, stop suppresses late result and remount cannot reclaim (0.384292ms)
+✔ pending bootstrap and ordinary flight each queue one force, double clicks share completion (0.672333ms)
+✔ wall clock skew does not alter bootstrap freshness and consumption checks its monotonic deadline (0.453667ms)
+✔ adoption keeps the polling deadline measured from the actual early attempt (0.429875ms)
+✔ queued force waits for foreground and resolves only after forced validation, or stop (1.5435ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 68.900667

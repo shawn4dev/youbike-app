@@ -1,4 +1,5 @@
 import { CITIES, createOfficialStations } from '../../../lib/official-stations.mjs';
+import { jsonApiResponse } from '../../../lib/api-response.mjs';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,8 +10,8 @@ export async function GET(request) {
   const force = params.get('force') === '1';
   const city = params.get('city');
   if (city !== null && !Object.values(CITIES).some(([name]) => name === city)) {
-    return Response.json({ error: 'unknown city' }, { status: 400 });
+    return jsonApiResponse(request, { error: 'unknown city' }, { status: 400 });
   }
   const payload = await officialStations.get({ force, city });
-  return Response.json(payload, { headers: { 'Cache-Control': 'no-store' } });
+  return jsonApiResponse(request, payload);
 }

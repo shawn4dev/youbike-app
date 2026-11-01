@@ -50,7 +50,8 @@ test('304 advances only checkedAt, retains values/fetchedAt/validator, and share
   assert.equal(a.fetchedAt, first.fetchedAt);
   assert.equal(a.sourceLastModified, modified);
   assert.equal(a.checkedAt, new Date(clock).toISOString());
-  assert.equal(a.stale, true);
+  assert.equal(a.stale, false);
+  assert.equal(a.freshForMs, 10);
   assert.deepEqual(a.errors, []);
 });
 
@@ -69,6 +70,7 @@ test('overdue failure retains data and throttles retries without pretending old 
   const stale = await service.get();
   assert.deepEqual(stale.stations, first.stations);
   assert.equal(stale.stale, true);
+  assert.equal(stale.freshForMs, 0);
   const retained = await service.get({ city: '臺北' });
   assert.equal(calls, 2);
   assert.deepEqual(retained.errors, ['臺北']);
@@ -175,4 +177,33 @@ test('changed 200 replaces accepted data and validator only after validation', a
 test('route rejects unknown or empty city before network access', async () => {
   for (const city of ['未知', '']) assert.equal((await GET(new Request(`http://localhost/api/stations?city=${encodeURIComponent(city)}`))).status, 400);
   assert.equal(legacyStation({ ...rows[0], available_spaces_detail: { yb2: '', eyb: 0 } }, 'receipt').regularBikes, null);
+});
+
+test('memory spends checkedAt budget and a forced failure immediately removes remaining freshness', async () => {
+  let clock = 1000;
+  let fail = false;
+  let calls = 0;
+  const service = createOfficialStations({ now: () => clock, liveTtl: 100, fetchImpl: async () => {
+    calls++;
+    if (fail) throw Error('offline');
+    return response(rows);
+  } });
+  const first = await service.get();
+  assert.equal(first.freshForMs, 100);
+  assert.equal(first.stale, false);
+  clock += 25;
+  const memory = await service.get();
+  assert.equal(memory.freshForMs, 75);
+  assert.equal(memory.checkedAt, first.checkedAt);
+  assert.equal(memory.fetchedAt, first.fetchedAt);
+  assert.equal(calls, 1);
+  fail = true;
+  const failed = await service.get({ force: true });
+  assert.equal(failed.freshForMs, 0);
+  assert.equal(failed.stale, true);
+  assert.equal(failed.checkedAt, first.checkedAt);
+  assert.equal(failed.fetchedAt, first.fetchedAt);
+  assert.deepEqual(failed.stations, first.stations);
+  assert.equal((await service.get()).freshForMs, 0);
+  assert.equal(calls, 2);
 });

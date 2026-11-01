@@ -1,0 +1,1228 @@
+[
+  {
+    "scenario": "browser-cold-source-warm",
+    "index": 0,
+    "side": "before",
+    "probe": {
+      "started": 38.1000000089407,
+      "events": [
+        {
+          "at": 200.70000000298023,
+          "url": "/api/stations",
+          "readyState": "interactive",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:44:52.057Z",
+            "checkedAt": "2026-11-01T14:44:52.061Z",
+            "sourceLastModified": "Sun, 01 Nov 2026 14:43:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 352.40000000596046
+        }
+      ],
+      "errors": [],
+      "card": 386.20000000298023,
+      "marker": 612,
+      "tiles": 696.5
+    },
+    "nav": {
+      "ttfb": 30.299999997019768,
+      "dcl": 188.70000000298023
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 188
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 188
+      }
+    ],
+    "cards": 300,
+    "markers": 396,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 200.90000000596046,
+        "end": 325.6000000089407,
+        "encoded": 272926,
+        "decoded": 2133364
+      }
+    ]
+  },
+  {
+    "scenario": "browser-cold-source-warm",
+    "index": 0,
+    "side": "after",
+    "probe": {
+      "started": 15.099999994039536,
+      "events": [
+        {
+          "at": 97.40000000596046,
+          "url": "/api/stations",
+          "readyState": "loading",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:43:45.112Z",
+            "checkedAt": "2026-11-01T14:43:45.124Z",
+            "freshForMs": 1820,
+            "sourceLastModified": "Sun, 01 Nov 2026 14:42:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 203.5
+        }
+      ],
+      "errors": [],
+      "card": 233.5,
+      "marker": 598.7000000029802,
+      "tiles": 2089.4000000059605
+    },
+    "nav": {
+      "ttfb": 9.400000005960464,
+      "dcl": 166.79999999701977
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 180
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 180
+      }
+    ],
+    "cards": 300,
+    "markers": 396,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 97.5,
+        "end": 176,
+        "encoded": 272814,
+        "decoded": 2133399
+      }
+    ]
+  },
+  {
+    "scenario": "browser-cold-source-warm",
+    "index": 1,
+    "side": "after",
+    "probe": {
+      "started": 16,
+      "events": [
+        {
+          "at": 112.1000000089407,
+          "url": "/api/stations",
+          "readyState": "loading",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:45:17.255Z",
+            "checkedAt": "2026-11-01T14:45:17.265Z",
+            "freshForMs": 90000,
+            "sourceLastModified": "Sun, 01 Nov 2026 14:44:38 GMT",
+            "cached": false,
+            "stale": false
+          },
+          "done": 443
+        }
+      ],
+      "errors": [],
+      "card": 472.70000000298023,
+      "marker": 704.9000000059605
+    },
+    "nav": {
+      "ttfb": 9.900000005960464,
+      "dcl": 181.40000000596046
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 204
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 204
+      }
+    ],
+    "cards": 300,
+    "markers": 397,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 112.20000000298023,
+        "end": 424.40000000596046,
+        "encoded": 272828,
+        "decoded": 2133377
+      }
+    ]
+  },
+  {
+    "scenario": "browser-cold-source-warm",
+    "index": 1,
+    "side": "before",
+    "probe": {
+      "started": 15.300000011920929,
+      "events": [
+        {
+          "at": 185.70000000298023,
+          "url": "/api/stations",
+          "readyState": "interactive",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:44:52.057Z",
+            "checkedAt": "2026-11-01T14:44:52.061Z",
+            "sourceLastModified": "Sun, 01 Nov 2026 14:43:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 264.20000000298023
+        }
+      ],
+      "errors": [],
+      "card": 354.5,
+      "marker": 611.8000000119209
+    },
+    "nav": {
+      "ttfb": 10.400000005960464,
+      "dcl": 175.70000000298023
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 180
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 180
+      }
+    ],
+    "cards": 300,
+    "markers": 396,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 185.80000001192093,
+        "end": 244.90000000596046,
+        "encoded": 272926,
+        "decoded": 2133364
+      }
+    ]
+  },
+  {
+    "scenario": "browser-cold-source-warm",
+    "index": 2,
+    "side": "before",
+    "probe": {
+      "started": 11.299999997019768,
+      "events": [
+        {
+          "at": 174.59999999403954,
+          "url": "/api/stations",
+          "readyState": "interactive",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:44:52.057Z",
+            "checkedAt": "2026-11-01T14:44:52.061Z",
+            "sourceLastModified": "Sun, 01 Nov 2026 14:43:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 262.8999999910593
+        }
+      ],
+      "errors": [],
+      "card": 348.8999999910593,
+      "marker": 612.7999999970198,
+      "tiles": 705.8999999910593
+    },
+    "nav": {
+      "ttfb": 4.5,
+      "dcl": 164.09999999403954
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 168
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 168
+      }
+    ],
+    "cards": 300,
+    "markers": 396,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 174.79999999701977,
+        "end": 240.5,
+        "encoded": 272926,
+        "decoded": 2133364
+      }
+    ]
+  },
+  {
+    "scenario": "browser-cold-source-warm",
+    "index": 2,
+    "side": "after",
+    "probe": {
+      "started": 12.700000002980232,
+      "events": [
+        {
+          "at": 93.40000000596046,
+          "url": "/api/stations",
+          "readyState": "loading",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:45:17.255Z",
+            "checkedAt": "2026-11-01T14:45:17.265Z",
+            "freshForMs": 82705,
+            "sourceLastModified": "Sun, 01 Nov 2026 14:44:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 202.29999999701977
+        }
+      ],
+      "errors": [],
+      "card": 237.90000000596046,
+      "marker": 648.1000000089407,
+      "tiles": 662.2999999970198
+    },
+    "nav": {
+      "ttfb": 7.299999997019768,
+      "dcl": 162
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 164
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 164
+      }
+    ],
+    "cards": 300,
+    "markers": 397,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 93.6000000089407,
+        "end": 170.70000000298023,
+        "encoded": 272828,
+        "decoded": 2133376
+      }
+    ]
+  },
+  {
+    "scenario": "browser-cold-source-warm",
+    "index": 3,
+    "side": "after",
+    "probe": {
+      "started": 11.300000011920929,
+      "events": [
+        {
+          "at": 93,
+          "url": "/api/stations",
+          "readyState": "loading",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:45:17.255Z",
+            "checkedAt": "2026-11-01T14:45:17.265Z",
+            "freshForMs": 80257,
+            "sourceLastModified": "Sun, 01 Nov 2026 14:44:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 210.90000000596046
+        }
+      ],
+      "errors": [],
+      "card": 238.1000000089407,
+      "marker": 601.6000000089407,
+      "tiles": 628.9000000059605
+    },
+    "nav": {
+      "ttfb": 5.700000002980232,
+      "dcl": 171.70000000298023
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 172
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 172
+      }
+    ],
+    "cards": 300,
+    "markers": 397,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 93.20000000298023,
+        "end": 180.30000001192093,
+        "encoded": 272828,
+        "decoded": 2133376
+      }
+    ]
+  },
+  {
+    "scenario": "browser-cold-source-warm",
+    "index": 3,
+    "side": "before",
+    "probe": {
+      "started": 13.099999994039536,
+      "events": [
+        {
+          "at": 176.09999999403954,
+          "url": "/api/stations",
+          "readyState": "interactive",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:44:52.057Z",
+            "checkedAt": "2026-11-01T14:44:52.061Z",
+            "sourceLastModified": "Sun, 01 Nov 2026 14:43:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 281
+        }
+      ],
+      "errors": [],
+      "card": 369,
+      "marker": 702.5999999940395
+    },
+    "nav": {
+      "ttfb": 8.299999997019768,
+      "dcl": 163.79999999701977
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 176
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 176
+      }
+    ],
+    "cards": 300,
+    "markers": 396,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 176.40000000596046,
+        "end": 261.79999999701977,
+        "encoded": 272926,
+        "decoded": 2133364
+      }
+    ]
+  },
+  {
+    "scenario": "browser-cold-source-warm",
+    "index": 4,
+    "side": "before",
+    "probe": {
+      "started": 13,
+      "events": [
+        {
+          "at": 168.20000000298023,
+          "url": "/api/stations",
+          "readyState": "interactive",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:44:52.057Z",
+            "checkedAt": "2026-11-01T14:44:52.061Z",
+            "sourceLastModified": "Sun, 01 Nov 2026 14:43:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 270.5
+        }
+      ],
+      "errors": [],
+      "card": 362.90000000596046,
+      "marker": 694.9000000059605
+    },
+    "nav": {
+      "ttfb": 7.299999997019768,
+      "dcl": 158.59999999403954
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 160
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 160
+      }
+    ],
+    "cards": 300,
+    "markers": 396,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 168.40000000596046,
+        "end": 249.5,
+        "encoded": 272926,
+        "decoded": 2133364
+      }
+    ]
+  },
+  {
+    "scenario": "browser-cold-source-warm",
+    "index": 4,
+    "side": "after",
+    "probe": {
+      "started": 16,
+      "events": [
+        {
+          "at": 105,
+          "url": "/api/stations",
+          "readyState": "loading",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:45:17.255Z",
+            "checkedAt": "2026-11-01T14:45:17.265Z",
+            "freshForMs": 71760,
+            "sourceLastModified": "Sun, 01 Nov 2026 14:44:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 220.70000000298023
+        }
+      ],
+      "errors": [],
+      "card": 253.40000000596046,
+      "marker": 607.7000000029802,
+      "tiles": 689.5
+    },
+    "nav": {
+      "ttfb": 10.599999994039536,
+      "dcl": 178.20000000298023
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 184
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 184
+      }
+    ],
+    "cards": 300,
+    "markers": 397,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 105.20000000298023,
+        "end": 188.09999999403954,
+        "encoded": 272828,
+        "decoded": 2133376
+      }
+    ]
+  },
+  {
+    "scenario": "browser-warm-source-warm",
+    "index": 0,
+    "side": "before",
+    "probe": {
+      "started": 72.09999999403954,
+      "events": [
+        {
+          "at": 245.5,
+          "url": "/api/stations",
+          "readyState": "interactive",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:44:52.057Z",
+            "checkedAt": "2026-11-01T14:44:52.061Z",
+            "sourceLastModified": "Sun, 01 Nov 2026 14:43:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 395
+        }
+      ],
+      "errors": [],
+      "tiles": 353.5,
+      "card": 422.09999999403954,
+      "marker": 608.0999999940395
+    },
+    "nav": {
+      "ttfb": 36.599999994039536,
+      "dcl": 145.29999999701977
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 292
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 292
+      }
+    ],
+    "cards": 300,
+    "markers": 396,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 245.69999998807907,
+        "end": 373.19999998807907,
+        "encoded": 272926,
+        "decoded": 2133364
+      }
+    ]
+  },
+  {
+    "scenario": "browser-warm-source-warm",
+    "index": 0,
+    "side": "after",
+    "probe": {
+      "started": 24.599999994039536,
+      "events": [
+        {
+          "at": 54.400000005960464,
+          "url": "/api/stations",
+          "readyState": "loading",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:45:17.255Z",
+            "checkedAt": "2026-11-01T14:45:17.265Z",
+            "freshForMs": 57730,
+            "sourceLastModified": "Sun, 01 Nov 2026 14:44:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 200.59999999403954
+        }
+      ],
+      "errors": [],
+      "card": 274.59999999403954,
+      "tiles": 372.09999999403954,
+      "marker": 511.70000000298023
+    },
+    "nav": {
+      "ttfb": 11.099999994039536,
+      "dcl": 65.59999999403954
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 112
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 112
+      }
+    ],
+    "cards": 300,
+    "markers": 397,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 54.5,
+        "end": 182.79999999701977,
+        "encoded": 272828,
+        "decoded": 2133376
+      }
+    ]
+  },
+  {
+    "scenario": "browser-warm-source-warm",
+    "index": 1,
+    "side": "after",
+    "probe": {
+      "started": 62.6000000089407,
+      "events": [
+        {
+          "at": 83.5,
+          "url": "/api/stations",
+          "readyState": "loading",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:45:17.255Z",
+            "checkedAt": "2026-11-01T14:45:17.265Z",
+            "freshForMs": 56163,
+            "sourceLastModified": "Sun, 01 Nov 2026 14:44:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 181.80000001192093
+        }
+      ],
+      "errors": [],
+      "card": 269.5,
+      "tiles": 322.30000001192093,
+      "marker": 440.30000001192093
+    },
+    "nav": {
+      "ttfb": 7.700000002980232,
+      "dcl": 117
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 176
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 176
+      }
+    ],
+    "cards": 300,
+    "markers": 397,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 83.70000000298023,
+        "end": 150.90000000596046,
+        "encoded": 272828,
+        "decoded": 2133376
+      }
+    ]
+  },
+  {
+    "scenario": "browser-warm-source-warm",
+    "index": 1,
+    "side": "before",
+    "probe": {
+      "started": 31,
+      "events": [
+        {
+          "at": 100.09999999403954,
+          "url": "/api/stations",
+          "readyState": "interactive",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:44:52.057Z",
+            "checkedAt": "2026-11-01T14:44:52.061Z",
+            "sourceLastModified": "Sun, 01 Nov 2026 14:43:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 176.3999999910593
+        }
+      ],
+      "errors": [],
+      "card": 240.19999998807907,
+      "tiles": 326.8999999910593,
+      "marker": 442.59999999403954
+    },
+    "nav": {
+      "ttfb": 10.399999991059303,
+      "dcl": 88
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 148
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 148
+      }
+    ],
+    "cards": 300,
+    "markers": 396,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 100.19999998807907,
+        "end": 160.29999999701977,
+        "encoded": 272926,
+        "decoded": 2133364
+      }
+    ]
+  },
+  {
+    "scenario": "browser-warm-source-warm",
+    "index": 2,
+    "side": "before",
+    "probe": {
+      "started": 47.20000000298023,
+      "events": [
+        {
+          "at": 87.79999999701977,
+          "url": "/api/stations",
+          "readyState": "interactive",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:44:52.057Z",
+            "checkedAt": "2026-11-01T14:44:52.061Z",
+            "sourceLastModified": "Sun, 01 Nov 2026 14:43:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 176.09999999403954
+        }
+      ],
+      "errors": [],
+      "card": 245.5,
+      "tiles": 293.59999999403954,
+      "marker": 406
+    },
+    "nav": {
+      "ttfb": 6.5999999940395355,
+      "dcl": 81.09999999403954
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 148
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 148
+      }
+    ],
+    "cards": 300,
+    "markers": 396,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 87.8999999910593,
+        "end": 152.3999999910593,
+        "encoded": 272926,
+        "decoded": 2133364
+      }
+    ]
+  },
+  {
+    "scenario": "browser-warm-source-warm",
+    "index": 2,
+    "side": "after",
+    "probe": {
+      "started": 51.6000000089407,
+      "events": [
+        {
+          "at": 102.5,
+          "url": "/api/stations",
+          "readyState": "loading",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:45:17.255Z",
+            "checkedAt": "2026-11-01T14:45:17.265Z",
+            "freshForMs": 51510,
+            "sourceLastModified": "Sun, 01 Nov 2026 14:44:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 205.40000000596046
+        }
+      ],
+      "errors": [],
+      "card": 274,
+      "tiles": 371.70000000298023,
+      "marker": 498.79999999701977
+    },
+    "nav": {
+      "ttfb": 8.5,
+      "dcl": 108.90000000596046
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 176
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 176
+      }
+    ],
+    "cards": 300,
+    "markers": 397,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 102.6000000089407,
+        "end": 187.90000000596046,
+        "encoded": 272828,
+        "decoded": 2133376
+      }
+    ]
+  },
+  {
+    "scenario": "browser-warm-source-warm",
+    "index": 3,
+    "side": "after",
+    "probe": {
+      "started": 29.299999997019768,
+      "events": [
+        {
+          "at": 45.3999999910593,
+          "url": "/api/stations",
+          "readyState": "loading",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:45:17.255Z",
+            "checkedAt": "2026-11-01T14:45:17.265Z",
+            "freshForMs": 50533,
+            "sourceLastModified": "Sun, 01 Nov 2026 14:44:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 115.3999999910593
+        }
+      ],
+      "errors": [],
+      "card": 182.5,
+      "tiles": 221.19999998807907,
+      "marker": 322.59999999403954
+    },
+    "nav": {
+      "ttfb": 4,
+      "dcl": 54.599999994039536
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 244
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 244
+      }
+    ],
+    "cards": 300,
+    "markers": 397,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 45.5,
+        "end": 93.59999999403954,
+        "encoded": 272828,
+        "decoded": 2133376
+      }
+    ]
+  },
+  {
+    "scenario": "browser-warm-source-warm",
+    "index": 3,
+    "side": "before",
+    "probe": {
+      "started": 50,
+      "events": [
+        {
+          "at": 107.40000000596046,
+          "url": "/api/stations",
+          "readyState": "interactive",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:44:52.057Z",
+            "checkedAt": "2026-11-01T14:44:52.061Z",
+            "sourceLastModified": "Sun, 01 Nov 2026 14:43:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 214
+        }
+      ],
+      "errors": [],
+      "card": 286,
+      "tiles": 378.1000000089407,
+      "marker": 494
+    },
+    "nav": {
+      "ttfb": 8.299999997019768,
+      "dcl": 99.6000000089407
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 172
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 172
+      }
+    ],
+    "cards": 300,
+    "markers": 396,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 107.6000000089407,
+        "end": 195.1000000089407,
+        "encoded": 272926,
+        "decoded": 2133364
+      }
+    ]
+  },
+  {
+    "scenario": "browser-warm-source-warm",
+    "index": 4,
+    "side": "before",
+    "probe": {
+      "started": 59.8999999910593,
+      "events": [
+        {
+          "at": 99.5,
+          "url": "/api/stations",
+          "readyState": "interactive",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:44:52.057Z",
+            "checkedAt": "2026-11-01T14:44:52.061Z",
+            "sourceLastModified": "Sun, 01 Nov 2026 14:43:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 198.8999999910593
+        }
+      ],
+      "errors": [],
+      "card": 276.79999999701977,
+      "tiles": 328.5,
+      "marker": 447.69999998807907
+    },
+    "nav": {
+      "ttfb": 6.399999991059303,
+      "dcl": 88.29999999701977
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 160
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 160
+      }
+    ],
+    "cards": 300,
+    "markers": 396,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 99.79999999701977,
+        "end": 177.09999999403954,
+        "encoded": 272926,
+        "decoded": 2133364
+      }
+    ]
+  },
+  {
+    "scenario": "browser-warm-source-warm",
+    "index": 4,
+    "side": "after",
+    "probe": {
+      "started": 54.70000000298023,
+      "events": [
+        {
+          "at": 119.5,
+          "url": "/api/stations",
+          "readyState": "loading",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:45:17.255Z",
+            "checkedAt": "2026-11-01T14:45:17.265Z",
+            "freshForMs": 45794,
+            "sourceLastModified": "Sun, 01 Nov 2026 14:44:38 GMT",
+            "cached": true,
+            "stale": false
+          },
+          "done": 232.79999999701977
+        }
+      ],
+      "errors": [],
+      "card": 319.5,
+      "tiles": 421.20000000298023,
+      "marker": 548.7999999970198
+    },
+    "nav": {
+      "ttfb": 10.400000005960464,
+      "dcl": 125.40000000596046
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "start": 180
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 180
+      }
+    ],
+    "cards": 300,
+    "markers": 397,
+    "worker": false,
+    "viewport": [
+      1440,
+      900,
+      1
+    ],
+    "resources": [
+      {
+        "start": 119.79999999701977,
+        "end": 214,
+        "encoded": 272828,
+        "decoded": 2133376
+      }
+    ]
+  }
+]

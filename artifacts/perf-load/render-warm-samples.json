@@ -1,0 +1,2867 @@
+[
+  {
+    "sampleAt": 1913.7999999970198,
+    "nav": {
+      "name": "https://youbike-app.yoyowu.uk/?lat=25.0382&lng=121.5636&z=15",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 368.70000000298023,
+      "navigationId": 375,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "zstd",
+      "workerStart": 3.7000000029802322,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 4.100000008940697,
+      "domainLookupStart": 4.100000008940697,
+      "domainLookupEnd": 4.100000008940697,
+      "connectStart": 4.100000008940697,
+      "secureConnectionStart": 4.100000008940697,
+      "connectEnd": 4.100000008940697,
+      "requestStart": 4.100000008940697,
+      "responseStart": 280.70000000298023,
+      "firstInterimResponseStart": 280.70000000298023,
+      "finalResponseHeadersStart": 0,
+      "responseEnd": 283.79999999701977,
+      "transferSize": 11625,
+      "encodedBodySize": 11325,
+      "decodedBodySize": 11325,
+      "responseStatus": 200,
+      "serverTiming": [
+        {
+          "name": "cfCacheStatus",
+          "duration": 0,
+          "description": "DYNAMIC"
+        },
+        {
+          "name": "cfEdge",
+          "duration": 17,
+          "description": ""
+        },
+        {
+          "name": "cfOrigin",
+          "duration": 114,
+          "description": ""
+        },
+        {
+          "name": "cfExtPri",
+          "duration": 0,
+          "description": ""
+        }
+      ],
+      "unloadEventStart": 297,
+      "unloadEventEnd": 297,
+      "domInteractive": 332.20000000298023,
+      "domContentLoadedEventStart": 338.1000000089407,
+      "domContentLoadedEventEnd": 338.1000000089407,
+      "domComplete": 368.29999999701977,
+      "loadEventStart": 368.29999999701977,
+      "loadEventEnd": 368.70000000298023,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {
+        "randomizedTriggerRate": 0.4994798,
+        "value": "high"
+      }
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "entryType": "paint",
+        "startTime": 464,
+        "duration": 0,
+        "navigationId": 375,
+        "paintTime": 391.70000000298023,
+        "presentationTime": 464
+      },
+      {
+        "name": "first-contentful-paint",
+        "entryType": "paint",
+        "startTime": 464,
+        "duration": 0,
+        "navigationId": 375,
+        "paintTime": 391.70000000298023,
+        "presentationTime": 464
+      }
+    ],
+    "lcp": [
+      {
+        "start": 464,
+        "size": 5440,
+        "tag": "H1",
+        "class": ""
+      },
+      {
+        "start": 516,
+        "size": 65536,
+        "tag": "IMG",
+        "class": "leaflet-tile leaflet-tile-loaded"
+      }
+    ],
+    "resources": [
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/3lmo9m-0hcoxy.css",
+        "start": 306.20000000298023,
+        "end": 306.20000000298023,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 28532,
+        "decoded": 28532,
+        "status": 200,
+        "initiator": "link"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/19wg2q9r2_sev.js",
+        "start": 306.29999999701977,
+        "end": 306.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 21767,
+        "decoded": 21767,
+        "status": 200,
+        "initiator": "link"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/1f3_j0-7srs8o.js",
+        "start": 306.29999999701977,
+        "end": 306.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 180551,
+        "decoded": 180551,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/3wbm-994r45kr.js",
+        "start": 306.29999999701977,
+        "end": 306.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 229820,
+        "decoded": 229820,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+        "start": 306.29999999701977,
+        "end": 306.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 10030,
+        "decoded": 10030,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/0umf92h1sb77c.js",
+        "start": 306.40000000596046,
+        "end": 306.40000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 13822,
+        "decoded": 13822,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/216lchwq-6zyt.js",
+        "start": 306.40000000596046,
+        "end": 306.40000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 518,
+        "decoded": 518,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/3xhuba235gdec.js",
+        "start": 306.5,
+        "end": 306.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 36785,
+        "decoded": 36785,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Noto+Sans+TC:wght@300..700&display=swap",
+        "start": 306.5,
+        "end": 306.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 35197,
+        "decoded": 127875,
+        "status": 0,
+        "initiator": "link"
+      },
+      {
+        "name": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+        "start": 306.70000000298023,
+        "end": 306.70000000298023,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 0,
+        "decoded": 0,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+        "start": 338.40000000596046,
+        "end": 338.40000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 48432,
+        "decoded": 48432,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.10.woff2",
+        "start": 338.5,
+        "end": 338.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 15264,
+        "decoded": 15264,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.30.woff2",
+        "start": 338.79999999701977,
+        "end": 338.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 22748,
+        "decoded": 22748,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.57.woff2",
+        "start": 339.29999999701977,
+        "end": 339.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 40180,
+        "decoded": 40180,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.58.woff2",
+        "start": 339.29999999701977,
+        "end": 339.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 42232,
+        "decoded": 42232,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.91.woff2",
+        "start": 339.6000000089407,
+        "end": 339.6000000089407,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 5736,
+        "decoded": 5736,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.94.woff2",
+        "start": 339.70000000298023,
+        "end": 339.70000000298023,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 9292,
+        "decoded": 9292,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.104.woff2",
+        "start": 339.79999999701977,
+        "end": 339.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 62976,
+        "decoded": 62976,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.105.woff2",
+        "start": 339.90000000596046,
+        "end": 339.90000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 62384,
+        "decoded": 62384,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.107.woff2",
+        "start": 339.90000000596046,
+        "end": 339.90000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 70056,
+        "decoded": 70056,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.108.woff2",
+        "start": 339.90000000596046,
+        "end": 339.90000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 68564,
+        "decoded": 68564,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.109.woff2",
+        "start": 340,
+        "end": 340,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 67908,
+        "decoded": 67908,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.110.woff2",
+        "start": 340,
+        "end": 340,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 72244,
+        "decoded": 72244,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.111.woff2",
+        "start": 340,
+        "end": 340,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 72848,
+        "decoded": 72848,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.112.woff2",
+        "start": 340,
+        "end": 340,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 72392,
+        "decoded": 72392,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.113.woff2",
+        "start": 340,
+        "end": 340,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 71768,
+        "decoded": 71768,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.114.woff2",
+        "start": 340.1000000089407,
+        "end": 340.1000000089407,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 79056,
+        "decoded": 79056,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.115.woff2",
+        "start": 340.1000000089407,
+        "end": 340.1000000089407,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 74672,
+        "decoded": 74672,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.116.woff2",
+        "start": 340.1000000089407,
+        "end": 340.1000000089407,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 73264,
+        "decoded": 73264,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.117.woff2",
+        "start": 340.20000000298023,
+        "end": 340.20000000298023,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 71260,
+        "decoded": 71260,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.118.woff2",
+        "start": 340.20000000298023,
+        "end": 340.20000000298023,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 84908,
+        "decoded": 84908,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.119.woff2",
+        "start": 340.29999999701977,
+        "end": 340.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 74096,
+        "decoded": 74096,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.120.woff2",
+        "start": 340.29999999701977,
+        "end": 340.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 71384,
+        "decoded": 71384,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.121.woff2",
+        "start": 340.29999999701977,
+        "end": 340.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 65208,
+        "decoded": 65208,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.122.woff2",
+        "start": 340.29999999701977,
+        "end": 340.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 60152,
+        "decoded": 60152,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.123.woff2",
+        "start": 340.29999999701977,
+        "end": 340.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 36304,
+        "decoded": 36304,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/api/stations",
+        "start": 360.29999999701977,
+        "end": 1472.5,
+        "duration": 1112.2000000029802,
+        "transfer": 294206,
+        "encoded": 293906,
+        "decoded": 2133321,
+        "status": 200,
+        "initiator": "fetch"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/1q5va-cyk3fsi.js",
+        "start": 361.90000000596046,
+        "end": 361.90000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 199569,
+        "decoded": 199569,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/1iw5_uek2hn9s.css",
+        "start": 362.1000000089407,
+        "end": 362.1000000089407,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 12219,
+        "decoded": 12219,
+        "status": 200,
+        "initiator": "link"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/cdn-cgi/rum?",
+        "start": 396.79999999701977,
+        "end": 535.7000000029802,
+        "duration": 138.90000000596046,
+        "transfer": 300,
+        "encoded": 0,
+        "decoded": 0,
+        "status": 204,
+        "initiator": "xmlhttprequest"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/icon-192.png",
+        "start": 420.20000000298023,
+        "end": 421.79999999701977,
+        "duration": 1.5999999940395355,
+        "transfer": 0,
+        "encoded": 4501,
+        "decoded": 4501,
+        "status": 200,
+        "initiator": "other"
+      }
+    ],
+    "cards": 296,
+    "markers": 296,
+    "tiles": 24,
+    "controller": "https://youbike-app.yoyowu.uk/sw.js",
+    "viewport": [
+      1710,
+      838
+    ],
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+  },
+  {
+    "sampleAt": 1869.0999999940395,
+    "nav": {
+      "name": "https://youbike-app.yoyowu.uk/?lat=25.0382&lng=121.5636&z=15",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 350.19999998807907,
+      "navigationId": 9713,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "zstd",
+      "workerStart": 1.5999999940395355,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 1.7999999970197678,
+      "domainLookupStart": 1.7999999970197678,
+      "domainLookupEnd": 1.7999999970197678,
+      "connectStart": 1.7999999970197678,
+      "secureConnectionStart": 1.7999999970197678,
+      "connectEnd": 1.7999999970197678,
+      "requestStart": 1.7999999970197678,
+      "responseStart": 259.59999999403954,
+      "firstInterimResponseStart": 259.59999999403954,
+      "finalResponseHeadersStart": 0,
+      "responseEnd": 264.29999999701977,
+      "transferSize": 11625,
+      "encodedBodySize": 11325,
+      "decodedBodySize": 11325,
+      "responseStatus": 200,
+      "serverTiming": [
+        {
+          "name": "cfCacheStatus",
+          "duration": 0,
+          "description": "DYNAMIC"
+        },
+        {
+          "name": "cfEdge",
+          "duration": 4,
+          "description": ""
+        },
+        {
+          "name": "cfOrigin",
+          "duration": 113,
+          "description": ""
+        },
+        {
+          "name": "cfExtPri",
+          "duration": 0,
+          "description": ""
+        }
+      ],
+      "unloadEventStart": 272.5,
+      "unloadEventEnd": 272.5,
+      "domInteractive": 312.19999998807907,
+      "domContentLoadedEventStart": 316.79999999701977,
+      "domContentLoadedEventEnd": 316.79999999701977,
+      "domComplete": 349.69999998807907,
+      "loadEventStart": 349.69999998807907,
+      "loadEventEnd": 350.19999998807907,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {
+        "randomizedTriggerRate": 0.4994798,
+        "value": "high"
+      }
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "entryType": "paint",
+        "startTime": 392,
+        "duration": 0,
+        "navigationId": 9713,
+        "paintTime": 341.29999999701977,
+        "presentationTime": 392
+      },
+      {
+        "name": "first-contentful-paint",
+        "entryType": "paint",
+        "startTime": 392,
+        "duration": 0,
+        "navigationId": 9713,
+        "paintTime": 341.29999999701977,
+        "presentationTime": 392
+      }
+    ],
+    "lcp": [
+      {
+        "start": 392,
+        "size": 5440,
+        "tag": "H1",
+        "class": ""
+      },
+      {
+        "start": 456,
+        "size": 65536,
+        "tag": "IMG",
+        "class": "leaflet-tile leaflet-tile-loaded"
+      }
+    ],
+    "resources": [
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/3lmo9m-0hcoxy.css",
+        "start": 279.5,
+        "end": 279.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 28532,
+        "decoded": 28532,
+        "status": 200,
+        "initiator": "link"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/19wg2q9r2_sev.js",
+        "start": 279.69999998807907,
+        "end": 279.69999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 21767,
+        "decoded": 21767,
+        "status": 200,
+        "initiator": "link"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/1f3_j0-7srs8o.js",
+        "start": 279.69999998807907,
+        "end": 279.69999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 180551,
+        "decoded": 180551,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/3wbm-994r45kr.js",
+        "start": 279.69999998807907,
+        "end": 279.69999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 229820,
+        "decoded": 229820,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+        "start": 279.79999999701977,
+        "end": 279.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 10030,
+        "decoded": 10030,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/0umf92h1sb77c.js",
+        "start": 279.79999999701977,
+        "end": 279.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 13822,
+        "decoded": 13822,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/216lchwq-6zyt.js",
+        "start": 279.8999999910593,
+        "end": 279.8999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 518,
+        "decoded": 518,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/3xhuba235gdec.js",
+        "start": 279.8999999910593,
+        "end": 279.8999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 36785,
+        "decoded": 36785,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Noto+Sans+TC:wght@300..700&display=swap",
+        "start": 280,
+        "end": 280,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 35197,
+        "decoded": 127875,
+        "status": 0,
+        "initiator": "link"
+      },
+      {
+        "name": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+        "start": 280.19999998807907,
+        "end": 280.19999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 0,
+        "decoded": 0,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+        "start": 317.09999999403954,
+        "end": 317.09999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 48432,
+        "decoded": 48432,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.10.woff2",
+        "start": 317.19999998807907,
+        "end": 317.19999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 15264,
+        "decoded": 15264,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.30.woff2",
+        "start": 317.3999999910593,
+        "end": 317.3999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 22748,
+        "decoded": 22748,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.57.woff2",
+        "start": 317.69999998807907,
+        "end": 317.69999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 40180,
+        "decoded": 40180,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.58.woff2",
+        "start": 317.69999998807907,
+        "end": 317.69999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 42232,
+        "decoded": 42232,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.91.woff2",
+        "start": 318.09999999403954,
+        "end": 318.09999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 5736,
+        "decoded": 5736,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.94.woff2",
+        "start": 318.19999998807907,
+        "end": 318.19999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 9292,
+        "decoded": 9292,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.104.woff2",
+        "start": 318.19999998807907,
+        "end": 318.19999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 62976,
+        "decoded": 62976,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.105.woff2",
+        "start": 318.29999999701977,
+        "end": 318.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 62384,
+        "decoded": 62384,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.107.woff2",
+        "start": 318.29999999701977,
+        "end": 318.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 70056,
+        "decoded": 70056,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.108.woff2",
+        "start": 318.29999999701977,
+        "end": 318.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 68564,
+        "decoded": 68564,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.109.woff2",
+        "start": 318.29999999701977,
+        "end": 318.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 67908,
+        "decoded": 67908,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.110.woff2",
+        "start": 318.3999999910593,
+        "end": 318.3999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 72244,
+        "decoded": 72244,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.111.woff2",
+        "start": 318.5,
+        "end": 318.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 72848,
+        "decoded": 72848,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.112.woff2",
+        "start": 318.5,
+        "end": 318.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 72392,
+        "decoded": 72392,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.113.woff2",
+        "start": 318.5,
+        "end": 318.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 71768,
+        "decoded": 71768,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.114.woff2",
+        "start": 318.59999999403954,
+        "end": 318.59999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 79056,
+        "decoded": 79056,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.115.woff2",
+        "start": 318.59999999403954,
+        "end": 318.59999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 74672,
+        "decoded": 74672,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.116.woff2",
+        "start": 318.59999999403954,
+        "end": 318.59999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 73264,
+        "decoded": 73264,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.117.woff2",
+        "start": 318.69999998807907,
+        "end": 318.69999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 71260,
+        "decoded": 71260,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.118.woff2",
+        "start": 318.69999998807907,
+        "end": 318.69999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 84908,
+        "decoded": 84908,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.119.woff2",
+        "start": 318.69999998807907,
+        "end": 318.69999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 74096,
+        "decoded": 74096,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.120.woff2",
+        "start": 318.79999999701977,
+        "end": 318.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 71384,
+        "decoded": 71384,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.121.woff2",
+        "start": 318.79999999701977,
+        "end": 318.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 65208,
+        "decoded": 65208,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.122.woff2",
+        "start": 318.79999999701977,
+        "end": 318.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 60152,
+        "decoded": 60152,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.123.woff2",
+        "start": 318.8999999910593,
+        "end": 318.8999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 36304,
+        "decoded": 36304,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/api/stations",
+        "start": 343.69999998807907,
+        "end": 672.5999999940395,
+        "duration": 328.90000000596046,
+        "transfer": 295630,
+        "encoded": 295330,
+        "decoded": 2133320,
+        "status": 200,
+        "initiator": "fetch"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/1q5va-cyk3fsi.js",
+        "start": 345.29999999701977,
+        "end": 345.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 199569,
+        "decoded": 199569,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/1iw5_uek2hn9s.css",
+        "start": 345.5,
+        "end": 345.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 12219,
+        "decoded": 12219,
+        "status": 200,
+        "initiator": "link"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/cdn-cgi/rum?",
+        "start": 352.8999999910593,
+        "end": 488.69999998807907,
+        "duration": 135.79999999701977,
+        "transfer": 300,
+        "encoded": 0,
+        "decoded": 0,
+        "status": 204,
+        "initiator": "xmlhttprequest"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/icon-192.png",
+        "start": 370.8999999910593,
+        "end": 373.5,
+        "duration": 2.6000000089406967,
+        "transfer": 0,
+        "encoded": 4501,
+        "decoded": 4501,
+        "status": 200,
+        "initiator": "other"
+      }
+    ],
+    "cards": 294,
+    "markers": 294,
+    "tiles": 24,
+    "controller": "https://youbike-app.yoyowu.uk/sw.js",
+    "viewport": [
+      1710,
+      838
+    ],
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+  },
+  {
+    "sampleAt": 1865.7999999970198,
+    "nav": {
+      "name": "https://youbike-app.yoyowu.uk/?lat=25.0382&lng=121.5636&z=15",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 362.5,
+      "navigationId": 3289,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "zstd",
+      "workerStart": 1.7000000029802322,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 1.9000000059604645,
+      "domainLookupStart": 1.9000000059604645,
+      "domainLookupEnd": 1.9000000059604645,
+      "connectStart": 1.9000000059604645,
+      "secureConnectionStart": 1.9000000059604645,
+      "connectEnd": 1.9000000059604645,
+      "requestStart": 1.9000000059604645,
+      "responseStart": 269.09999999403954,
+      "firstInterimResponseStart": 269.09999999403954,
+      "finalResponseHeadersStart": 0,
+      "responseEnd": 272.90000000596046,
+      "transferSize": 11625,
+      "encodedBodySize": 11325,
+      "decodedBodySize": 11325,
+      "responseStatus": 200,
+      "serverTiming": [
+        {
+          "name": "cfCacheStatus",
+          "duration": 0,
+          "description": "DYNAMIC"
+        },
+        {
+          "name": "cfEdge",
+          "duration": 14,
+          "description": ""
+        },
+        {
+          "name": "cfOrigin",
+          "duration": 113,
+          "description": ""
+        },
+        {
+          "name": "cfExtPri",
+          "duration": 0,
+          "description": ""
+        }
+      ],
+      "unloadEventStart": 287.09999999403954,
+      "unloadEventEnd": 287.09999999403954,
+      "domInteractive": 325.40000000596046,
+      "domContentLoadedEventStart": 329.59999999403954,
+      "domContentLoadedEventEnd": 329.59999999403954,
+      "domComplete": 362.40000000596046,
+      "loadEventStart": 362.40000000596046,
+      "loadEventEnd": 362.5,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {
+        "randomizedTriggerRate": 0.4994798,
+        "value": "high"
+      }
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "entryType": "paint",
+        "startTime": 404,
+        "duration": 0,
+        "navigationId": 3289,
+        "paintTime": 346.59999999403954,
+        "presentationTime": 404
+      },
+      {
+        "name": "first-contentful-paint",
+        "entryType": "paint",
+        "startTime": 404,
+        "duration": 0,
+        "navigationId": 3289,
+        "paintTime": 346.59999999403954,
+        "presentationTime": 404
+      }
+    ],
+    "lcp": [
+      {
+        "start": 404,
+        "size": 5440,
+        "tag": "H1",
+        "class": ""
+      },
+      {
+        "start": 464,
+        "size": 65536,
+        "tag": "IMG",
+        "class": "leaflet-tile leaflet-tile-loaded"
+      }
+    ],
+    "resources": [
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/3lmo9m-0hcoxy.css",
+        "start": 295.29999999701977,
+        "end": 295.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 28532,
+        "decoded": 28532,
+        "status": 200,
+        "initiator": "link"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/19wg2q9r2_sev.js",
+        "start": 295.40000000596046,
+        "end": 295.40000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 21767,
+        "decoded": 21767,
+        "status": 200,
+        "initiator": "link"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/1f3_j0-7srs8o.js",
+        "start": 295.40000000596046,
+        "end": 295.40000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 180551,
+        "decoded": 180551,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/3wbm-994r45kr.js",
+        "start": 295.40000000596046,
+        "end": 295.40000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 229820,
+        "decoded": 229820,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+        "start": 295.5,
+        "end": 295.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 10030,
+        "decoded": 10030,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/0umf92h1sb77c.js",
+        "start": 295.59999999403954,
+        "end": 295.59999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 13822,
+        "decoded": 13822,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/216lchwq-6zyt.js",
+        "start": 295.59999999403954,
+        "end": 295.59999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 518,
+        "decoded": 518,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/3xhuba235gdec.js",
+        "start": 295.59999999403954,
+        "end": 295.59999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 36785,
+        "decoded": 36785,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Noto+Sans+TC:wght@300..700&display=swap",
+        "start": 295.79999999701977,
+        "end": 295.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 35197,
+        "decoded": 127875,
+        "status": 0,
+        "initiator": "link"
+      },
+      {
+        "name": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+        "start": 295.79999999701977,
+        "end": 295.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 0,
+        "decoded": 0,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+        "start": 329.90000000596046,
+        "end": 329.90000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 48432,
+        "decoded": 48432,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.10.woff2",
+        "start": 330,
+        "end": 330,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 15264,
+        "decoded": 15264,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.30.woff2",
+        "start": 330.09999999403954,
+        "end": 330.09999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 22748,
+        "decoded": 22748,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.57.woff2",
+        "start": 330.5,
+        "end": 330.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 40180,
+        "decoded": 40180,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.58.woff2",
+        "start": 330.5,
+        "end": 330.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 42232,
+        "decoded": 42232,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.91.woff2",
+        "start": 330.90000000596046,
+        "end": 330.90000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 5736,
+        "decoded": 5736,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.94.woff2",
+        "start": 330.90000000596046,
+        "end": 330.90000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 9292,
+        "decoded": 9292,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.104.woff2",
+        "start": 331,
+        "end": 331,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 62976,
+        "decoded": 62976,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.105.woff2",
+        "start": 331,
+        "end": 331,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 62384,
+        "decoded": 62384,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.107.woff2",
+        "start": 331.09999999403954,
+        "end": 331.09999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 70056,
+        "decoded": 70056,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.108.woff2",
+        "start": 331.09999999403954,
+        "end": 331.09999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 68564,
+        "decoded": 68564,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.109.woff2",
+        "start": 331.20000000298023,
+        "end": 331.20000000298023,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 67908,
+        "decoded": 67908,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.110.woff2",
+        "start": 331.20000000298023,
+        "end": 331.20000000298023,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 72244,
+        "decoded": 72244,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.111.woff2",
+        "start": 331.20000000298023,
+        "end": 331.20000000298023,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 72848,
+        "decoded": 72848,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.112.woff2",
+        "start": 331.29999999701977,
+        "end": 331.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 72392,
+        "decoded": 72392,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.113.woff2",
+        "start": 331.29999999701977,
+        "end": 331.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 71768,
+        "decoded": 71768,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.114.woff2",
+        "start": 331.29999999701977,
+        "end": 331.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 79056,
+        "decoded": 79056,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.115.woff2",
+        "start": 331.29999999701977,
+        "end": 331.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 74672,
+        "decoded": 74672,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.116.woff2",
+        "start": 331.40000000596046,
+        "end": 331.40000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 73264,
+        "decoded": 73264,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.117.woff2",
+        "start": 331.40000000596046,
+        "end": 331.40000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 71260,
+        "decoded": 71260,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.118.woff2",
+        "start": 331.40000000596046,
+        "end": 331.40000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 84908,
+        "decoded": 84908,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.119.woff2",
+        "start": 331.40000000596046,
+        "end": 331.40000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 74096,
+        "decoded": 74096,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.120.woff2",
+        "start": 331.40000000596046,
+        "end": 331.40000000596046,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 71384,
+        "decoded": 71384,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.121.woff2",
+        "start": 331.5,
+        "end": 331.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 65208,
+        "decoded": 65208,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.122.woff2",
+        "start": 331.5,
+        "end": 331.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 60152,
+        "decoded": 60152,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.123.woff2",
+        "start": 331.59999999403954,
+        "end": 331.59999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 36304,
+        "decoded": 36304,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/api/stations",
+        "start": 349.59999999403954,
+        "end": 679,
+        "duration": 329.40000000596046,
+        "transfer": 294840,
+        "encoded": 294540,
+        "decoded": 2133320,
+        "status": 200,
+        "initiator": "fetch"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/1q5va-cyk3fsi.js",
+        "start": 350.70000000298023,
+        "end": 350.70000000298023,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 199569,
+        "decoded": 199569,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/1iw5_uek2hn9s.css",
+        "start": 351.09999999403954,
+        "end": 351.09999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 12219,
+        "decoded": 12219,
+        "status": 200,
+        "initiator": "link"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/cdn-cgi/rum?",
+        "start": 365.29999999701977,
+        "end": 508.20000000298023,
+        "duration": 142.90000000596046,
+        "transfer": 300,
+        "encoded": 0,
+        "decoded": 0,
+        "status": 204,
+        "initiator": "xmlhttprequest"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/icon-192.png",
+        "start": 384.40000000596046,
+        "end": 387,
+        "duration": 2.5999999940395355,
+        "transfer": 0,
+        "encoded": 4501,
+        "decoded": 4501,
+        "status": 200,
+        "initiator": "other"
+      }
+    ],
+    "cards": 294,
+    "markers": 294,
+    "tiles": 24,
+    "controller": "https://youbike-app.yoyowu.uk/sw.js",
+    "viewport": [
+      1710,
+      838
+    ],
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+  },
+  {
+    "sampleAt": 1884.8999999910593,
+    "nav": {
+      "name": "https://youbike-app.yoyowu.uk/?lat=25.0382&lng=121.5636&z=15",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 354.79999999701977,
+      "navigationId": 308,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "zstd",
+      "workerStart": 1.7000000029802322,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 2,
+      "domainLookupStart": 2,
+      "domainLookupEnd": 2,
+      "connectStart": 2,
+      "secureConnectionStart": 2,
+      "connectEnd": 2,
+      "requestStart": 2,
+      "responseStart": 265.09999999403954,
+      "firstInterimResponseStart": 265.09999999403954,
+      "finalResponseHeadersStart": 0,
+      "responseEnd": 269.5,
+      "transferSize": 11625,
+      "encodedBodySize": 11325,
+      "decodedBodySize": 11325,
+      "responseStatus": 200,
+      "serverTiming": [
+        {
+          "name": "cfCacheStatus",
+          "duration": 0,
+          "description": "DYNAMIC"
+        },
+        {
+          "name": "cfEdge",
+          "duration": 5,
+          "description": ""
+        },
+        {
+          "name": "cfOrigin",
+          "duration": 114,
+          "description": ""
+        },
+        {
+          "name": "cfExtPri",
+          "duration": 0,
+          "description": ""
+        }
+      ],
+      "unloadEventStart": 283.09999999403954,
+      "unloadEventEnd": 283.09999999403954,
+      "domInteractive": 310.29999999701977,
+      "domContentLoadedEventStart": 330.70000000298023,
+      "domContentLoadedEventEnd": 330.70000000298023,
+      "domComplete": 354.59999999403954,
+      "loadEventStart": 354.59999999403954,
+      "loadEventEnd": 354.79999999701977,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {
+        "randomizedTriggerRate": 0.4994798,
+        "value": "high"
+      }
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "entryType": "paint",
+        "startTime": 376,
+        "duration": 0,
+        "navigationId": 308,
+        "paintTime": 324.59999999403954,
+        "presentationTime": 376
+      },
+      {
+        "name": "first-contentful-paint",
+        "entryType": "paint",
+        "startTime": 376,
+        "duration": 0,
+        "navigationId": 308,
+        "paintTime": 324.59999999403954,
+        "presentationTime": 376
+      }
+    ],
+    "lcp": [
+      {
+        "start": 376,
+        "size": 5440,
+        "tag": "H1",
+        "class": ""
+      },
+      {
+        "start": 444,
+        "size": 65536,
+        "tag": "IMG",
+        "class": "leaflet-tile leaflet-tile-loaded"
+      }
+    ],
+    "resources": [
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/3lmo9m-0hcoxy.css",
+        "start": 289.5,
+        "end": 289.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 28532,
+        "decoded": 28532,
+        "status": 200,
+        "initiator": "link"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/19wg2q9r2_sev.js",
+        "start": 289.59999999403954,
+        "end": 289.59999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 21767,
+        "decoded": 21767,
+        "status": 200,
+        "initiator": "link"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/1f3_j0-7srs8o.js",
+        "start": 289.59999999403954,
+        "end": 289.59999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 180551,
+        "decoded": 180551,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/3wbm-994r45kr.js",
+        "start": 289.59999999403954,
+        "end": 289.59999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 229820,
+        "decoded": 229820,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+        "start": 289.70000000298023,
+        "end": 289.70000000298023,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 10030,
+        "decoded": 10030,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/0umf92h1sb77c.js",
+        "start": 289.70000000298023,
+        "end": 289.70000000298023,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 13822,
+        "decoded": 13822,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/216lchwq-6zyt.js",
+        "start": 289.79999999701977,
+        "end": 289.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 518,
+        "decoded": 518,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/3xhuba235gdec.js",
+        "start": 289.79999999701977,
+        "end": 289.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 36785,
+        "decoded": 36785,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Noto+Sans+TC:wght@300..700&display=swap",
+        "start": 289.8999999910593,
+        "end": 289.8999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 35197,
+        "decoded": 127875,
+        "status": 0,
+        "initiator": "link"
+      },
+      {
+        "name": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+        "start": 289.8999999910593,
+        "end": 289.8999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 0,
+        "decoded": 0,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+        "start": 313.8999999910593,
+        "end": 313.8999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 48432,
+        "decoded": 48432,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.10.woff2",
+        "start": 314,
+        "end": 314,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 15264,
+        "decoded": 15264,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.30.woff2",
+        "start": 314,
+        "end": 314,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 22748,
+        "decoded": 22748,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.57.woff2",
+        "start": 314.29999999701977,
+        "end": 314.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 40180,
+        "decoded": 40180,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.58.woff2",
+        "start": 314.3999999910593,
+        "end": 314.3999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 42232,
+        "decoded": 42232,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.91.woff2",
+        "start": 314.70000000298023,
+        "end": 314.70000000298023,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 5736,
+        "decoded": 5736,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.94.woff2",
+        "start": 314.79999999701977,
+        "end": 314.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 9292,
+        "decoded": 9292,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.104.woff2",
+        "start": 314.79999999701977,
+        "end": 314.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 62976,
+        "decoded": 62976,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.105.woff2",
+        "start": 314.79999999701977,
+        "end": 314.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 62384,
+        "decoded": 62384,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.107.woff2",
+        "start": 314.8999999910593,
+        "end": 314.8999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 70056,
+        "decoded": 70056,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.108.woff2",
+        "start": 314.8999999910593,
+        "end": 314.8999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 68564,
+        "decoded": 68564,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.109.woff2",
+        "start": 315,
+        "end": 315,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 67908,
+        "decoded": 67908,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.110.woff2",
+        "start": 315,
+        "end": 315,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 72244,
+        "decoded": 72244,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.111.woff2",
+        "start": 315,
+        "end": 315,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 72848,
+        "decoded": 72848,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.112.woff2",
+        "start": 315,
+        "end": 315,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 72392,
+        "decoded": 72392,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.113.woff2",
+        "start": 315.09999999403954,
+        "end": 315.09999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 71768,
+        "decoded": 71768,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.114.woff2",
+        "start": 315.09999999403954,
+        "end": 315.09999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 79056,
+        "decoded": 79056,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.115.woff2",
+        "start": 315.09999999403954,
+        "end": 315.09999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 74672,
+        "decoded": 74672,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.116.woff2",
+        "start": 315.20000000298023,
+        "end": 315.20000000298023,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 73264,
+        "decoded": 73264,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.117.woff2",
+        "start": 315.20000000298023,
+        "end": 315.20000000298023,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 71260,
+        "decoded": 71260,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.118.woff2",
+        "start": 315.20000000298023,
+        "end": 315.20000000298023,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 84908,
+        "decoded": 84908,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.119.woff2",
+        "start": 315.29999999701977,
+        "end": 315.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 74096,
+        "decoded": 74096,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.120.woff2",
+        "start": 315.29999999701977,
+        "end": 315.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 71384,
+        "decoded": 71384,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.121.woff2",
+        "start": 315.29999999701977,
+        "end": 315.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 65208,
+        "decoded": 65208,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.122.woff2",
+        "start": 315.29999999701977,
+        "end": 315.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 60152,
+        "decoded": 60152,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.123.woff2",
+        "start": 315.29999999701977,
+        "end": 315.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 36304,
+        "decoded": 36304,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/api/stations",
+        "start": 346.8999999910593,
+        "end": 696.5999999940395,
+        "duration": 349.70000000298023,
+        "transfer": 294734,
+        "encoded": 294434,
+        "decoded": 2133320,
+        "status": 200,
+        "initiator": "fetch"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/1q5va-cyk3fsi.js",
+        "start": 348.3999999910593,
+        "end": 348.3999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 199569,
+        "decoded": 199569,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/1iw5_uek2hn9s.css",
+        "start": 348.5,
+        "end": 348.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 12219,
+        "decoded": 12219,
+        "status": 200,
+        "initiator": "link"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/cdn-cgi/rum?",
+        "start": 355.8999999910593,
+        "end": 496.3999999910593,
+        "duration": 140.5,
+        "transfer": 300,
+        "encoded": 0,
+        "decoded": 0,
+        "status": 204,
+        "initiator": "xmlhttprequest"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/icon-192.png",
+        "start": 377.5,
+        "end": 384.79999999701977,
+        "duration": 7.299999997019768,
+        "transfer": 0,
+        "encoded": 4501,
+        "decoded": 4501,
+        "status": 200,
+        "initiator": "other"
+      }
+    ],
+    "cards": 294,
+    "markers": 294,
+    "tiles": 24,
+    "controller": "https://youbike-app.yoyowu.uk/sw.js",
+    "viewport": [
+      1710,
+      838
+    ],
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+  },
+  {
+    "sampleAt": 1908.0999999940395,
+    "nav": {
+      "name": "https://youbike-app.yoyowu.uk/?lat=25.0382&lng=121.5636&z=15",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 386.29999999701977,
+      "navigationId": 5100,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "zstd",
+      "workerStart": 1.7999999970197678,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 2.0999999940395355,
+      "domainLookupStart": 2.0999999940395355,
+      "domainLookupEnd": 2.0999999940395355,
+      "connectStart": 2.0999999940395355,
+      "secureConnectionStart": 2.0999999940395355,
+      "connectEnd": 2.0999999940395355,
+      "requestStart": 2.0999999940395355,
+      "responseStart": 261.09999999403954,
+      "firstInterimResponseStart": 261.09999999403954,
+      "finalResponseHeadersStart": 0,
+      "responseEnd": 272.8999999910593,
+      "transferSize": 11625,
+      "encodedBodySize": 11325,
+      "decodedBodySize": 11325,
+      "responseStatus": 200,
+      "serverTiming": [
+        {
+          "name": "cfCacheStatus",
+          "duration": 0,
+          "description": "DYNAMIC"
+        },
+        {
+          "name": "cfEdge",
+          "duration": 3,
+          "description": ""
+        },
+        {
+          "name": "cfOrigin",
+          "duration": 113,
+          "description": ""
+        },
+        {
+          "name": "cfExtPri",
+          "duration": 0,
+          "description": ""
+        }
+      ],
+      "unloadEventStart": 298.69999998807907,
+      "unloadEventEnd": 298.69999998807907,
+      "domInteractive": 347.69999998807907,
+      "domContentLoadedEventStart": 356.5,
+      "domContentLoadedEventEnd": 356.59999999403954,
+      "domComplete": 386.09999999403954,
+      "loadEventStart": 386.19999998807907,
+      "loadEventEnd": 386.29999999701977,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {
+        "randomizedTriggerRate": 0.4994798,
+        "value": "low"
+      }
+    },
+    "paint": [
+      {
+        "name": "first-paint",
+        "entryType": "paint",
+        "startTime": 460,
+        "duration": 0,
+        "navigationId": 5100,
+        "paintTime": 398.3999999910593,
+        "presentationTime": 460
+      },
+      {
+        "name": "first-contentful-paint",
+        "entryType": "paint",
+        "startTime": 460,
+        "duration": 0,
+        "navigationId": 5100,
+        "paintTime": 398.3999999910593,
+        "presentationTime": 460
+      }
+    ],
+    "lcp": [
+      {
+        "start": 460,
+        "size": 5440,
+        "tag": "H1",
+        "class": ""
+      },
+      {
+        "start": 540,
+        "size": 65536,
+        "tag": "IMG",
+        "class": "leaflet-tile leaflet-tile-loaded"
+      }
+    ],
+    "resources": [
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/3lmo9m-0hcoxy.css",
+        "start": 307.5,
+        "end": 307.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 28532,
+        "decoded": 28532,
+        "status": 200,
+        "initiator": "link"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/19wg2q9r2_sev.js",
+        "start": 307.5,
+        "end": 307.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 21767,
+        "decoded": 21767,
+        "status": 200,
+        "initiator": "link"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/1f3_j0-7srs8o.js",
+        "start": 307.59999999403954,
+        "end": 307.59999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 180551,
+        "decoded": 180551,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/3wbm-994r45kr.js",
+        "start": 307.59999999403954,
+        "end": 307.59999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 229820,
+        "decoded": 229820,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+        "start": 307.59999999403954,
+        "end": 307.59999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 10030,
+        "decoded": 10030,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/0umf92h1sb77c.js",
+        "start": 307.69999998807907,
+        "end": 307.69999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 13822,
+        "decoded": 13822,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/216lchwq-6zyt.js",
+        "start": 307.69999998807907,
+        "end": 307.69999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 518,
+        "decoded": 518,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/3xhuba235gdec.js",
+        "start": 307.69999998807907,
+        "end": 307.69999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 36785,
+        "decoded": 36785,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Noto+Sans+TC:wght@300..700&display=swap",
+        "start": 307.79999999701977,
+        "end": 307.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 35197,
+        "decoded": 127875,
+        "status": 0,
+        "initiator": "link"
+      },
+      {
+        "name": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+        "start": 307.8999999910593,
+        "end": 307.8999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 0,
+        "decoded": 0,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+        "start": 356.79999999701977,
+        "end": 356.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 48432,
+        "decoded": 48432,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.10.woff2",
+        "start": 356.8999999910593,
+        "end": 356.8999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 15264,
+        "decoded": 15264,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.30.woff2",
+        "start": 357.09999999403954,
+        "end": 357.09999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 22748,
+        "decoded": 22748,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.57.woff2",
+        "start": 357.3999999910593,
+        "end": 357.3999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 40180,
+        "decoded": 40180,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.58.woff2",
+        "start": 357.5,
+        "end": 357.5,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 42232,
+        "decoded": 42232,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.91.woff2",
+        "start": 357.8999999910593,
+        "end": 357.8999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 5736,
+        "decoded": 5736,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.94.woff2",
+        "start": 358,
+        "end": 358,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 9292,
+        "decoded": 9292,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.104.woff2",
+        "start": 358,
+        "end": 358,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 62976,
+        "decoded": 62976,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.105.woff2",
+        "start": 358.09999999403954,
+        "end": 358.09999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 62384,
+        "decoded": 62384,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.107.woff2",
+        "start": 358.09999999403954,
+        "end": 358.09999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 70056,
+        "decoded": 70056,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.108.woff2",
+        "start": 358.19999998807907,
+        "end": 358.19999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 68564,
+        "decoded": 68564,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.109.woff2",
+        "start": 358.19999998807907,
+        "end": 358.19999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 67908,
+        "decoded": 67908,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.110.woff2",
+        "start": 358.29999999701977,
+        "end": 358.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 72244,
+        "decoded": 72244,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.111.woff2",
+        "start": 358.29999999701977,
+        "end": 358.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 72848,
+        "decoded": 72848,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.112.woff2",
+        "start": 358.29999999701977,
+        "end": 358.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 72392,
+        "decoded": 72392,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.113.woff2",
+        "start": 358.3999999910593,
+        "end": 358.3999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 71768,
+        "decoded": 71768,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.114.woff2",
+        "start": 358.3999999910593,
+        "end": 358.3999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 79056,
+        "decoded": 79056,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.115.woff2",
+        "start": 358.3999999910593,
+        "end": 358.3999999910593,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 74672,
+        "decoded": 74672,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.116.woff2",
+        "start": 358.59999999403954,
+        "end": 358.59999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 73264,
+        "decoded": 73264,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.117.woff2",
+        "start": 358.69999998807907,
+        "end": 358.69999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 71260,
+        "decoded": 71260,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.118.woff2",
+        "start": 358.79999999701977,
+        "end": 358.79999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 84908,
+        "decoded": 84908,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.119.woff2",
+        "start": 359,
+        "end": 359,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 74096,
+        "decoded": 74096,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.120.woff2",
+        "start": 359,
+        "end": 359,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 71384,
+        "decoded": 71384,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.121.woff2",
+        "start": 359.09999999403954,
+        "end": 359.09999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 65208,
+        "decoded": 65208,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.122.woff2",
+        "start": 359.29999999701977,
+        "end": 359.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 60152,
+        "decoded": 60152,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/notosanstc/v40/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.123.woff2",
+        "start": 359.29999999701977,
+        "end": 359.29999999701977,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 36304,
+        "decoded": 36304,
+        "status": 200,
+        "initiator": "css"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/api/stations",
+        "start": 377.59999999403954,
+        "end": 724.8999999910593,
+        "duration": 347.29999999701977,
+        "transfer": 294831,
+        "encoded": 294531,
+        "decoded": 2133320,
+        "status": 200,
+        "initiator": "fetch"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/1q5va-cyk3fsi.js",
+        "start": 379.59999999403954,
+        "end": 379.59999999403954,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 199569,
+        "decoded": 199569,
+        "status": 200,
+        "initiator": "script"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/_next/static/chunks/1iw5_uek2hn9s.css",
+        "start": 379.69999998807907,
+        "end": 379.69999998807907,
+        "duration": 0,
+        "transfer": 0,
+        "encoded": 12219,
+        "decoded": 12219,
+        "status": 200,
+        "initiator": "link"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/cdn-cgi/rum?",
+        "start": 401,
+        "end": 543.2999999970198,
+        "duration": 142.29999999701977,
+        "transfer": 300,
+        "encoded": 0,
+        "decoded": 0,
+        "status": 204,
+        "initiator": "xmlhttprequest"
+      },
+      {
+        "name": "https://youbike-app.yoyowu.uk/icon-192.png",
+        "start": 424,
+        "end": 429.09999999403954,
+        "duration": 5.0999999940395355,
+        "transfer": 0,
+        "encoded": 4501,
+        "decoded": 4501,
+        "status": 200,
+        "initiator": "other"
+      }
+    ],
+    "cards": 294,
+    "markers": 294,
+    "tiles": 24,
+    "controller": "https://youbike-app.yoyowu.uk/sw.js",
+    "viewport": [
+      1710,
+      838
+    ],
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+  }
+]

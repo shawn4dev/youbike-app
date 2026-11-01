@@ -1,0 +1,126 @@
+
+> youbike-app@1.0.0 test
+> node --test tests/*.test.mjs
+
+(node:98471) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/yoyo/youbike-app/app/api/stations/route.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/yoyo/youbike-app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[Function: createOfficialStations]
+✔ complete JSON survives negotiation undefined (27.184792ms)
+✔ complete JSON survives negotiation  (0.463542ms)
+✔ complete JSON survives negotiation gzip (11.529084ms)
+✔ complete JSON survives negotiation GZip;Q=1 (1.210375ms)
+✔ complete JSON survives negotiation gzip;q=0 (0.33375ms)
+✔ complete JSON survives negotiation * (1.590125ms)
+✔ complete JSON survives negotiation *;q=0.5 (0.284417ms)
+✔ complete JSON survives negotiation gzip;q=0, *;q=1 (0.162667ms)
+✔ complete JSON survives negotiation identity;q=0, *;q=0.5 (1.945583ms)
+✔ complete JSON survives negotiation gzip;q=0.5, identity;q=0.1 (3.376125ms)
+✔ complete JSON survives negotiation gzip;q=0.5, identity;q=0.8 (0.203208ms)
+✔ complete JSON survives negotiation gzip;q=oops (0.115084ms)
+✔ complete JSON survives negotiation gzip;q=1.001 (0.08725ms)
+✔ complete JSON survives negotiation gzip;q=-1 (0.074333ms)
+✔ complete JSON survives negotiation gzip;q=0.1234 (0.072708ms)
+✔ complete JSON survives negotiation br (0.065708ms)
+✔ complete JSON survives negotiation gzip;q=0.5, identity;q=0.5 (3.217792ms)
+✔ coding name accepts optional whitespace before quality " " (3.268458ms)
+✔ coding name accepts optional whitespace before quality "\t" (1.829ms)
+✔ refusal returns 406 without claiming compression (0.23725ms)
+✔ Vary retains existing tokens and avoids case-insensitive duplicates (0.250625ms)
+✔ HEAD and bodyless statuses have no body or encoding (0.139792ms)
+✔ unavailable, constructor failure, and stream failure safely fall back only if identity is allowed (2.675166ms)
+✔ route 400 uses real gzip and no-store with complete JSON (4.874625ms)
+✔ 每個行政區都接受完整名稱與省略「區」的精確查詢 (7.187208ms)
+✔ 較長的站名或地址不會被誤判成行政區查詢 (0.147291ms)
+✔ 先要求快速快取定位，再背景精確定位，取消後不回寫位置 (2.654167ms)
+✔ 拒絕定位立即回報備援，不重複要求權限 (0.129792ms)
+✔ 清除分享站號保留最新地圖位置與其他查詢條件 (0.518792ms)
+✔ 只有使用者點擊地圖空白可取消，圖標、popup、控制列與程式事件不取消 (0.125208ms)
+✔ 地圖僅繪製可視範圍與周邊緩衝區站點，原始資料保持完整 (1.762541ms)
+✔ 可透過視野移動顯示其他縣市，無需捨棄完整站點資料 (0.106792ms)
+✔ 已選站點在移動視野或開啟分享網址時仍有圖標 (0.118167ms)
+✔ 緩衝區包含視野外鄰近站點 (3.888042ms)
+✔ 小幅拖曳保持在緩衝區內時可跳過圖標更新，超出時則必須刷新 (0.127708ms)
+✔ 其中一市失敗時仍提供其他兩市站點，並標出失敗城市 (26.495ms)
+(node:98477) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/yoyo/youbike-app/lib/official-feed.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/yoyo/youbike-app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ 圓心常數覆蓋全台且未超出伺服器 maxDistance 上限 (0.662458ms)
+✔ haversineMeters 對已知距離給出合理值 (0.280417ms)
+✔ normOfficial 把官方兩個 schema 合成 /api/stations 的站點物件 (0.181708ms)
+✔ normOfficial 對暫停營運與缺欄位不臆測數值 (0.075833ms)
+✔ merges 以 station_no 串接靜態與即時資料，靜態沒有的站號直接跳過 (0.108ms)
+✔ AREA_NAMES 涵蓋官方 14 個服務區 (0.06925ms)
+✔ fetchParkingInfo 以 station_no 去重並回報失敗的圓心 (0.43ms)
+✔ fetchParkingInfo 在 retCode 非 1 時視為失敗而非空資料 (0.166166ms)
+✔ fetchOfficialFeed 回報靜態清單中即時狀態未覆蓋的站號 (0.573ms)
+✔ fetchUpdatedAt 從 HEAD 標頭取得更新時間，不下載本體 (0.837291ms)
+✔ fetchStationFeedConditional 未變更時回 304 且仍帶 last-modified (0.184583ms)
+✔ fetchStationFeedConditional 變更時回 200 並解析 JSON (0.156458ms)
+✔ fetchStationFeedConditional 首次呼叫（無 lastModified）不送條件標頭 (0.122375ms)
+﹣ LIVE：85 個圓心可完整取得全台站點 (0.032542ms) # SKIP
+(node:98478) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/yoyo/youbike-app/lib/official-feed.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/yoyo/youbike-app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[Function: createOfficialStations]
+[Function: createOfficialStations]
+[Function: createOfficialStations]
+[Function: createOfficialStations]
+[Function: createOfficialStations]
+[Function: createOfficialStations]
+[Function: createOfficialStations]
+[Function: createOfficialStations]
+[Function: createOfficialStations]
+✔ single gzip full-feed request serves isolated city and subsequent complete default cache (23.561292ms)
+✔ 304 advances only checkedAt, retains values/fetchedAt/validator, and shares force in-flight (0.484625ms)
+✔ overdue failure retains data and throttles retries without pretending old values are fresh (0.364875ms)
+✔ overdue automatic request awaits conditional 200; next overdue 304 retains snapshot times (1.415958ms)
+✔ invalid/empty/missing-city/duplicate feeds retain previous complete snapshot and validator (0.99325ms)
+✔ cold unexpected304 or malformed JSON reports errors, no fabricated timestamp, no rapid retry (0.298792ms)
+[Function: createOfficialStations]
+[Function: createOfficialStations]
+✔ deadline aborts a pending full-feed download and reports explicit failure (5.353625ms)
+✔ conditional helper propagates external cancellation (0.393958ms)
+✔ changed 200 replaces accepted data and validator only after validation (0.447916ms)
+✔ route rejects unknown or empty city before network access (0.97025ms)
+✔ memory spends checkedAt budget and a forced failure immediately removes remaining freshness (0.246667ms)
+✔ API and force requests bypass cached stale entries and never enter SW cache (24.642459ms)
+✔ static cache-first hit and miss behavior remains unchanged (2.789666ms)
+✔ v4 activation removes only obsolete YouBike caches and claims clients (1.532125ms)
+✔ exact fixed script does zero hidden work and handles rejection before claim (5.709166ms)
+✔ pending and completed early requests each transfer once and avoid a second download (27.580792ms)
+✔ hide, pagehide, timeout and expiry before claim discard the handle and retained data (2.680583ms)
+✔ delayed body, source errors and invalid budgets fall through to exactly one normal request (2.554042ms)
+✔ claim removes visibility ownership, stop suppresses late result and remount cannot reclaim (1.003583ms)
+✔ pending bootstrap and ordinary flight each queue one force, double clicks share completion (0.788209ms)
+✔ wall clock skew does not alter bootstrap freshness and consumption checks its monotonic deadline (0.6405ms)
+✔ adoption keeps the polling deadline measured from the actual early attempt (0.494417ms)
+✔ queued force waits for foreground and resolves only after forced validation, or stop (1.58825ms)
+✔ 初次直接取得三市全量站點，不依照地圖位置分段請求 (21.494458ms)
+✔ 手動刷新可繞過快取，並更新收藏站的即時資料取樣 (0.737291ms)
+✔ 更新失敗時保留原有站點，不再清空地圖 (0.391459ms)
+✔ 多個同時的刷新共用請求，停止後不發布遲到資料 (0.218708ms)
+✔ 初始隱藏不下載，回到前景立即普通刷新並恢復輪詢，隱藏再次暫停 (0.832792ms)
+✔ 前景恢復合併未完成請求，停止後移除事件並取消請求與輪詢 (0.320042ms)
+✔ 預設5分鐘：4分鐘返回等待剩餘1分鐘，超過5分鐘立即刷新 (0.420875ms)
+✔ 手動刷新與失敗都重設自動期限，不因返回前景連續重試 (0.904458ms)
+✔ only cancellable Ctrl wheel is normalized; ordinary scroll remains untouched (0.744958ms)
+✔ direction, fractional input, line/page units and outlier limits are explicit (0.253125ms)
+✔ fractional zoom is retained and bounded; invalid bounds cannot escape (1.851416ms)
+✔ coalesces deltas once per frame, accumulates desired zoom independently and preserves public anchor (0.648708ms)
+✔ ordinary scroll/controls are untouched, interrupting input restores native wheel before bubbling (0.188166ms)
+✔ limits consume no hidden overshoot so reversal responds immediately (0.146333ms)
+✔ blur, visibility, external motion and disposal cancel pending work and restore original disabled state (0.174375ms)
+✔ gesture cancels pending debounce, ignores all intermediate viewport events, commits final exactly once (0.58975ms)
+✔ fractional URL values round trip within tolerance and old integers remain compatible (0.1225ms)
+ℹ tests 90
+ℹ suites 0
+ℹ pass 89
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 185.226625

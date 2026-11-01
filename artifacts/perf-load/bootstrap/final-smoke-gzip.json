@@ -1,0 +1,24 @@
+{
+  "status": 200,
+  "headers": {
+    "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+    "cache-control": "no-store",
+    "content-encoding": "gzip",
+    "content-type": "application/json",
+    "date": "Sun, 01 Nov 2026 14:55:40 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked"
+  },
+  "wireBytes": 273124,
+  "decodedBytes": 2133420,
+  "stationCount": 4959,
+  "stationHash": "0d13898a73e2ca09c9ae388a8a75df962ad74ef18c52abf7ce71f6151eb94b25",
+  "errors": [],
+  "sourceErrors": [],
+  "checkedAt": "2026-11-01T14:55:39.660Z",
+  "fetchedAt": "2026-11-01T14:55:39.656Z",
+  "freshForMs": 89498,
+  "sourceLastModified": "Sun, 01 Nov 2026 14:55:38 GMT",
+  "gzipLayers": 1
+}

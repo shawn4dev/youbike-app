@@ -1,0 +1,113 @@
+{
+  "origin": "http://127.0.0.1:3318",
+  "initial": {
+    "probe": {
+      "started": 70.5,
+      "events": [
+        {
+          "at": 203.90000000596046,
+          "url": "/api/stations",
+          "readyState": "loading",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:55:18.986Z",
+            "checkedAt": "2026-11-01T14:55:18.992Z",
+            "freshForMs": 90000,
+            "sourceLastModified": "Sun, 01 Nov 2026 14:54:38 GMT",
+            "cached": false,
+            "stale": false
+          },
+          "done": 664.9000000059605
+        }
+      ],
+      "errors": [],
+      "card": 709.4000000059605,
+      "marker": 1042.2000000029802,
+      "tiles": 2259
+    },
+    "scriptHash": "f3d17d3213d203585419af31043d78e6436a3af0e92a342815c33ab908a05a0f",
+    "cards": 300,
+    "markers": 397,
+    "resources": [
+      {
+        "name": "http://127.0.0.1:3318/api/stations",
+        "start": 204,
+        "end": 646.3000000119209,
+        "encoded": 273165,
+        "decoded": 2133421
+      }
+    ],
+    "worker": false
+  },
+  "manual": {
+    "before": 1,
+    "after": 2,
+    "probe": {
+      "started": 70.5,
+      "events": [
+        {
+          "at": 203.90000000596046,
+          "url": "/api/stations",
+          "readyState": "loading",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:55:18.986Z",
+            "checkedAt": "2026-11-01T14:55:18.992Z",
+            "freshForMs": 90000,
+            "sourceLastModified": "Sun, 01 Nov 2026 14:54:38 GMT",
+            "cached": false,
+            "stale": false
+          },
+          "done": 664.9000000059605
+        },
+        {
+          "at": 21014.80000001192,
+          "url": "/api/stations?force=1",
+          "readyState": "complete",
+          "status": 200,
+          "payload": {
+            "count": 4959,
+            "errors": [],
+            "sourceErrors": [],
+            "fetchedAt": "2026-11-01T14:55:39.656Z",
+            "checkedAt": "2026-11-01T14:55:39.660Z",
+            "freshForMs": 89999,
+            "sourceLastModified": "Sun, 01 Nov 2026 14:55:38 GMT",
+            "cached": false,
+            "stale": false
+          },
+          "done": 21336.10000000894
+        }
+      ],
+      "errors": [],
+      "card": 709.4000000059605,
+      "marker": 1042.2000000029802,
+      "tiles": 2259
+    },
+    "cards": 300,
+    "markers": 373,
+    "resources": [
+      {
+        "name": "http://127.0.0.1:3318/api/stations",
+        "start": 204,
+        "end": 646.3000000119209,
+        "encoded": 273165,
+        "decoded": 2133421
+      },
+      {
+        "name": "http://127.0.0.1:3318/api/stations?force=1",
+        "start": 21015.5,
+        "end": 21315.60000000894,
+        "encoded": 273125,
+        "decoded": 2133421
+      }
+    ]
+  },
+  "note": "Final current production build after hidden queued-force correction. No product code changed for smoke."
+}

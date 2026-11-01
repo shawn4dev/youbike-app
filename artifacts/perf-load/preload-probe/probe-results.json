@@ -1,0 +1,18 @@
+{
+  "completed": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36\",\"result\":{\"body\":{\"sequence\":3},\"visibility\":\"visible\",\"resources\":[{\"initiatorType\":\"link\",\"name\":\"http://127.0.0.1:64106/data?id=completed-again&network=0\",\"startTime\":13.399999991059303,\"responseEnd\":32.8999999910593,\"transferSize\":314}]},\"requests\":[{\"url\":\"/data?id=completed-no-store&network=0\",\"at\":1793542975248,\"mode\":\"cors\",\"destination\":\"empty\"},{\"url\":\"/data?id=inflight-no-store&network=1000\",\"at\":1793542981188,\"mode\":\"cors\",\"destination\":\"empty\"},{\"url\":\"/data?id=completed-again&network=0\",\"at\":1793542987634,\"mode\":\"cors\",\"destination\":\"empty\"}]}\n```"
+      }
+    ]
+  },
+  "hiddenAttempt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36\",\"result\":{\"body\":{\"sequence\":4},\"visibility\":\"visible\",\"resources\":[{\"initiatorType\":\"link\",\"name\":\"http://127.0.0.1:64106/data?id=hidden-case&network=0\",\"startTime\":8.599999994039536,\"responseEnd\":86,\"transferSize\":314}]},\"visibility\":\"visible\",\"requests\":[{\"url\":\"/data?id=completed-no-store&network=0\",\"at\":1793542975248,\"mode\":\"cors\",\"destination\":\"empty\"},{\"url\":\"/data?id=inflight-no-store&network=1000\",\"at\":1793542981188,\"mode\":\"cors\",\"destination\":\"empty\"},{\"url\":\"/data?id=completed-again&network=0\",\"at\":1793542987634,\"mode\":\"cors\",\"destination\":\"empty\"},{\"url\":\"/data?id=hidden-case&network=0\",\"at\":1793542994278,\"mode\":\"cors\",\"destination\":\"empty\"}]}\n```"
+      }
+    ]
+  }
+}

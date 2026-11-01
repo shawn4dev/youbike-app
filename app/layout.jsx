@@ -1,4 +1,5 @@
 import './globals.css';
+import { stationBootstrapScript } from '../lib/station-bootstrap.mjs';
 
 export const viewport = { width: 'device-width', initialScale: 1, viewportFit: 'cover' };
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/icon-192.png" />
         <link rel="apple-touch-icon" href="/icon-192.png" />
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
+        <script id="station-bootstrap" dangerouslySetInnerHTML={{ __html: stationBootstrapScript }} />
       </head>
       <body>{children}</body>
     </html>

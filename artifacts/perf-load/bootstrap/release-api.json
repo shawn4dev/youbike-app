@@ -1,0 +1,531 @@
+{
+  "origin": "http://127.0.0.1:3317",
+  "at": "2026-11-01T14:43:53.627Z",
+  "samples": [
+    {
+      "path": "/api/stations",
+      "method": "GET",
+      "encoding": "identity",
+      "status": 200,
+      "headers": {
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "no-store",
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 14:43:53 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "ttfbMs": 22.200791000000002,
+      "totalMs": 30.787083000000003,
+      "wireBytes": 2133400,
+      "decodedBytes": 2133400,
+      "stationCount": 4959,
+      "stationHash": "89622acea600e4ae69f4b18c0617e95ddf09b4ae9448d9b1cff8468892a3f442",
+      "errors": [],
+      "sourceErrors": [],
+      "metadata": {
+        "errors": [],
+        "fetchedAt": "2026-11-01T14:43:45.112Z",
+        "checkedAt": "2026-11-01T14:43:45.124Z",
+        "sourceLastModified": "Sun, 01 Nov 2026 14:42:38 GMT",
+        "sourceErrors": [],
+        "cached": true,
+        "freshForMs": 82134,
+        "stale": false
+      }
+    },
+    {
+      "path": "/api/stations",
+      "method": "GET",
+      "encoding": "gzip",
+      "status": 200,
+      "headers": {
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "no-store",
+        "content-encoding": "gzip",
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 14:43:53 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "ttfbMs": 32.87287499999999,
+      "totalMs": 42.748917000000006,
+      "wireBytes": 272814,
+      "decodedBytes": 2133400,
+      "stationCount": 4959,
+      "stationHash": "89622acea600e4ae69f4b18c0617e95ddf09b4ae9448d9b1cff8468892a3f442",
+      "errors": [],
+      "sourceErrors": [],
+      "metadata": {
+        "errors": [],
+        "fetchedAt": "2026-11-01T14:43:45.112Z",
+        "checkedAt": "2026-11-01T14:43:45.124Z",
+        "sourceLastModified": "Sun, 01 Nov 2026 14:42:38 GMT",
+        "sourceErrors": [],
+        "cached": true,
+        "freshForMs": 82100,
+        "stale": false
+      }
+    },
+    {
+      "path": "/api/stations",
+      "method": "GET",
+      "encoding": "identity",
+      "status": 200,
+      "headers": {
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "no-store",
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 14:43:53 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "ttfbMs": 11.099250000000012,
+      "totalMs": 17.26120800000001,
+      "wireBytes": 2133400,
+      "decodedBytes": 2133400,
+      "stationCount": 4959,
+      "stationHash": "89622acea600e4ae69f4b18c0617e95ddf09b4ae9448d9b1cff8468892a3f442",
+      "errors": [],
+      "sourceErrors": [],
+      "metadata": {
+        "errors": [],
+        "fetchedAt": "2026-11-01T14:43:45.112Z",
+        "checkedAt": "2026-11-01T14:43:45.124Z",
+        "sourceLastModified": "Sun, 01 Nov 2026 14:42:38 GMT",
+        "sourceErrors": [],
+        "cached": true,
+        "freshForMs": 82048,
+        "stale": false
+      }
+    },
+    {
+      "path": "/api/stations",
+      "method": "GET",
+      "encoding": "identity",
+      "status": 200,
+      "headers": {
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "no-store",
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 14:43:53 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "ttfbMs": 27.436709000000008,
+      "totalMs": 42.217209000000025,
+      "wireBytes": 2133400,
+      "decodedBytes": 2133400,
+      "stationCount": 4959,
+      "stationHash": "89622acea600e4ae69f4b18c0617e95ddf09b4ae9448d9b1cff8468892a3f442",
+      "errors": [],
+      "sourceErrors": [],
+      "metadata": {
+        "errors": [],
+        "fetchedAt": "2026-11-01T14:43:45.112Z",
+        "checkedAt": "2026-11-01T14:43:45.124Z",
+        "sourceLastModified": "Sun, 01 Nov 2026 14:42:38 GMT",
+        "sourceErrors": [],
+        "cached": true,
+        "freshForMs": 82010,
+        "stale": false
+      }
+    },
+    {
+      "path": "/api/stations",
+      "method": "GET",
+      "encoding": "gzip",
+      "status": 200,
+      "headers": {
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "no-store",
+        "content-encoding": "gzip",
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 14:43:53 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "ttfbMs": 27.398124999999993,
+      "totalMs": 35.85779199999999,
+      "wireBytes": 272814,
+      "decodedBytes": 2133400,
+      "stationCount": 4959,
+      "stationHash": "89622acea600e4ae69f4b18c0617e95ddf09b4ae9448d9b1cff8468892a3f442",
+      "errors": [],
+      "sourceErrors": [],
+      "metadata": {
+        "errors": [],
+        "fetchedAt": "2026-11-01T14:43:45.112Z",
+        "checkedAt": "2026-11-01T14:43:45.124Z",
+        "sourceLastModified": "Sun, 01 Nov 2026 14:42:38 GMT",
+        "sourceErrors": [],
+        "cached": true,
+        "freshForMs": 81960,
+        "stale": false
+      }
+    },
+    {
+      "path": "/api/stations",
+      "method": "GET",
+      "encoding": "gzip",
+      "status": 200,
+      "headers": {
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "no-store",
+        "content-encoding": "gzip",
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 14:43:53 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "ttfbMs": 22.987000000000023,
+      "totalMs": 30.48258400000003,
+      "wireBytes": 272814,
+      "decodedBytes": 2133400,
+      "stationCount": 4959,
+      "stationHash": "89622acea600e4ae69f4b18c0617e95ddf09b4ae9448d9b1cff8468892a3f442",
+      "errors": [],
+      "sourceErrors": [],
+      "metadata": {
+        "errors": [],
+        "fetchedAt": "2026-11-01T14:43:45.112Z",
+        "checkedAt": "2026-11-01T14:43:45.124Z",
+        "sourceLastModified": "Sun, 01 Nov 2026 14:42:38 GMT",
+        "sourceErrors": [],
+        "cached": true,
+        "freshForMs": 81914,
+        "stale": false
+      }
+    },
+    {
+      "path": "/api/stations",
+      "method": "GET",
+      "encoding": "identity",
+      "status": 200,
+      "headers": {
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "no-store",
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 14:43:53 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "ttfbMs": 7.652290999999991,
+      "totalMs": 13.263166000000012,
+      "wireBytes": 2133400,
+      "decodedBytes": 2133400,
+      "stationCount": 4959,
+      "stationHash": "89622acea600e4ae69f4b18c0617e95ddf09b4ae9448d9b1cff8468892a3f442",
+      "errors": [],
+      "sourceErrors": [],
+      "metadata": {
+        "errors": [],
+        "fetchedAt": "2026-11-01T14:43:45.112Z",
+        "checkedAt": "2026-11-01T14:43:45.124Z",
+        "sourceLastModified": "Sun, 01 Nov 2026 14:42:38 GMT",
+        "sourceErrors": [],
+        "cached": true,
+        "freshForMs": 81875,
+        "stale": false
+      }
+    },
+    {
+      "path": "/api/stations",
+      "method": "GET",
+      "encoding": "identity",
+      "status": 200,
+      "headers": {
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "no-store",
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 14:43:53 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "ttfbMs": 6.909041000000002,
+      "totalMs": 12.537958000000003,
+      "wireBytes": 2133400,
+      "decodedBytes": 2133400,
+      "stationCount": 4959,
+      "stationHash": "89622acea600e4ae69f4b18c0617e95ddf09b4ae9448d9b1cff8468892a3f442",
+      "errors": [],
+      "sourceErrors": [],
+      "metadata": {
+        "errors": [],
+        "fetchedAt": "2026-11-01T14:43:45.112Z",
+        "checkedAt": "2026-11-01T14:43:45.124Z",
+        "sourceLastModified": "Sun, 01 Nov 2026 14:42:38 GMT",
+        "sourceErrors": [],
+        "cached": true,
+        "freshForMs": 81851,
+        "stale": false
+      }
+    },
+    {
+      "path": "/api/stations",
+      "method": "GET",
+      "encoding": "gzip",
+      "status": 200,
+      "headers": {
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "no-store",
+        "content-encoding": "gzip",
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 14:43:53 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "ttfbMs": 22.245000000000005,
+      "totalMs": 29.29458299999999,
+      "wireBytes": 272814,
+      "decodedBytes": 2133400,
+      "stationCount": 4959,
+      "stationHash": "89622acea600e4ae69f4b18c0617e95ddf09b4ae9448d9b1cff8468892a3f442",
+      "errors": [],
+      "sourceErrors": [],
+      "metadata": {
+        "errors": [],
+        "fetchedAt": "2026-11-01T14:43:45.112Z",
+        "checkedAt": "2026-11-01T14:43:45.124Z",
+        "sourceLastModified": "Sun, 01 Nov 2026 14:42:38 GMT",
+        "sourceErrors": [],
+        "cached": true,
+        "freshForMs": 81832,
+        "stale": false
+      }
+    },
+    {
+      "path": "/api/stations",
+      "method": "GET",
+      "encoding": "gzip",
+      "status": 200,
+      "headers": {
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "no-store",
+        "content-encoding": "gzip",
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 14:43:53 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "ttfbMs": 23.17345899999998,
+      "totalMs": 30.198541999999975,
+      "wireBytes": 272814,
+      "decodedBytes": 2133400,
+      "stationCount": 4959,
+      "stationHash": "89622acea600e4ae69f4b18c0617e95ddf09b4ae9448d9b1cff8468892a3f442",
+      "errors": [],
+      "sourceErrors": [],
+      "metadata": {
+        "errors": [],
+        "fetchedAt": "2026-11-01T14:43:45.112Z",
+        "checkedAt": "2026-11-01T14:43:45.124Z",
+        "sourceLastModified": "Sun, 01 Nov 2026 14:42:38 GMT",
+        "sourceErrors": [],
+        "cached": true,
+        "freshForMs": 81790,
+        "stale": false
+      }
+    },
+    {
+      "path": "/api/stations",
+      "method": "GET",
+      "encoding": "identity",
+      "status": 200,
+      "headers": {
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "no-store",
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 14:43:53 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "ttfbMs": 6.280208000000016,
+      "totalMs": 12.074958000000038,
+      "wireBytes": 2133400,
+      "decodedBytes": 2133400,
+      "stationCount": 4959,
+      "stationHash": "89622acea600e4ae69f4b18c0617e95ddf09b4ae9448d9b1cff8468892a3f442",
+      "errors": [],
+      "sourceErrors": [],
+      "metadata": {
+        "errors": [],
+        "fetchedAt": "2026-11-01T14:43:45.112Z",
+        "checkedAt": "2026-11-01T14:43:45.124Z",
+        "sourceLastModified": "Sun, 01 Nov 2026 14:42:38 GMT",
+        "sourceErrors": [],
+        "cached": true,
+        "freshForMs": 81753,
+        "stale": false
+      }
+    },
+    {
+      "path": "/api/stations?city=unknown",
+      "method": "GET",
+      "encoding": "gzip",
+      "status": 400,
+      "headers": {
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "no-store",
+        "content-encoding": "gzip",
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 14:43:53 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "ttfbMs": 1.4848340000000348,
+      "totalMs": 1.6090840000000526,
+      "wireBytes": 44,
+      "decodedBytes": 24,
+      "stationHash": null,
+      "metadata": {
+        "error": "unknown city"
+      }
+    },
+    {
+      "path": "/api/stations?city=unknown",
+      "method": "GET",
+      "encoding": "identity",
+      "status": 400,
+      "headers": {
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "no-store",
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 14:43:53 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "ttfbMs": 0.6602079999999546,
+      "totalMs": 0.7004999999999768,
+      "wireBytes": 24,
+      "decodedBytes": 24,
+      "stationHash": null,
+      "metadata": {
+        "error": "unknown city"
+      }
+    },
+    {
+      "path": "/api/stations",
+      "method": "GET",
+      "encoding": "*;q=0",
+      "status": 406,
+      "headers": {
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "no-store",
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 14:43:53 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "ttfbMs": 0.7753749999999968,
+      "totalMs": 0.8080830000000105,
+      "wireBytes": 0,
+      "decodedBytes": 0,
+      "stationHash": null,
+      "metadata": null
+    },
+    {
+      "path": "/api/stations",
+      "method": "HEAD",
+      "encoding": "gzip",
+      "status": 200,
+      "headers": {
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "no-store",
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 14:43:53 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "ttfbMs": 0.6565840000000094,
+      "totalMs": 0.8396670000000199,
+      "wireBytes": 0,
+      "decodedBytes": 0,
+      "stationHash": null,
+      "metadata": null
+    }
+  ],
+  "costs": [
+    {
+      "encoding": "gzip",
+      "elapsedMs": 25.45225000000005,
+      "cpuMs": 27.788,
+      "wireBytes": 272814
+    },
+    {
+      "encoding": "identity",
+      "elapsedMs": 5.897790999999984,
+      "cpuMs": 5.922,
+      "wireBytes": 2133400
+    },
+    {
+      "encoding": "identity",
+      "elapsedMs": 5.4468330000000265,
+      "cpuMs": 5.516,
+      "wireBytes": 2133400
+    },
+    {
+      "encoding": "gzip",
+      "elapsedMs": 22.397625000000062,
+      "cpuMs": 40.359,
+      "wireBytes": 272814
+    },
+    {
+      "encoding": "gzip",
+      "elapsedMs": 21.312832999999955,
+      "cpuMs": 22.323,
+      "wireBytes": 272814
+    },
+    {
+      "encoding": "identity",
+      "elapsedMs": 5.215333999999984,
+      "cpuMs": 5.601,
+      "wireBytes": 2133400
+    },
+    {
+      "encoding": "identity",
+      "elapsedMs": 5.602500000000077,
+      "cpuMs": 5.607,
+      "wireBytes": 2133400
+    },
+    {
+      "encoding": "gzip",
+      "elapsedMs": 21.898791000000074,
+      "cpuMs": 22.039,
+      "wireBytes": 272814
+    },
+    {
+      "encoding": "gzip",
+      "elapsedMs": 22.297874999999976,
+      "cpuMs": 23.608,
+      "wireBytes": 272814
+    },
+    {
+      "encoding": "identity",
+      "elapsedMs": 5.282542000000035,
+      "cpuMs": 5.348,
+      "wireBytes": 2133400
+    }
+  ],
+  "validation": {
+    "requests": 15,
+    "failedRequests": 0,
+    "completeSnapshotPairsEqualExceptRemainingBudget": 5,
+    "gzipLayers": 1,
+    "helperCostSamples": 10
+  }
+}
