@@ -3,7 +3,7 @@
  * - 靜態圖示：cache-first
  * - 站點靜態索引：network-first；版本化區塊：cache-first
  */
-const VERSION = 'v3';
+const VERSION = 'v4';
 const STATIC_CACHE = `youbike-static-${VERSION}`;
 const RUNTIME_CACHE = `youbike-runtime-${VERSION}`;
 
@@ -26,7 +26,7 @@ self.addEventListener('activate', (event) => {
       .then((keys) =>
         Promise.all(
           keys
-            .filter((key) => key !== STATIC_CACHE && key !== RUNTIME_CACHE)
+            .filter((key) => key.startsWith('youbike-') && key !== STATIC_CACHE && key !== RUNTIME_CACHE)
             .map((key) => caches.delete(key))
         )
       )
@@ -40,6 +40,8 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
+  // 即時 API 交由瀏覽器網路處理，遵守呼叫端與路由的 no-store。
+  if (url.pathname === '/api' || url.pathname.startsWith('/api/')) return;
 
   // Next.js bundle 與頁面導覽優先拿最新版本，離線時才退回快取
   if (request.mode === 'navigate' || url.pathname.startsWith('/_next/') || url.pathname === '/data/stations/index.json') {

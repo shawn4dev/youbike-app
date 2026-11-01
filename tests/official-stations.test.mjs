@@ -54,7 +54,7 @@ test('304 advances only checkedAt, retains values/fetchedAt/validator, and share
   assert.deepEqual(a.errors, []);
 });
 
-test('SWR returns immediately and failures throttle retries without pretending old values are fresh', async () => {
+test('overdue failure retains data and throttles retries without pretending old values are fresh', async () => {
   let clock = 1000;
   let calls = 0;
   let fail = false;
@@ -69,13 +69,42 @@ test('SWR returns immediately and failures throttle retries without pretending o
   const stale = await service.get();
   assert.deepEqual(stale.stations, first.stations);
   assert.equal(stale.stale, true);
-  await service.get({ force: true });
   const retained = await service.get({ city: '臺北' });
   assert.equal(calls, 2);
   assert.deepEqual(retained.errors, ['臺北']);
   assert.equal(retained.fetchedAt, first.fetchedAt);
   assert.equal(retained.checkedAt, first.checkedAt);
   assert.equal(retained.stale, true);
+});
+
+test('overdue automatic request awaits conditional 200; next overdue 304 retains snapshot times', async () => {
+  let clock = 1000;
+  let calls = 0;
+  let release;
+  const gate = new Promise(resolve => { release = resolve; });
+  const service = createOfficialStations({ now: () => clock, liveTtl: 10, fetchImpl: async (url, init) => {
+    calls++;
+    if (calls === 1) return response(rows);
+    assert.equal(init.headers['if-modified-since'], modified);
+    if (calls === 2) { await gate; return response(rows.map(row => ({ ...row, available_spaces: 8 }))); }
+    return new Response(null, { status: 304 });
+  } });
+  await service.get();
+  clock += 20;
+  let resolved = false;
+  const updating = service.get().then(result => { resolved = true; return result; });
+  await Promise.resolve();
+  assert.equal(resolved, false);
+  release();
+  const fresh = await updating;
+  assert.ok(fresh.stations.every(row => row.available === 8));
+  assert.equal(fresh.fetchedAt, new Date(clock).toISOString());
+  clock += 20;
+  const unchanged = await service.get();
+  assert.equal(calls, 3);
+  assert.deepEqual(unchanged.stations, fresh.stations);
+  assert.equal(unchanged.fetchedAt, fresh.fetchedAt);
+  assert.notEqual(unchanged.checkedAt, fresh.checkedAt);
 });
 
 test('invalid/empty/missing-city/duplicate feeds retain previous complete snapshot and validator', async () => {
