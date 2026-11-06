@@ -1093,6 +1093,8 @@ export default function Home() {
   const focusIndex = useRef(-1);
   useEffect(() => {
     function onKey(e) {
+      // 輸入法選字期間保留按鍵；229 涵蓋部分瀏覽器的組字結束事件。
+      if (e.isComposing || e.keyCode === 229) return;
       if (e.key === '/' && document.activeElement?.tagName !== 'INPUT') {
         e.preventDefault();
         document.querySelector('.search')?.focus();
