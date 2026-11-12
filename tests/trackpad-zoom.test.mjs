@@ -42,6 +42,7 @@ function fixture({ nativeEnabled = true } = {}) {
   container.closest = () => null;
   const handlers = new Map();
   const calls = [];
+  const lifecycle = { starts: 0, ends: 0, flyTo: 0 };
   let stops = 0;
   const map = {
     options: { zoomSnap: .5 }, getContainer: () => container,
@@ -52,13 +53,16 @@ function fixture({ nativeEnabled = true } = {}) {
     project: (point, zoom) => ({ x: point.x * 2 ** zoom, y: point.y * 2 ** zoom,
       subtract(offset) { return { x: this.x - offset.x, y: this.y - offset.y }; } }),
     unproject: (point, zoom) => ({ x: point.x / 2 ** zoom, y: point.y / 2 ** zoom }),
-    flyTo: (center, zoom, options) => { calls.push({ center, zoom, options }); handlers.get('zoomstart')?.(); handlers.get('movestart')?.(); },
+    flyTo: (center, zoom, options) => { lifecycle.flyTo++; calls.push({ center, zoom, options }); handlers.get('zoomstart')?.(); handlers.get('movestart')?.(); },
+    _moveStart: () => { lifecycle.starts++; handlers.get('zoomstart')?.(); handlers.get('movestart')?.(); },
+    _move: (center, zoom, options) => { calls.push({ center, zoom, options }); },
+    _moveEnd: () => { lifecycle.ends++; handlers.get('zoomend')?.(); handlers.get('moveend')?.(); },
     stop: () => { stops++; },
     on: (types, handler) => { for (const type of types.split(' ')) handlers.set(type, handler); },
     off: types => { for (const type of types.split(' ')) handlers.delete(type); },
     scrollWheelZoom: { enabled: () => nativeEnabled, disable: () => { nativeEnabled = false; }, enable: () => { nativeEnabled = true; } },
   };
-  return { map, calls, frames, timers, window, document, container, handlers, stops: () => stops,
+  return { map, calls, lifecycle, frames, timers, window, document, container, handlers, stops: () => stops,
     frame() { const callbacks = [...frames.values()]; frames.clear(); for (const callback of callbacks) callback(); },
     settle() { const callbacks = [...timers.values()]; timers.clear(); for (const callback of callbacks) callback(); },
     wheel(patch = {}) {
@@ -95,6 +99,38 @@ test('coalesces deltas once per frame, accumulates desired zoom independently an
   assert.equal(f.map.options.zoomSnap, .5);
   assert.equal(f.map.scrollWheelZoom.enabled(), true);
   dispose();
+});
+
+test('continuous trackpad frames share one map gesture rather than restarting fly animations', () => {
+  const f = fixture();
+  const dispose = attachTrackpadZoom(f.map);
+  for (let i = 0; i < 8; i++) { f.wheel(); f.frame(); }
+  assert.equal(f.calls.length, 8);
+  assert.equal(f.lifecycle.flyTo, 0);
+  assert.equal(f.lifecycle.starts, 1);
+  assert.equal(f.lifecycle.ends, 0);
+  assert.ok(f.calls.every(call => call.options?.pinch === true));
+  f.settle();
+  assert.equal(f.lifecycle.ends, 1);
+  dispose();
+});
+
+test('interrupted active pinch ends once without resetting the map view', () => {
+  const f = fixture();
+  const ends = [];
+  const dispose = attachTrackpadZoom(f.map, { onGestureEnd: value => ends.push(value) });
+  f.wheel(); f.frame();
+  const stopsBeforeBlur = f.stops();
+  f.window.dispatchEvent(new Event('blur'));
+  f.frame(); f.settle();
+  assert.equal(f.lifecycle.starts, 1);
+  assert.equal(f.lifecycle.ends, 1);
+  assert.equal(f.stops(), stopsBeforeBlur);
+  assert.deepEqual(ends, [{ cancelled: true }]);
+  assert.equal(f.map.options.zoomSnap, .5);
+  assert.equal(f.map.scrollWheelZoom.enabled(), true);
+  dispose();
+  assert.equal(f.lifecycle.ends, 1);
 });
 
 test('ordinary scroll/controls are untouched, interrupting input restores native wheel before bubbling', () => {

@@ -37,11 +37,12 @@ const bubbleIconCache = new Map();
 
 // 數字氣泡圖標:沒車顯示 0、不能還車顯示 M、暫停營運灰底顯示車數
 function bubbleIcon(s) {
-  const key = `${s.active ? 1 : 0}:${s.available}:${s.empty ?? ''}`;
+  const isFullDock = s.empty === 0 && s.available > 0;
+  // 空位數只有在滿柱時影響圖標；避免每次空位變動都建立等價的新 icon。
+  const key = `${s.active ? 1 : 0}:${s.available}:${isFullDock ? 1 : 0}`;
   const cached = bubbleIconCache.get(key);
   if (cached) return cached;
 
-  const isFullDock = s.empty === 0 && s.available > 0;
   let color, label;
   if (!s.active) {
     color = '#9b9ba3';
@@ -164,16 +165,15 @@ function ViewportStationMarkers({ stations, selectedId, markerSetKey, onOpen, on
   const map = useMap();
   const [markerWindow, setMarkerWindow] = useState(() => ({
     bounds: paddedMarkerBounds(currentViewportBounds(map)),
-    zoom: map.getZoom(),
   }));
   const refreshBounds = useCallback(() => {
     const viewport = currentViewportBounds(map);
-    const zoom = map.getZoom();
     setMarkerWindow((previous) => {
-      if (previous.zoom === zoom && viewportWithinMarkerBounds(viewport, previous.bounds)) {
+      // Leaflet 會自行處理縮放群聚；視野未越過緩衝區時避免重建站點集合。
+      if (viewportWithinMarkerBounds(viewport, previous.bounds)) {
         return previous;
       }
-      return { bounds: paddedMarkerBounds(viewport), zoom };
+      return { bounds: paddedMarkerBounds(viewport) };
     });
   }, [map]);
 
@@ -195,6 +195,7 @@ function ViewportStationMarkers({ stations, selectedId, markerSetKey, onOpen, on
       showCoverageOnHover={false}
       maxClusterRadius={20}
       disableClusteringAtZoom={15}
+      animate={false}
       zoomToBoundsOnClick
       spiderfyOnMaxZoom={false}
       chunkedLoading
@@ -350,7 +351,7 @@ export default function MapView({ stations, center, zoom, onSelect, onDeselect, 
   );
 
   const selVisible = selected && !visible.some((v) => v.id === selected.id) ? selected : null;
-  const popupStationId = popupState?.station.id ?? null;
+  const popupStationId = popupState?.stationId ?? null;
   const activePopupState = popupStationId === selected?.id ? popupState : null;
   const selectedRef = useRef(selected);
   selectedRef.current = selected;
@@ -362,7 +363,7 @@ export default function MapView({ stations, center, zoom, onSelect, onDeselect, 
   const showPopup = useCallback((station) => {
     if (selectedRef.current?.id !== station.id) return;
     setPopupState((previous) => ({
-      station,
+      stationId: station.id,
       sequence: (previous?.sequence ?? 0) + 1,
     }));
   }, []);
@@ -425,10 +426,10 @@ export default function MapView({ stations, center, zoom, onSelect, onDeselect, 
         />
         {activePopupState && (
           <StationPopup
-            key={`${activePopupState.station.id}:${activePopupState.sequence}`}
-            station={activePopupState.station}
+            key={`${activePopupState.stationId}:${activePopupState.sequence}`}
+            station={selected}
             onDismiss={dismissPopup}
-            isFavorite={favoriteSet.has(activePopupState.station.id)}
+            isFavorite={favoriteSet.has(activePopupState.stationId)}
             onToggleFavorite={onToggleFavorite}
           />
         )}
